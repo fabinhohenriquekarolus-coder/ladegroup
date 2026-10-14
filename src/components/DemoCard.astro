@@ -1,11 +1,11 @@
 ---
 import { Picture } from 'astro:assets';
 
-const { title, text, href, product, cover, detail } = Astro.props;
-const sizes = '(max-width: 860px) calc(100vw - 48px), 560px';
+const { title, text, href, product, cover, detail, wide = false } = Astro.props;
+const sizes = wide ? '(max-width: 860px) calc(100vw - 48px), 640px' : '(max-width: 860px) calc(100vw - 48px), 560px';
 ---
 
-<article class="demo-card">
+<article class:list={['demo-card', { 'is-wide': wide }]}>
   <div class="demo-card-media">
     <Picture src={cover} alt="" widths={[480, 720, 1080]} sizes={sizes} formats={['avif', 'webp']} loading="lazy" class="demo-card-shot" />
     <Picture src={detail} alt="" widths={[480, 720, 1080]} sizes={sizes} formats={['avif', 'webp']} loading="lazy" class="demo-card-shot is-detail" />

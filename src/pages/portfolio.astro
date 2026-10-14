@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBand from '../components/CtaBand.astro';
 import DemoCard from '../components/DemoCard.astro';
 import PageHero from '../components/PageHero.astro';
-import { systemDemos, siteDemos } from '../data/demos/index.js';
+import { lacarDemo, systemDemos, siteDemos } from '../data/demos/index.js';
 ---
 
 <BaseLayout
@@ -19,15 +19,14 @@ import { systemDemos, siteDemos } from '../data/demos/index.js';
 
   <section class="tight" id="lacar">
     <div class="container">
-      <div class="product-feature is-brand">
-        <span class="eyebrow-alt">Produto próprio · em produção</span>
-        <h2>LaCar</h2>
+      <div class="section-head">
+        <h2>LaCar, nosso sistema em produção</h2>
         <p>
-          Bot de WhatsApp + painel de gestão para lava-rápido e estética automotiva. A gente não só
-          recomenda automação pros clientes: constrói e mantém a nossa própria, rodando de verdade.
+          Atendente no WhatsApp e painel de gestão para lava-rápido e estética automotiva. A
+          demonstração usa a identidade do LaCar e dados fictícios.
         </p>
-        <a class="btn btn-primary" href="/lacar.html">Conhecer o LaCar</a>
       </div>
+      <DemoCard {...lacarDemo} wide />
     </div>
   </section>
 

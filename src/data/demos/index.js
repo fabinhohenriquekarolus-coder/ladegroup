@@ -1,3 +1,5 @@
+import lacarCover from '../../assets/previews/lacar-inicio.jpg';
+import lacarDetail from '../../assets/previews/lacar-uso.jpg';
 import crmCover from '../../assets/previews/crm-imobiliario-inicio.jpg';
 import crmDetail from '../../assets/previews/crm-imobiliario-uso.jpg';
 import erpCover from '../../assets/previews/erp-contabil-inicio.jpg';
@@ -14,6 +16,15 @@ import modaCover from '../../assets/previews/moda-inicio.jpg';
 import modaDetail from '../../assets/previews/moda-uso.jpg';
 import autopecasCover from '../../assets/previews/autopecas-inicio.jpg';
 import autopecasDetail from '../../assets/previews/autopecas-uso.jpg';
+
+export const lacarDemo = {
+  product: 'LaCar',
+  title: 'Atendimento e gestão para lava-rápido',
+  text: 'Atendente no WhatsApp com três modos, agenda por dia e semana, clientes, fluxo de caixa, serviços por porte e o Ladinho, que responde sobre o caixa.',
+  href: '/demos/lacar/',
+  cover: lacarCover,
+  detail: lacarDetail,
+};
 
 export const systemDemos = [
   {

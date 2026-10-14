@@ -23,7 +23,6 @@ const whatsappMessagesByOrigin = {
   home: 'Olá! Vim pela página inicial do site da Lade Group e quero conversar sobre um sistema para o meu negócio.',
   servicos:
     'Olá! Vim pela página de serviços do site da Lade Group e quero conversar sobre um sistema para o meu negócio.',
-  lacar: 'Olá! Vim pela página do LaCar e quero saber como ele funciona no meu lava-rápido.',
 };
 
 export const whatsappLinkFor = (origin) =>

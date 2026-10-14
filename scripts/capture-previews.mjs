@@ -45,6 +45,14 @@ const hideChrome = '.demo-bar, .demo-badge, .demo-toast, .demo-skip { display: n
 
 const demos = [
   {
+    slug: 'lacar',
+    path: 'demos/lacar/',
+    use: async (page) => {
+      await page.evaluate(() => document.querySelector('#painel .lc-app').scrollIntoView());
+      await page.click('#aba-caixa');
+    },
+  },
+  {
     slug: 'crm-imobiliario',
     path: 'demos/sistemas/crm-imobiliario/',
     use: async (page) => {
@@ -122,7 +130,8 @@ const base = `http://127.0.0.1:${server.address().port}/`;
 const browser = await chromium.launch();
 
 try {
-  for (const demo of demos) {
+  const only = process.argv.slice(2);
+  for (const demo of only.length ? demos.filter((item) => only.includes(item.slug)) : demos) {
     const context = await browser.newContext({ viewport: { width: 1280, height: 800 }, reducedMotion: 'reduce' });
     const page = await context.newPage();
     await page.goto(base + demo.path, { waitUntil: 'networkidle' });

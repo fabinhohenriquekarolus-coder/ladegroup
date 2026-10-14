@@ -1,16 +1,17 @@
 # Demonstrações do portfólio
 
-Oito exemplos navegáveis (quatro sistemas e quatro sites) feitos em HTML, CSS e JavaScript puro, sem framework e sem dependências em tempo de execução. Todos usam marcas e dados fictícios, não fazem requisições externas e não guardam nada: o estado vive só na memória da página.
+Nove exemplos navegáveis feitos em HTML, CSS e JavaScript puro, sem framework e sem dependências em tempo de execução: o LaCar, quatro sistemas e quatro sites. O LaCar é produto real da Lade Group; os outros oito usam marcas fictícias. Todos usam dados fictícios, não fazem requisições externas e não guardam nada: o estado vive só na memória da página.
 
 ## Onde fica cada coisa
 
 ```
 public/demos/
-  comum/                 base compartilhada pelas oito demonstrações
+  comum/                 base compartilhada pelas demonstrações
     demo.css             reset, barra "Demonstração", selo e aviso
     toast.js             aviso acessível (role="status") e botões data-demo-action
     html.js              template html`` que escapa todo valor interpolado
     fonts/               Montserrat e Open Sans da barra da Lade
+  lacar/                 página do LaCar, na identidade do próprio sistema
   sistemas/<exemplo>/    crm-imobiliario, erp-contabil, painel-de-gestao, agendamento
   sites/<exemplo>/       pizzaria, petshop, moda, autopecas
     index.html           estrutura e conteúdo
@@ -25,7 +26,7 @@ scripts/capture-previews.mjs   gera as imagens dos cards do portfólio
 src/assets/previews/     imagens geradas pelo script acima
 ```
 
-O Astro copia `public/` sem processar, então cada pasta funciona como está. As URLs ficam em `/demos/sistemas/<exemplo>/` e `/demos/sites/<exemplo>/`.
+O Astro copia `public/` sem processar, então cada pasta funciona como está. As URLs ficam em `/demos/lacar/`, `/demos/sistemas/<exemplo>/` e `/demos/sites/<exemplo>/`.
 
 ## Convenções
 
@@ -35,7 +36,7 @@ O Astro copia `public/` sem processar, então cada pasta funciona como está. As
 - Todo HTML montado no JavaScript passa pelo template `html` de `comum/html.js`, que escapa cada valor interpolado. Texto digitado pela pessoa (nome, mensagem, CNPJ) nunca entra cru em `innerHTML`.
 - Nos sites, o conteúdo (cardápio, catálogo, produtos) está no HTML e o JavaScript só lê `data-*` e cuida da interação. Nos sistemas, a interface é montada a partir de `data.js`.
 - Cada exemplo tem paleta, fontes, caixas e tabelas próprias. A única peça visual compartilhada é a barra preta da Lade no topo.
-- Raio de borda: até 8 px em cartões, até 6 px em botões e campos, círculo só em avatar e indicador.
+- Raio de borda: até 8 px em cartões, até 6 px em botões e campos, círculo só em avatar e indicador. A exceção é o LaCar, que segue o sistema real: 14 px em cartões, 8 px em controles e selos arredondados.
 
 ## Acessibilidade (WCAG 2.2 AA)
 
@@ -55,6 +56,7 @@ npm run dev          site e demonstrações em http://localhost:4321
 npm test             testes das regras (node --test, sem dependências)
 npm run build
 npm run previews     depois do build: recaptura as imagens dos cards
+                     (npm run previews -- lacar recaptura só um exemplo)
 npm run build        de novo, para otimizar as novas imagens
 ```
 
@@ -67,6 +69,7 @@ Todas são servidas pelo próprio site, só no subconjunto latino (cobre o portu
 | Exemplo | Títulos | Corpo |
 | --- | --- | --- |
 | Barra da Lade | Montserrat | Open Sans |
+| LaCar | Geist | Geist |
 | Cumeeira, CRM | Plus Jakarta Sans | Plus Jakarta Sans |
 | Razão, ERP | IBM Plex Sans | IBM Plex Sans e IBM Plex Mono |
 | Maré, painel | Inter | Inter |
@@ -78,6 +81,7 @@ Todas são servidas pelo próprio site, só no subconjunto latino (cobre o portu
 
 ## Documentação de cada exemplo
 
+- [LaCar, atendimento e gestão para lava-rápido](lacar.md)
 - [Cumeeira, CRM imobiliário](crm-imobiliario.md)
 - [Razão, ERP contábil](erp-contabil.md)
 - [Maré, painel de gestão](painel-de-gestao.md)
