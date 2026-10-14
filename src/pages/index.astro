@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBand from '../components/CtaBand.astro';
+import HexFrame from '../components/HexFrame.astro';
+import Icon from '../components/Icon.astro';
+import Logo from '../components/Logo.astro';
+import PortCard from '../components/PortCard.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { homeDemos } from '../data/portfolio.js';
+
+const services = [
+  {
+    icon: 'target',
+    title: 'Tráfego pago',
+    text: 'Google Ads e Meta Ads segmentados por bairro e cidade — pra pagar clique de gente que vai até você.',
+  },
+  {
+    icon: 'browser',
+    title: 'Sites e landing pages',
+    text: 'Rápido, sob medida e com botão de WhatsApp em destaque — o visitante vira conversa.',
+  },
+  {
+    icon: 'pin',
+    title: 'SEO & Google Meu Negócio',
+    text: 'Seu negócio aparecendo no mapa e na busca quando o cliente procurar por perto.',
+  },
+  {
+    icon: 'nodes',
+    title: 'Automação e IA',
+    text: 'A gente constrói isso de verdade: o LaCar, nosso sistema de automação via WhatsApp, já roda para lava-rápidos e estéticas.',
+  },
+];
+
+const steps = [
+  {
+    num: '01',
+    title: 'Diagnóstico',
+    text: 'Analisamos como seu negócio aparece hoje: site, Google, redes e concorrência.',
+  },
+  {
+    num: '02',
+    title: 'Estratégia',
+    text: 'Definimos onde investir primeiro pra gerar resultado mais rápido, sem desperdiçar verba.',
+  },
+  {
+    num: '03',
+    title: 'Execução',
+    text: 'Colocamos no ar: campanhas, site e perfil otimizado — tudo alinhado entre si.',
+  },
+  {
+    num: '04',
+    title: 'Otimização',
+    text: 'Acompanhamos os números toda semana e ajustamos com apoio de automação e IA.',
+  },
+];
+
+const reasons = [
+  {
+    title: 'Time local',
+    text: 'Estamos em Joinville. Você fala com gente daqui, não um call center do outro lado do país.',
+  },
+  {
+    title: 'Resposta direto no WhatsApp',
+    text: 'Sem formulário que ninguém responde depois. Você manda mensagem e a gente responde.',
+  },
+  {
+    title: 'IA aplicada, não só discurso',
+    text: 'Automação de verdade no dia a dia da campanha e do atendimento — não só uma palavra bonita na proposta.',
+  },
+  {
+    title: 'Transparência de número',
+    text: 'Você vê o que está sendo investido e o que está voltando, sem enrolação.',
+  },
+];
+---
+
+<BaseLayout
+  title="Lade Group — Marketing Digital, Sites e Automação em Joinville"
+  description="Lade Group: marketing digital, sites, SEO e automação com IA para comércios de Joinville e região. Fale agora no WhatsApp."
+  ogDescription="Tráfego pago, sites profissionais, SEO e automação com IA para comércios de Joinville e região."
+  path="/"
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Marketing digital e automação · Joinville e região</p>
+        <h1>Seu concorrente não é melhor. Ele só aparece primeiro.</h1>
+        <p class="lead">
+          A Lade Group coloca seu negócio na frente de quem já está procurando por ele — com tráfego
+          pago, site profissional e automação com IA, tudo cuidado por gente daqui de Joinville.
+        </p>
+        <div class="hero-ctas">
+          <WhatsAppButton />
+          <a class="btn btn-secondary" href="/portfolio.html">Ver o que já fizemos</a>
+        </div>
+        <div class="hero-meta">
+          <span class="dot"></span> Atendendo Joinville e região · resposta direto no WhatsApp
+        </div>
+      </div>
+      <div class="reticle" aria-hidden="true">
+        <Logo />
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Prova, não promessa</p>
+        <h2>O que já colocamos no ar</h2>
+        <p>
+          Sem cliente fechado pra citar ainda — mas rodamos o bairro Vila Nova, em Joinville, e
+          montamos sites reais pra comércios que não tinham nenhum. Veja três deles.
+        </p>
+      </div>
+      <div class="grid-3">
+        {
+          homeDemos.map((demo) => (
+            <PortCard title={demo.title} text={demo.homeText} gradient={demo.gradient} />
+          ))
+        }
+      </div>
+      <p class="section-action">
+        <a class="btn btn-secondary" href="/portfolio.html">Ver todos os projetos</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">O que fazemos</p>
+        <h2>Quatro frentes, um único foco: te achar mais fácil</h2>
+      </div>
+      <div class="grid-4">
+        {
+          services.map((service) => (
+            <div class="card">
+              <HexFrame>
+                <Icon name={service.icon} />
+              </HexFrame>
+              <h3>{service.title}</h3>
+              <p>{service.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Como funciona</p>
+        <h2>Do diagnóstico ao ajuste fino, nessa ordem</h2>
+      </div>
+      <div class="grid-4">
+        {
+          steps.map((step) => (
+            <div class="process-card">
+              <HexFrame filled>
+                <span class="num">{step.num}</span>
+              </HexFrame>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Por que a Lade Group</p>
+        <h2>Diferença que dá pra sentir na conversa</h2>
+      </div>
+      <div class="grid-2">
+        {
+          reasons.map((reason) => (
+            <div class="card">
+              <h3>{reason.title}</h3>
+              <p>{reason.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Bora tirar seu negócio do anonimato?"
+    text="Manda uma mensagem agora — é o jeito mais rápido de falar com a gente."
+  />
+</BaseLayout>

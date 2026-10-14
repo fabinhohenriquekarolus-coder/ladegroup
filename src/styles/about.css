@@ -1,0 +1,47 @@
+.about-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-hex-art {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 1;
+  margin: 0 auto;
+}
+
+.about-hex-art::before {
+  content: '';
+  position: absolute;
+  inset: -25%;
+  background: radial-gradient(closest-side, rgba(201, 162, 39, 0.14), transparent 72%);
+  z-index: -1;
+}
+
+.about-story .lead + .lead {
+  margin-top: 20px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+@media (max-width: 860px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hex-art {
+    order: -1;
+    max-width: 240px;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}

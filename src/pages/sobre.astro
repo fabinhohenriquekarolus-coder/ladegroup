@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBand from '../components/CtaBand.astro';
+import HexFrame from '../components/HexFrame.astro';
+import Icon from '../components/Icon.astro';
+import Logo from '../components/Logo.astro';
+
+const values = [
+  {
+    icon: 'home',
+    title: 'Proximidade',
+    text: 'Somos de Joinville. A conversa é direta, no WhatsApp, com quem realmente vai tocar sua campanha — não um call center.',
+  },
+  {
+    icon: 'bars',
+    title: 'Transparência',
+    text: 'Você acompanha o que está sendo investido e o que está voltando. Sem relatório que ninguém entende.',
+  },
+  {
+    icon: 'nodes',
+    title: 'Tecnologia aplicada',
+    text: 'IA e automação no dia a dia — resposta automática, relatório sem trabalho manual — não só no discurso de venda.',
+  },
+];
+---
+
+<BaseLayout
+  title="Sobre — Lade Group"
+  description="A Lade Group nasceu em Joinville ajudando comércios locais a sair do anonimato. Conheça a origem e os valores por trás do trabalho."
+  path="/sobre.html"
+  current="sobre"
+>
+  <section class="hero is-compact">
+    <div class="container about-hero">
+      <div>
+        <p class="eyebrow">Sobre a Lade Group</p>
+        <h1>Comércio local não perde pra concorrência por ter produto pior.</h1>
+        <p class="lead">
+          Perde por ser mais difícil de encontrar. A Lade Group existe pra resolver essa parte — com
+          tráfego pago, site profissional e automação com IA, tudo pensado pra quem atende Joinville
+          e região.
+        </p>
+      </div>
+      <div class="about-hex-art">
+        <Logo />
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container container-narrow about-story">
+      <p class="lead">
+        A gente testou isso na prática antes de vender pra alguém. Rodamos o bairro Vila Nova, em
+        Joinville, batendo de porta em porta em comércios que não tinham nenhum site — e montamos,
+        como demonstração, uma proposta real pra cada um ver como ficaria. O portfólio que você
+        confere neste site é resultado direto disso: sete negócios, sete identidades, todos no ar de
+        verdade.
+      </p>
+      <p class="lead">
+        Isso moldou como a gente trabalha: sem enrolação, sem termo técnico que não ajuda em nada,
+        sempre pensando em quem realmente decide se virou cliente — o dono do negócio, não uma
+        métrica de vaidade.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">O que guia o trabalho</p>
+        <h2>Três coisas que não abrimos mão</h2>
+      </div>
+      <div class="values-grid">
+        {
+          values.map((value) => (
+            <div class="card">
+              <HexFrame>
+                <Icon name={value.icon} />
+              </HexFrame>
+              <h3>{value.title}</h3>
+              <p>{value.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Vamos conversar sobre o seu negócio?"
+    text="Conta pra gente como está hoje — a gente escuta antes de propor qualquer coisa."
+  />
+</BaseLayout>
