@@ -1,7 +1,7 @@
 ---
 import WhatsAppButton from './WhatsAppButton.astro';
 
-const { title, text } = Astro.props;
+const { title, text, origin } = Astro.props;
 ---
 
 <section class="band">
@@ -10,6 +10,6 @@ const { title, text } = Astro.props;
       <h2>{title}</h2>
       <p>{text}</p>
     </div>
-    <WhatsAppButton variant="light" />
+    <WhatsAppButton variant="light" origin={origin} />
   </div>
 </section>

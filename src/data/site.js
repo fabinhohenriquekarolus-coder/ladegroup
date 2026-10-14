@@ -19,7 +19,14 @@ const whatsappUrl = (message) => {
   return message ? `${base}?text=${encodeURIComponent(message)}` : base;
 };
 
-export const whatsappLink = whatsappUrl(defaultWhatsappMessage);
+const whatsappMessagesByOrigin = {
+  home: 'Olá! Vim pela página inicial do site da Lade Group e quero conversar sobre um sistema para o meu negócio.',
+  servicos:
+    'Olá! Vim pela página de serviços do site da Lade Group e quero conversar sobre um sistema para o meu negócio.',
+};
+
+export const whatsappLinkFor = (origin) =>
+  whatsappUrl(whatsappMessagesByOrigin[origin] ?? defaultWhatsappMessage);
 export const whatsappContactLink = whatsappUrl();
 
 export const navItems = [

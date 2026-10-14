@@ -3,7 +3,7 @@ import Logo from './Logo.astro';
 import WhatsAppButton from './WhatsAppButton.astro';
 import { navItems, site } from '../data/site.js';
 
-const { current } = Astro.props;
+const { current, origin } = Astro.props;
 ---
 
 <header class="nav">
@@ -28,7 +28,7 @@ const { current } = Astro.props;
           </a>
         ))
       }
-      <WhatsAppButton small />
+      <WhatsAppButton small origin={origin} />
     </nav>
   </div>
 </header>

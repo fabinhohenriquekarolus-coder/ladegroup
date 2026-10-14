@@ -5,7 +5,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { site } from '../data/site.js';
 
-const { title, description, path, current, ogDescription = description } = Astro.props;
+const { title, description, path, current, origin, ogDescription = description } = Astro.props;
 const canonical = new URL(path, site.url).href;
 ---
 
@@ -28,7 +28,7 @@ const canonical = new URL(path, site.url).href;
   </head>
   <body>
     <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
-    <Header current={current} />
+    <Header current={current} origin={origin} />
     <main id="conteudo">
       <slot />
     </main>
