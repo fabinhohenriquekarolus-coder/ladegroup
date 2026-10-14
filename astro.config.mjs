@@ -10,6 +10,7 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
+      filter: (page) => !page.includes('/404'),
       serialize: (item) => ({
         ...item,
         url: item.url.endsWith('/') ? item.url : `${item.url}.html`,

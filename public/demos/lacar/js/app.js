@@ -83,7 +83,6 @@ const setupTabs = (list, onChange) => {
 const press = (buttons, active) => buttons.forEach((button) => button.setAttribute('aria-pressed', String(button === active)));
 
 setupTabs($('.lc-modes-tabs'));
-setupTabs($('.lc-app-nav'));
 
 const agenda = { date: today, mode: 'dia' };
 const agendaButtons = [...document.querySelectorAll('[data-agenda]')];
@@ -327,7 +326,13 @@ asks.addEventListener('click', (event) => {
   }, 650);
 });
 
+const views = { 'aba-clientes': renderClients, 'aba-caixa': renderCash, 'aba-servicos': renderServices };
+const rendered = new Set();
+
+setupTabs($('.lc-app-nav'), (tab) => {
+  if (rendered.has(tab.id) || !views[tab.id]) return;
+  rendered.add(tab.id);
+  views[tab.id]();
+});
+
 renderAgenda();
-renderClients();
-renderCash();
-renderServices();

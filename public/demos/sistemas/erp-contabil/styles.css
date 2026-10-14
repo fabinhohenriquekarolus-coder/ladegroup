@@ -102,6 +102,13 @@
   height: 18px;
 }
 
+.rz-name {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
 .rz-office {
   padding-left: 10px;
   border-left: 1px solid rgba(255, 255, 255, 0.35);

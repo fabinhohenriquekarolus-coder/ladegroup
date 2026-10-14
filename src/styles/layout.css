@@ -17,10 +17,6 @@ section.tight {
   padding: 56px 0;
 }
 
-.tight.is-flush-bottom {
-  padding-bottom: 0;
-}
-
 .section-alt {
   background: var(--surface);
   border-top: 1px solid var(--line);
@@ -30,10 +26,6 @@ section.tight {
 .section-head {
   max-width: 640px;
   margin-bottom: 48px;
-}
-
-.section-action {
-  margin-top: 32px;
 }
 
 .eyebrow {
@@ -63,12 +55,6 @@ section.tight {
   gap: 22px;
 }
 
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -80,8 +66,7 @@ section.tight {
     padding: 64px 0;
   }
 
-  .grid-4,
-  .grid-3 {
+  .grid-4 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -96,7 +81,6 @@ section.tight {
   }
 
   .grid-4,
-  .grid-3,
   .grid-2 {
     grid-template-columns: 1fr;
   }

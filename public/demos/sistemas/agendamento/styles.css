@@ -85,6 +85,12 @@
   letter-spacing: -0.02em;
 }
 
+.cp-brand .cp-name {
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+}
+
 .cp-brand svg {
   width: 32px;
   height: 32px;
@@ -313,7 +319,7 @@
   margin-bottom: 14px;
 }
 
-.cp-bar h1 {
+.cp-bar h2 {
   font-size: 24px;
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -709,7 +715,7 @@
   margin-bottom: 14px;
 }
 
-.cp-clients-head h1 {
+.cp-clients-head h2 {
   font-size: 24px;
   font-weight: 700;
   letter-spacing: -0.03em;

@@ -9,9 +9,11 @@ export const site = {
   footerTagline:
     'Sistemas sob medida, automação de atendimento e melhorias para negócios de Joinville e região.',
   footerMeta: 'Sistemas e automação em Joinville, SC',
+  ogImage: '/og/lade-group.png',
+  ogImageAlt: 'Lade Group: sistemas feitos sob medida para o seu negócio funcionar melhor.',
 };
 
-export const defaultWhatsappMessage =
+const defaultWhatsappMessage =
   'Olá! Vim pelo site da Lade Group e quero conversar sobre um sistema para o meu negócio.';
 
 const whatsappUrl = (message) => {
@@ -28,7 +30,6 @@ const whatsappMessagesByOrigin = {
 export const whatsappLinkFor = (origin) =>
   whatsappUrl(whatsappMessagesByOrigin[origin] ?? defaultWhatsappMessage);
 export const whatsappContactLink = whatsappUrl();
-export const whatsappLinkWith = (message) => whatsappUrl(message);
 
 export const navItems = [
   { key: 'servicos', label: 'Serviços', href: '/servicos.html' },

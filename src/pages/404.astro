@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { navItems } from '../data/site.js';
+---
+
+<BaseLayout
+  title="Página não encontrada | Lade Group"
+  description="A página que você procurou não existe ou mudou de endereço."
+  path="/404.html"
+  noindex
+>
+  <section class="page-hero is-borderless not-found">
+    <div class="container">
+      <p class="eyebrow">Erro 404</p>
+      <h1>Essa página não existe ou mudou de endereço.</h1>
+      <p class="lead">Confira o endereço digitado ou siga por um dos caminhos abaixo.</p>
+      <div class="not-found-actions">
+        <a class="btn btn-primary" href="/">Ir para o início</a>
+        <WhatsAppButton variant="secondary" />
+      </div>
+      <nav class="not-found-links" aria-labelledby="titulo-paginas">
+        <h2 id="titulo-paginas">Páginas do site</h2>
+        <ul>
+          {
+            navItems.map((item) => (
+              <li>
+                <a href={item.href}>{item.label}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,13 +1,22 @@
 ---
 import { Picture } from 'astro:assets';
 
-const { title, text, href, product, cover, detail, wide = false } = Astro.props;
+const { title, text, href, product, cover, detail, wide = false, priority = false } = Astro.props;
 const sizes = wide ? '(max-width: 860px) calc(100vw - 48px), 640px' : '(max-width: 860px) calc(100vw - 48px), 560px';
 ---
 
 <article class:list={['demo-card', { 'is-wide': wide }]}>
   <div class="demo-card-media">
-    <Picture src={cover} alt="" widths={[480, 720, 1080]} sizes={sizes} formats={['avif', 'webp']} loading="lazy" class="demo-card-shot" />
+    <Picture
+      src={cover}
+      alt=""
+      widths={[480, 720, 1080]}
+      sizes={sizes}
+      formats={['avif', 'webp']}
+      loading={priority ? 'eager' : 'lazy'}
+      fetchpriority={priority ? 'high' : undefined}
+      class="demo-card-shot"
+    />
     <Picture src={detail} alt="" widths={[480, 720, 1080]} sizes={sizes} formats={['avif', 'webp']} loading="lazy" class="demo-card-shot is-detail" />
     <span class="demo-card-tag">Demonstração</span>
   </div>
