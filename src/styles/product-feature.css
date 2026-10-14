@@ -9,6 +9,11 @@
   margin-bottom: 8px;
 }
 
+.product-feature.is-brand {
+  background: var(--black);
+  background-image: radial-gradient(560px 320px at 90% 10%, rgba(201, 162, 39, 0.15), transparent 60%);
+}
+
 .product-feature .eyebrow-alt {
   font-family: var(--font-mono);
   font-size: 12px;
