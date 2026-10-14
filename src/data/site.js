@@ -7,12 +7,12 @@ export const site = {
   whatsappNumber: '5547991065421',
   regionLabel: 'Joinville e região · SC',
   footerTagline:
-    'Gestão de tráfego, sites e automação com IA para comércios de Joinville e região.',
-  footerMeta: 'Marketing digital e automação · Joinville, SC',
+    'Sistemas sob medida, automação de atendimento e melhorias para negócios de Joinville e região.',
+  footerMeta: 'Sistemas e automação em Joinville, SC',
 };
 
 export const defaultWhatsappMessage =
-  'Olá! Vim pelo site da Lade Group e quero saber mais sobre gestão de tráfego.';
+  'Olá! Vim pelo site da Lade Group e quero conversar sobre um sistema para o meu negócio.';
 
 const whatsappUrl = (message) => {
   const base = `https://wa.me/${site.whatsappNumber}`;

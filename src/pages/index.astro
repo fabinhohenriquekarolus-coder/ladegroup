@@ -4,97 +4,69 @@ import CtaBand from '../components/CtaBand.astro';
 import HexFrame from '../components/HexFrame.astro';
 import Icon from '../components/Icon.astro';
 import Logo from '../components/Logo.astro';
-import PortCard from '../components/PortCard.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
-import { homeDemos } from '../data/portfolio.js';
 
-const services = [
+const builds = [
   {
-    icon: 'target',
-    title: 'Tráfego pago',
-    text: 'Google Ads e Meta Ads segmentados por bairro e cidade — pra pagar clique de gente que vai até você.',
+    icon: 'whatsapp',
+    title: 'Bot de atendimento no WhatsApp',
+    text: 'Responde na hora, qualifica o contato e passa para você só quem está pronto para fechar, inclusive fora do expediente.',
   },
   {
-    icon: 'browser',
-    title: 'Sites e landing pages',
-    text: 'Rápido, sob medida e com botão de WhatsApp em destaque — o visitante vira conversa.',
-  },
-  {
-    icon: 'pin',
-    title: 'SEO & Google Meu Negócio',
-    text: 'Seu negócio aparecendo no mapa e na busca quando o cliente procurar por perto.',
+    icon: 'bars',
+    title: 'Painel de gestão',
+    text: 'Veja agendamentos, clientes e números do negócio num lugar só, sem depender de planilha manual.',
   },
   {
     icon: 'nodes',
-    title: 'Automação e IA',
-    text: 'A gente constrói isso de verdade: o LaCar, nosso sistema de automação via WhatsApp, já roda para lava-rápidos e estéticas.',
+    title: 'Sistema sob medida',
+    text: 'O fluxo que é só do seu negócio, desenhado a partir da sua rotina.',
   },
 ];
 
 const steps = [
-  {
-    num: '01',
-    title: 'Diagnóstico',
-    text: 'Analisamos como seu negócio aparece hoje: site, Google, redes e concorrência.',
-  },
-  {
-    num: '02',
-    title: 'Estratégia',
-    text: 'Definimos onde investir primeiro pra gerar resultado mais rápido, sem desperdiçar verba.',
-  },
-  {
-    num: '03',
-    title: 'Execução',
-    text: 'Colocamos no ar: campanhas, site e perfil otimizado — tudo alinhado entre si.',
-  },
+  { num: '01', title: 'Conversa', text: 'Entendemos a sua rotina e onde o tempo se perde.' },
+  { num: '02', title: 'Proposta', text: 'Definimos o que entra primeiro e quanto custa.' },
+  { num: '03', title: 'Desenvolvimento', text: 'Construímos e mostramos o andamento.' },
   {
     num: '04',
-    title: 'Otimização',
-    text: 'Acompanhamos os números toda semana e ajustamos com apoio de automação e IA.',
+    title: 'Entrega e evolução',
+    text: 'Colocamos no ar, ensinamos a usar e seguimos ajustando.',
   },
 ];
 
 const reasons = [
-  {
-    title: 'Time local',
-    text: 'Estamos em Joinville. Você fala com gente daqui, não um call center do outro lado do país.',
-  },
+  { title: 'Time local', text: 'Você fala com gente de Joinville.' },
   {
     title: 'Resposta direto no WhatsApp',
     text: 'Sem formulário que ninguém responde depois. Você manda mensagem e a gente responde.',
   },
-  {
-    title: 'IA aplicada, não só discurso',
-    text: 'Automação de verdade no dia a dia da campanha e do atendimento — não só uma palavra bonita na proposta.',
-  },
-  {
-    title: 'Transparência de número',
-    text: 'Você vê o que está sendo investido e o que está voltando, sem enrolação.',
-  },
+  { title: 'Sistema que a gente mesmo usa', text: 'O LaCar é produto próprio em produção.' },
 ];
 ---
 
 <BaseLayout
-  title="Lade Group — Marketing Digital, Sites e Automação em Joinville"
-  description="Lade Group: marketing digital, sites, SEO e automação com IA para comércios de Joinville e região. Fale agora no WhatsApp."
-  ogDescription="Tráfego pago, sites profissionais, SEO e automação com IA para comércios de Joinville e região."
+  title="Lade Group | Sistemas sob medida e automação em Joinville"
+  description="A Lade Group desenvolve sistemas sob medida, bot de atendimento no WhatsApp e painéis de gestão para negócios de Joinville e região."
   path="/"
 >
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <p class="eyebrow">Marketing digital e automação · Joinville e região</p>
-        <h1>Seu concorrente não é melhor. Ele só aparece primeiro.</h1>
+        <h1>Sistemas feitos sob medida para o seu negócio funcionar melhor.</h1>
         <p class="lead">
-          A Lade Group coloca seu negócio na frente de quem já está procurando por ele — com tráfego
-          pago, site profissional e automação com IA, tudo cuidado por gente daqui de Joinville.
+          Ainda roda em planilha e mensagem solta? A gente resolve. Desenvolvemos bot de atendimento
+          no WhatsApp, painéis de gestão e sistemas sob medida, aqui em Joinville e região.
         </p>
         <div class="hero-ctas">
-          <WhatsAppButton />
-          <a class="btn btn-secondary" href="/portfolio.html">Ver o que já fizemos</a>
+          <WhatsAppButton label="Quero um sistema para o meu negócio" />
+        </div>
+        <div class="hero-links">
+          <a class="text-link" href="/portfolio.html#lacar">Ver o LaCar funcionando</a>
+          <a class="text-link" href="/servicos.html#presenca">Ver ofertas de sites e marketing</a>
         </div>
         <div class="hero-meta">
-          <span class="dot"></span> Atendendo Joinville e região · resposta direto no WhatsApp
+          <span class="dot"></span> Atendemos Joinville e região. Resposta direto no WhatsApp.
         </div>
       </div>
       <div class="reticle" aria-hidden="true">
@@ -106,41 +78,19 @@ const reasons = [
   <section class="tight">
     <div class="container">
       <div class="section-head">
-        <p class="eyebrow">Prova, não promessa</p>
-        <h2>O que já colocamos no ar</h2>
-        <p>
-          Sem cliente fechado pra citar ainda — mas rodamos o bairro Vila Nova, em Joinville, e
-          montamos sites reais pra comércios que não tinham nenhum. Veja três deles.
-        </p>
+        <h2>O que a gente constrói para o seu negócio</h2>
       </div>
-      <div class="grid-3">
+      <div class="feature-list">
         {
-          homeDemos.map((demo) => (
-            <PortCard title={demo.title} text={demo.homeText} gradient={demo.gradient} />
-          ))
-        }
-      </div>
-      <p class="section-action">
-        <a class="btn btn-secondary" href="/portfolio.html">Ver todos os projetos</a>
-      </p>
-    </div>
-  </section>
-
-  <section class="section-alt">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">O que fazemos</p>
-        <h2>Quatro frentes, um único foco: te achar mais fácil</h2>
-      </div>
-      <div class="grid-4">
-        {
-          services.map((service) => (
-            <div class="card">
+          builds.map((item) => (
+            <div class="feature-item">
               <HexFrame>
-                <Icon name={service.icon} />
+                <Icon name={item.icon} />
               </HexFrame>
-              <h3>{service.title}</h3>
-              <p>{service.text}</p>
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
             </div>
           ))
         }
@@ -148,11 +98,23 @@ const reasons = [
     </div>
   </section>
 
-  <section>
+  <section class="tight">
+    <div class="container">
+      <div class="product-feature">
+        <h2>LaCar: o nosso sistema, em produção</h2>
+        <p>
+          Bot de WhatsApp e painel de gestão para lava-rápidos e estéticas automotivas. Já roda no
+          dia a dia desses negócios.
+        </p>
+        <a class="btn btn-primary" href="/portfolio.html#lacar">Conhecer o LaCar</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
     <div class="container">
       <div class="section-head">
-        <p class="eyebrow">Como funciona</p>
-        <h2>Do diagnóstico ao ajuste fino, nessa ordem</h2>
+        <h2>Como a gente trabalha</h2>
       </div>
       <div class="grid-4">
         {
@@ -170,16 +132,25 @@ const reasons = [
     </div>
   </section>
 
-  <section class="section-alt">
+  <section class="offer-strip">
+    <div class="container offer-strip-inner">
+      <p>
+        Também cuidamos da sua presença online: sites e landing pages, tráfego pago e Google Meu
+        Negócio.
+      </p>
+      <a class="text-link" href="/servicos.html#presenca">Ver ofertas</a>
+    </div>
+  </section>
+
+  <section>
     <div class="container">
       <div class="section-head">
-        <p class="eyebrow">Por que a Lade Group</p>
         <h2>Diferença que dá pra sentir na conversa</h2>
       </div>
-      <div class="grid-2">
+      <div class="reasons">
         {
           reasons.map((reason) => (
-            <div class="card">
+            <div class="reason">
               <h3>{reason.title}</h3>
               <p>{reason.text}</p>
             </div>
@@ -190,7 +161,7 @@ const reasons = [
   </section>
 
   <CtaBand
-    title="Bora tirar seu negócio do anonimato?"
-    text="Manda uma mensagem agora — é o jeito mais rápido de falar com a gente."
+    title="Qual parte da sua rotina ainda depende de planilha?"
+    text="Conta pra gente pelo WhatsApp. A conversa é direta e sem compromisso."
   />
 </BaseLayout>

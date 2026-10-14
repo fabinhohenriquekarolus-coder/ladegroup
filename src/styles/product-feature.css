@@ -1,0 +1,36 @@
+.product-feature {
+  background: #073b3a;
+  border-radius: var(--radius);
+  padding: 44px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.product-feature .eyebrow-alt {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7fd4cd;
+}
+
+.product-feature h2,
+.product-feature h3 {
+  color: #fff;
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.product-feature p {
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 62ch;
+  margin: 0;
+}
+
+.product-feature .btn {
+  align-self: flex-start;
+  margin-top: 8px;
+}

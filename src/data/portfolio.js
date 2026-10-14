@@ -27,25 +27,18 @@ export const demos = [
     title: 'Ronan Lanches',
     gradient: 'linear-gradient(135deg,#161009,#ef5a2c,#dba342)',
     text: 'Fast-food noturno com chopp no Vila Nova, Joinville · 4,5★ com 396 avaliações e 13,2 mil seguidores no Instagram — mas sem casa própria na web.',
-    homeText:
-      'Fast-food noturno com chopp — identidade em tons de brasa e âmbar, sob medida pro clima do lugar.',
     href: 'https://claude.ai/code/artifact/60442eb2-f05e-4a4a-962d-64e0904e34bd',
   },
   {
     title: 'Sabores do Sul',
     gradient: 'linear-gradient(135deg,#1B120A,#BE3324,#E3A63E)',
     text: 'Restaurante de dia, hamburgueria à noite, em Jaraguá do Sul · 4,5★ com 345 avaliações, desde 2017. Dois negócios, uma identidade só.',
-    homeText:
-      'Restaurante de dia, hamburgueria à noite — o site separa os dois momentos com uma identidade só.',
     href: 'https://claude.ai/artifact/1ct28eh3tGrhTkTdvk6HhH',
   },
   {
     title: 'Pizzaria 20V',
     gradient: 'linear-gradient(135deg,#1b120b,#a24f2e,#dd9636)',
     text: 'Pizzaria de bairro no Vila Nova, Joinville, há 35 anos · 4,8★ com 779 avaliações. Clássico do bairro que merecia presença à altura.',
-    homeText: '35 anos de bairro e nota 4,8 no Google — faltava só um site à altura disso.',
     href: 'https://fabinhohenriquekarolus-coder.github.io/pizzaria20v/',
   },
 ];
-
-export const homeDemos = demos.filter((demo) => demo.homeText);

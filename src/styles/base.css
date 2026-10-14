@@ -18,6 +18,10 @@ figure {
   margin: 0;
 }
 
+[id] {
+  scroll-margin-top: 92px;
+}
+
 img,
 svg {
   display: block;
