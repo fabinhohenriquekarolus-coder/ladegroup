@@ -28,13 +28,6 @@
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 22px;
-}
-
-.hero-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 24px;
   margin-bottom: 30px;
 }
 
