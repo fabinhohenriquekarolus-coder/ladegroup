@@ -1,0 +1,246 @@
+---
+import '@fontsource-variable/space-grotesk';
+import '@fontsource/bebas-neue';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBand from '../components/CtaBand.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import '../styles/lacar.css';
+
+const chat = [
+  { from: 'cliente', text: 'Oi! Quanto fica a lavagem completa num SUV? Tem horário amanhã cedo?' },
+  { from: 'lacar', text: 'Oi! Para SUV a lavagem completa fica R$ 90 e leva cerca de 1 hora. Amanhã tenho 8h30 e 10h livres. Qual fica melhor?' },
+  { from: 'cliente', text: '8h30' },
+  { from: 'lacar', text: 'Agendado: lavagem completa, SUV, amanhã às 8h30. Mando um lembrete na véspera.' },
+];
+
+const whatsapp = [
+  { title: 'Responde na hora', text: 'Tira dúvida de serviço, preço por porte do veículo, horário de funcionamento e endereço.' },
+  { title: 'Agenda sozinho', text: 'Consulta os horários livres, oferece opções e grava o agendamento na agenda do painel.' },
+  { title: 'Confirma, cancela e reagenda', text: 'O cliente muda o horário pela conversa, sem você precisar parar o que está fazendo.' },
+  { title: 'Entende áudio', text: 'Mensagem de voz vira texto e é respondida como qualquer outra.' },
+  { title: 'Uma resposta por vez', text: 'Quando o cliente manda várias mensagens seguidas, ele junta tudo e responde uma vez só.' },
+  { title: 'Sabe a hora de chamar você', text: 'Pagamento, reclamação, avaria ou orçamento fora da tabela vão para você, com aviso no seu WhatsApp.' },
+];
+
+const agenda = [
+  { hour: '08:00', name: 'Marcos A.', service: 'Lavagem completa, SUV', status: 'Confirmado', tone: 'ok' },
+  { hour: '10:00', name: 'Juliana R.', service: 'Polimento, sedan', status: 'Agendado', tone: 'wait' },
+  { hour: '14:00', name: 'Carlos P.', service: 'Higienização interna, hatch', status: 'Confirmado', tone: 'ok' },
+];
+
+const panel = [
+  { title: 'Agenda do dia', text: 'Atendimentos por horário, agendamento manual e valor cobrado ao concluir.' },
+  { title: 'Clientes', text: 'Lista e quadro por estágio, com prioridade, próxima ação, tarefas e notas.' },
+  { title: 'Serviços por porte', text: 'Preço e duração por tipo de veículo, da moto à caminhonete, com fotos e vídeos.' },
+  { title: 'Caixa', text: 'Entradas, saídas, categorias e atendimentos concluídos sem valor lançado.' },
+  { title: 'Métricas', text: 'Faturamento por dia da semana, horários de pico, serviços mais pedidos e canais.' },
+];
+
+const automations = [
+  { title: 'Lembrete na véspera', text: 'Todo agendamento recebe uma confirmação no dia anterior.' },
+  { title: 'Relatório semanal', text: 'Um PDF com o resumo da semana chega no seu WhatsApp.' },
+  { title: 'Cliente sumido', text: 'Quem não volta há semanas recebe um convite para agendar de novo.' },
+  { title: 'Comandos pelo WhatsApp', text: 'Você consulta o histórico de um cliente, aplica desconto ou manda um recado sem abrir o painel.' },
+];
+
+const steps = [
+  { title: 'Conversa', text: 'Entendemos como funciona o seu atendimento hoje.' },
+  { title: 'Cadastro', text: 'Serviços, preços por porte, horários e capacidade do seu negócio.' },
+  { title: 'Atendente com a sua cara', text: 'Nome, tom de voz e as informações que ele precisa saber.' },
+  { title: 'WhatsApp conectado', text: 'Você conecta o número pelo QR code e o LaCar começa a atender.' },
+];
+
+const faq = [
+  {
+    question: 'E quando o cliente quer falar com uma pessoa?',
+    answer:
+      'O LaCar passa a conversa para você quando o cliente pede, quando o assunto é pagamento, reclamação, avaria ou orçamento fora da tabela, fora do horário de atendimento ou quando não entende o pedido depois de duas tentativas. Você recebe o aviso no seu WhatsApp.',
+  },
+  {
+    question: 'O cliente pode mandar áudio?',
+    answer: 'Pode. O áudio é transcrito e respondido como uma mensagem de texto.',
+  },
+  {
+    question: 'Dá para pausar o atendimento automático?',
+    answer: 'Dá. Uma chave no painel pausa o atendente em todas as conversas, e você retoma quando quiser.',
+  },
+  {
+    question: 'Funciona para moto, van e caminhonete?',
+    answer: 'Funciona. O preço e a duração são cadastrados por porte: moto pequena ou grande, hatch, sedan, SUV, van, picape pequena e caminhonete.',
+  },
+  {
+    question: 'Preciso de alguém técnico para conectar o WhatsApp?',
+    answer: 'Não. A conexão é feita pelo próprio dono, lendo um QR code no painel.',
+  },
+];
+---
+
+<BaseLayout
+  title="LaCar, atendimento e gestão para lava-rápido | Lade Group"
+  description="O LaCar atende seus clientes no WhatsApp, agenda lavagens sozinho e organiza agenda, clientes e caixa num painel feito para lava-rápido e estética automotiva."
+  path="/lacar.html"
+>
+  <div class="lc">
+    <section class="lc-hero">
+      <div class="container lc-hero-grid">
+        <div class="lc-hero-copy">
+          <p class="lc-kicker">Produto da Lade Group, em produção</p>
+          <p class="lc-wordmark">LaCar</p>
+          <h1>O atendente de WhatsApp que agenda as lavagens enquanto você cuida dos carros.</h1>
+          <p class="lc-lead">
+            O LaCar responde preço por porte de veículo, encontra horário livre e grava o agendamento
+            sozinho. Quando o assunto pede uma pessoa, ele passa a conversa para você.
+          </p>
+          <div class="lc-actions">
+            <WhatsAppButton label="Quero o LaCar no meu negócio" />
+            <a class="btn lc-btn-line" href="#atendimento">Ver o que ele faz</a>
+          </div>
+          <p class="lc-for">Feito para lava-rápido e estética automotiva.</p>
+        </div>
+
+        <figure class="lc-chat">
+          <div class="lc-chat-head" aria-hidden="true">
+            <span class="lc-chat-avatar">L</span>
+            <span><b>Lava-Rápido Exemplo</b><small>atendimento automático</small></span>
+          </div>
+          <ol class="lc-chat-list">
+            {
+              chat.map((message) => (
+                <li class:list={['lc-bubble', `is-${message.from}`]}>
+                  <span class="sr-only">{message.from === 'cliente' ? 'Cliente:' : 'LaCar:'}</span>
+                  {message.text}
+                </li>
+              ))
+            }
+          </ol>
+          <figcaption>Conversa de exemplo, com valores ilustrativos.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="lc-section" id="atendimento" aria-labelledby="titulo-atendimento">
+      <div class="container">
+        <div class="lc-head">
+          <p class="lc-kicker">No WhatsApp</p>
+          <h2 id="titulo-atendimento">Seu cliente é atendido na hora, até fora do expediente.</h2>
+        </div>
+        <ul class="lc-grid">
+          {
+            whatsapp.map((item) => (
+              <li class="lc-item">
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <section class="lc-section is-dark" id="painel" aria-labelledby="titulo-painel">
+      <div class="container lc-panel-grid">
+        <div>
+          <div class="lc-head">
+            <p class="lc-kicker">No painel</p>
+            <h2 id="titulo-painel">A rotina do <span class="lc-nowrap">lava-rápido</span> num lugar só.</h2>
+          </div>
+          <ul class="lc-list">
+            {
+              panel.map((item) => (
+                <li>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+
+        <figure class="lc-agenda">
+          <div class="lc-agenda-bar" aria-hidden="true">
+            <span class="is-active">Agenda</span><span>Clientes</span><span>Caixa</span>
+          </div>
+          <p class="lc-agenda-day">Hoje</p>
+          <ul class="lc-agenda-list">
+            {
+              agenda.map((item) => (
+                <li class:list={['lc-slot', `is-${item.tone}`]}>
+                  <span class="lc-hour">{item.hour}</span>
+                  <span class="lc-slot-meta">
+                    <b>{item.name}</b>
+                    <small>{item.service}</small>
+                  </span>
+                  <span class="lc-pill">{item.status}</span>
+                </li>
+              ))
+            }
+          </ul>
+          <figcaption>Tela de exemplo do painel.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="lc-section" id="automacoes" aria-labelledby="titulo-automacoes">
+      <div class="container">
+        <div class="lc-head">
+          <p class="lc-kicker">Funciona sozinho</p>
+          <h2 id="titulo-automacoes">O que acontece sem você precisar lembrar.</h2>
+        </div>
+        <ul class="lc-grid is-four">
+          {
+            automations.map((item) => (
+              <li class="lc-item">
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <section class="lc-section is-tint" id="comecar" aria-labelledby="titulo-comecar">
+      <div class="container">
+        <div class="lc-head">
+          <p class="lc-kicker">Como começa</p>
+          <h2 id="titulo-comecar">Do primeiro contato ao WhatsApp atendendo.</h2>
+        </div>
+        <ol class="lc-steps">
+          {
+            steps.map((step, index) => (
+              <li>
+                <span class="lc-step-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </section>
+
+    <section class="lc-section" id="perguntas" aria-labelledby="titulo-perguntas">
+      <div class="container container-narrow">
+        <div class="lc-head">
+          <p class="lc-kicker">Perguntas</p>
+          <h2 id="titulo-perguntas">O que os donos costumam perguntar.</h2>
+        </div>
+        <div class="lc-faq">
+          {
+            faq.map((item) => (
+              <details>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <CtaBand
+      title="Quer ver o LaCar no seu lava-rápido?"
+      text="Conta como funciona o seu atendimento hoje e a gente mostra o LaCar rodando."
+    />
+  </div>
+</BaseLayout>
