@@ -1,0 +1,36 @@
+---
+import Icon from '../Icon.astro';
+
+const { product, items } = Astro.props;
+---
+
+<aside class="app-side">
+  <div class="app-brand">
+    <svg viewBox="0 0 56 56" aria-hidden="true">
+      <polygon points="54,28 41,50.5 15,50.5 2,28 15,5.5 41,5.5" fill="#c9a227"></polygon>
+      <polygon points="41,28 34.5,39.3 21.5,39.3 15,28 21.5,16.7 34.5,16.7" fill="#0d0d0d"></polygon>
+    </svg>
+    <span>{product}</span>
+  </div>
+  <nav class="app-nav" aria-label="Menu do sistema">
+    {
+      items.map((item) =>
+        item.active ? (
+          <button type="button" class="app-nav-item is-active" aria-current="page">
+            <Icon name={item.icon} />
+            {item.label}
+          </button>
+        ) : (
+          <button
+            type="button"
+            class="app-nav-item"
+            data-demo-action="Nesta demonstração, só a tela principal é navegável."
+          >
+            <Icon name={item.icon} />
+            {item.label}
+          </button>
+        ),
+      )
+    }
+  </nav>
+</aside>

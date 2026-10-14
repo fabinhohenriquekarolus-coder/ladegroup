@@ -1,0 +1,75 @@
+---
+import DemoLayout from '../../../layouts/DemoLayout.astro';
+import AppSide from '../../../components/demo/AppSide.astro';
+import { leads, stages, heatClass } from '../../../data/demos/crm.js';
+import '../../../styles/demos/demo-app.css';
+import '../../../styles/demos/demo-crm.css';
+
+const menu = [
+  { label: 'Funil', icon: 'bars', active: true },
+  { label: 'Imóveis', icon: 'home' },
+  { label: 'Agenda', icon: 'calendar' },
+  { label: 'Relatórios', icon: 'file' },
+];
+---
+
+<DemoLayout
+  title="CRM imobiliário com IA (demonstração) — Lade Group"
+  description="Demonstração com dados fictícios de um CRM imobiliário com funil de vendas e assistente de IA simulado."
+  kind="sistema"
+  name="CRM imobiliário com IA"
+>
+  <div class="app">
+    <AppSide product="CRM Imobiliário" items={menu} />
+    <main class="app-main">
+      <header class="app-head">
+        <div>
+          <h1 class="app-title">Funil de vendas</h1>
+          <p class="app-sub">Imobiliária Exemplo · {leads.length} leads ativos · dados fictícios</p>
+        </div>
+      </header>
+
+      <div class="crm-layout">
+        <section class="crm-board" aria-label="Funil de vendas">
+          {
+            stages.map((stage) => {
+              const stageLeads = leads.filter((lead) => lead.stage === stage.id);
+              return (
+                <div class="crm-col">
+                  <h2 class="crm-col-head">
+                    {stage.name}
+                    <span class="crm-count">{stageLeads.length}</span>
+                  </h2>
+                  <ul class="crm-list">
+                    {stageLeads.map((lead) => (
+                      <li>
+                        <button type="button" class="crm-lead" data-lead={lead.id} aria-pressed="false">
+                          <span class="crm-lead-name">{lead.name}</span>
+                          <span class="crm-lead-want">
+                            {lead.want} · {lead.area}
+                          </span>
+                          <span class="crm-lead-foot">
+                            <span>{lead.budget}</span>
+                            <span class:list={['app-badge', heatClass[lead.heat]]}>{lead.heat}</span>
+                          </span>
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })
+          }
+        </section>
+
+        <aside class="app-card crm-detail" id="crm-detail" aria-live="polite">
+          <p class="app-sub">Selecione um lead para ver os detalhes e usar o assistente de IA.</p>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    import '../../../scripts/demos/crm.js';
+  </script>
+</DemoLayout>

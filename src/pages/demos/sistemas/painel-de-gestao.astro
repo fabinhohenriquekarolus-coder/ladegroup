@@ -1,0 +1,96 @@
+---
+import DemoLayout from '../../../layouts/DemoLayout.astro';
+import AppSide from '../../../components/demo/AppSide.astro';
+import { orders } from '../../../data/demos/painel.js';
+import '../../../styles/demos/demo-app.css';
+import '../../../styles/demos/demo-painel.css';
+
+const menu = [
+  { label: 'Visão geral', icon: 'bars', active: true },
+  { label: 'Vendas', icon: 'file' },
+  { label: 'Clientes', icon: 'home' },
+  { label: 'Agenda', icon: 'calendar' },
+];
+
+const periods = [
+  ['7', '7 dias'],
+  ['30', '30 dias'],
+  ['90', '90 dias'],
+];
+---
+
+<DemoLayout
+  title="Painel de gestão (demonstração) — Lade Group"
+  description="Demonstração com dados fictícios de um painel de gestão com indicadores, gráfico de faturamento e produtos mais vendidos."
+  kind="sistema"
+  name="Painel de gestão"
+>
+  <div class="app">
+    <AppSide product="Painel de Gestão" items={menu} />
+    <main class="app-main">
+      <header class="app-head">
+        <div>
+          <h1 class="app-title">Visão geral</h1>
+          <p class="app-sub">Loja Exemplo · <span id="period-caption">Últimos 7 dias</span> · dados fictícios</p>
+        </div>
+        <div class="app-seg" role="group" aria-label="Período">
+          {
+            periods.map(([key, label]) => (
+              <button type="button" data-period={key} aria-pressed={key === '7' ? 'true' : 'false'}>
+                {label}
+              </button>
+            ))
+          }
+        </div>
+      </header>
+
+      <div class="app-kpis" id="kpis"></div>
+
+      <div class="painel-grid">
+        <section class="app-card painel-chart" aria-labelledby="titulo-grafico">
+          <h2 class="app-card-title" id="titulo-grafico">Faturamento no período</h2>
+          <div id="chart"></div>
+          <table class="sr-only" id="chart-table"></table>
+        </section>
+        <section class="app-card" aria-labelledby="titulo-top">
+          <h2 class="app-card-title" id="titulo-top">Mais vendidos (unidades)</h2>
+          <ol class="painel-top" id="top"></ol>
+        </section>
+      </div>
+
+      <section class="app-card" aria-labelledby="titulo-pedidos">
+        <h2 class="app-card-title" id="titulo-pedidos">Últimos pedidos</h2>
+        <div class="app-table-wrap">
+          <table class="app-table">
+            <thead>
+              <tr>
+                <th>Pedido</th>
+                <th>Cliente</th>
+                <th>Valor</th>
+                <th>Situação</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                orders.map((order) => (
+                  <tr>
+                    <td>{order.id}</td>
+                    <td>{order.client}</td>
+                    <td>{order.value}</td>
+                    <td>
+                      <span class:list={['app-badge', order.tone]}>{order.status}</span>
+                    </td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    import '../../../scripts/demos/painel.js';
+  </script>
+</DemoLayout>

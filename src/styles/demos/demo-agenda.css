@@ -1,0 +1,152 @@
+.agenda-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.agenda-field {
+  margin-bottom: 18px;
+}
+
+.agenda-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+
+.agenda-slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(76px, 1fr));
+  gap: 8px;
+}
+
+.agenda-slot {
+  padding: 8px 0;
+  background: var(--surface);
+  border: 1.5px solid #cfcfd6;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.agenda-slot:hover:not([disabled]) {
+  border-color: var(--black);
+}
+
+.agenda-slot[aria-pressed='true'] {
+  background: var(--black);
+  border-color: var(--black);
+  color: #fff;
+}
+
+.agenda-slot[disabled] {
+  background: var(--neutral-bg);
+  border-color: transparent;
+  color: #8b8b94;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+.agenda-select {
+  width: 100%;
+  padding: 10px 12px;
+  background: var(--surface);
+  border: 1.5px solid #cfcfd6;
+  border-radius: 8px;
+  font: inherit;
+  color: var(--ink);
+}
+
+.agenda-service-line {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.agenda-service-chip {
+  text-align: left;
+  border-radius: 12px;
+  padding: 8px 14px;
+}
+
+.agenda-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.agenda-item {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.agenda-item:last-child {
+  border-bottom: 0;
+}
+
+.agenda-item.is-fresh {
+  background: linear-gradient(90deg, rgba(201, 162, 39, 0.16), transparent 70%);
+}
+
+.agenda-time {
+  font-weight: 700;
+}
+
+.agenda-service {
+  display: block;
+  font-size: 13px;
+  color: var(--soft);
+}
+
+.agenda-empty {
+  padding: 18px 0;
+  color: var(--soft);
+}
+
+.agenda-clients-card {
+  margin-top: 18px;
+}
+
+.agenda-clients {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.agenda-client {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.agenda-client[hidden] {
+  display: none;
+}
+
+.agenda-client strong {
+  display: block;
+}
+
+.agenda-client span.agenda-meta {
+  display: block;
+  margin: 2px 0 8px;
+  font-size: 13px;
+  color: var(--soft);
+}
+
+@media (max-width: 1100px) {
+  .agenda-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -1,0 +1,20 @@
+---
+import HexFrame from './HexFrame.astro';
+import Icon from './Icon.astro';
+
+const { title, text, href, icon, gradient } = Astro.props;
+---
+
+<article class="demo-card">
+  <div class="demo-card-thumb" style={gradient ? `background:${gradient}` : undefined}>
+    <span class="demo-card-tag">Demonstração</span>
+    <HexFrame filled>
+      <Icon name={icon} />
+    </HexFrame>
+  </div>
+  <div class="demo-card-body">
+    <h3>{title}</h3>
+    <p>{text}</p>
+    <a class="btn btn-secondary btn-sm" href={href}>Abrir demonstração</a>
+  </div>
+</article>

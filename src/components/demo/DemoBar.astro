@@ -1,0 +1,24 @@
+---
+import Logo from '../Logo.astro';
+import { whatsappLinkWith } from '../../data/site.js';
+
+const { kind, name } = Astro.props;
+const noun = kind === 'sistema' ? 'um sistema' : 'um site';
+const link = whatsappLinkWith(
+  `Olá! Vi a demonstração "${name}" no site da Lade Group e quero conversar sobre ${noun} parecido para o meu negócio.`,
+);
+---
+
+<div class="demo-bar">
+  <div class="demo-bar-inner">
+    <div class="demo-bar-id">
+      <Logo tone="light" />
+      <span class="demo-tag">Demonstração</span>
+      <span class="demo-note">Marca e dados fictícios</span>
+    </div>
+    <div class="demo-bar-actions">
+      <a class="demo-ghost" href="/portfolio.html"><span class="demo-long">Voltar ao portfólio</span><span class="demo-short">Portfólio</span></a>
+      <a class="demo-cta" href={link} target="_blank" rel="noopener">Quero {noun} assim</a>
+    </div>
+  </div>
+</div>

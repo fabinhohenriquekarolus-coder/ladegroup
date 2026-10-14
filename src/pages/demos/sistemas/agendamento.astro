@@ -1,0 +1,144 @@
+---
+import DemoLayout from '../../../layouts/DemoLayout.astro';
+import AppSide from '../../../components/demo/AppSide.astro';
+import { services, days, clients } from '../../../data/demos/agenda.js';
+import '../../../styles/demos/demo-app.css';
+import '../../../styles/demos/demo-agenda.css';
+
+const menu = [
+  { label: 'Agenda', icon: 'calendar', active: true },
+  { label: 'Clientes', icon: 'home' },
+  { label: 'Serviços', icon: 'file' },
+  { label: 'Relatórios', icon: 'bars' },
+];
+
+const clientFilters = [
+  ['todos', 'Todos'],
+  ['recorrente', 'Recorrentes'],
+  ['nova', 'Novas'],
+];
+---
+
+<DemoLayout
+  title="Agendamento e cadastro de clientes (demonstração) — Lade Group"
+  description="Demonstração com dados fictícios de um sistema de agendamento e cadastro de clientes com horários que respeitam a duração de cada serviço."
+  kind="sistema"
+  name="Agendamento e cadastro de clientes"
+>
+  <div class="app">
+    <AppSide product="Agenda & Clientes" items={menu} />
+    <main class="app-main">
+      <header class="app-head">
+        <div>
+          <h1 class="app-title">Agenda</h1>
+          <p class="app-sub">Estúdio Exemplo · semana fictícia · dados ilustrativos</p>
+        </div>
+      </header>
+
+      <div class="agenda-layout">
+        <section class="app-card" aria-labelledby="titulo-novo">
+          <h2 class="app-card-title" id="titulo-novo">Novo agendamento</h2>
+
+          <div class="agenda-field">
+            <span class="agenda-label" id="rotulo-servico">Serviço</span>
+            <div class="app-chips" role="group" aria-labelledby="rotulo-servico">
+              {
+                services.map((service, index) => (
+                  <button
+                    type="button"
+                    class="app-chip agenda-service-chip"
+                    data-service={service.id}
+                    aria-pressed={index === 0 ? 'true' : 'false'}
+                  >
+                    {service.name}
+                    <span class="agenda-service-line">
+                      {service.minutes} min · {service.price}
+                    </span>
+                  </button>
+                ))
+              }
+            </div>
+          </div>
+
+          <div class="agenda-field">
+            <span class="agenda-label" id="rotulo-dia">Dia</span>
+            <div class="app-chips" role="group" aria-labelledby="rotulo-dia">
+              {
+                days.map((day, index) => (
+                  <button
+                    type="button"
+                    class="app-chip"
+                    data-day={day.id}
+                    aria-pressed={index === 0 ? 'true' : 'false'}
+                  >
+                    {day.label}
+                  </button>
+                ))
+              }
+            </div>
+          </div>
+
+          <div class="agenda-field">
+            <span class="agenda-label" id="rotulo-horario">Horário</span>
+            <div class="agenda-slots" id="slots" role="group" aria-labelledby="rotulo-horario"></div>
+          </div>
+
+          <div class="agenda-field">
+            <label class="agenda-label" for="client">Cliente</label>
+            <select class="agenda-select" id="client">
+              {clients.map((client) => <option value={client.id}>{client.name}</option>)}
+            </select>
+          </div>
+
+          <button type="button" class="app-btn is-primary" id="book" disabled>Agendar</button>
+        </section>
+
+        <div>
+          <section class="app-card" aria-labelledby="day-title">
+            <h2 class="app-card-title" id="day-title">Agenda do dia</h2>
+            <ul class="agenda-list" id="day-list"></ul>
+          </section>
+
+          <section class="app-card agenda-clients-card" aria-labelledby="titulo-clientes">
+            <div class="app-card-title-row">
+              <h2 class="app-card-title" id="titulo-clientes">Clientes</h2>
+            </div>
+            <div class="app-chips" role="group" aria-label="Filtrar clientes">
+              {
+                clientFilters.map(([key, label]) => (
+                  <button
+                    type="button"
+                    class="app-chip"
+                    data-client-filter={key}
+                    aria-pressed={key === 'todos' ? 'true' : 'false'}
+                  >
+                    {label}
+                  </button>
+                ))
+              }
+            </div>
+            <ul class="agenda-clients">
+              {
+                clients.map((client) => (
+                  <li class="agenda-client" data-client-kind={client.kind}>
+                    <strong>{client.name}</strong>
+                    <span class="agenda-meta">
+                      {client.visits} {client.visits === 1 ? 'visita' : 'visitas'} · última {client.last}
+                    </span>
+                    <span class:list={['app-badge', client.kind === 'recorrente' ? 'is-ok' : '']}>
+                      {client.kind === 'recorrente' ? 'Recorrente' : 'Nova'}
+                    </span>
+                  </li>
+                ))
+              }
+            </ul>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    import '../../../scripts/demos/agenda.js';
+  </script>
+</DemoLayout>

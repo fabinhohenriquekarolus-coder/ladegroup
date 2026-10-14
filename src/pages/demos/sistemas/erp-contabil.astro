@@ -1,0 +1,195 @@
+---
+import DemoLayout from '../../../layouts/DemoLayout.astro';
+import AppSide from '../../../components/demo/AppSide.astro';
+import { kpis, deadlines, obligations, statusTone, docs } from '../../../data/demos/erp.js';
+import '../../../styles/demos/demo-app.css';
+import '../../../styles/demos/demo-erp.css';
+
+const menu = [
+  { label: 'Painel', icon: 'bars', active: true },
+  { label: 'Clientes', icon: 'home' },
+  { label: 'Obrigações', icon: 'calendar' },
+  { label: 'Documentos', icon: 'file' },
+];
+
+const sections = [
+  { id: 'geral', label: 'Visão geral' },
+  { id: 'obrigacoes', label: 'Obrigações' },
+  { id: 'documentos', label: 'Documentos' },
+];
+
+const filters = [
+  { id: 'todas', label: 'Todas' },
+  { id: 'pendente', label: 'Pendentes' },
+  { id: 'entregue', label: 'Entregues' },
+  { id: 'atrasada', label: 'Atrasadas' },
+];
+
+const activity = [
+  ['Guia DAS de Oficina Demo EPP entregue', 'hoje, 09:12'],
+  ['14 documentos recebidos pelo portal do cliente', 'hoje, 08:40'],
+  ['Alerta enviado: DCTFWeb de Oficina Demo EPP em atraso', 'ontem, 17:05'],
+];
+---
+
+<DemoLayout
+  title="ERP contábil com IA (demonstração) — Lade Group"
+  description="Demonstração com dados fictícios de um ERP para escritório de contabilidade, com obrigações e classificação de documentos por IA simulada."
+  kind="sistema"
+  name="ERP contábil com IA"
+>
+  <div class="app">
+    <AppSide product="ERP Contábil" items={menu} />
+    <main class="app-main">
+      <header class="app-head">
+        <div>
+          <h1 class="app-title">Escritório contábil</h1>
+          <p class="app-sub">Escritório Exemplo · datas, nomes e valores ilustrativos</p>
+        </div>
+      </header>
+
+      <div class="app-tabs" role="tablist" aria-label="Seções do sistema">
+        {
+          sections.map((section, index) => (
+            <button
+              type="button"
+              role="tab"
+              class="app-tab"
+              id={`tab-${section.id}`}
+              aria-controls={`painel-${section.id}`}
+              aria-selected={index === 0 ? 'true' : 'false'}
+              tabindex={index === 0 ? 0 : -1}
+            >
+              {section.label}
+            </button>
+          ))
+        }
+      </div>
+
+      <section role="tabpanel" id="painel-geral" aria-labelledby="tab-geral">
+        <div class="app-kpis">
+          {
+            kpis.map((kpi) => (
+              <div class="app-card" id={kpi.id}>
+                <div class="app-kpi-label">{kpi.label}</div>
+                <div class="app-kpi-value">{kpi.value}</div>
+                <div class="app-kpi-foot">{kpi.foot}</div>
+              </div>
+            ))
+          }
+        </div>
+        <div class="erp-overview">
+          <div class="app-card">
+            <h2 class="app-card-title">Próximos prazos</h2>
+            <ul class="erp-deadlines">
+              {
+                deadlines.map((item) => (
+                  <li class="erp-deadline">
+                    <span class="erp-day" aria-label={`Dia ${item.day}`}>{item.day}</span>
+                    <span>
+                      <strong>{item.what}</strong>
+                      <span class="erp-detail">{item.detail}</span>
+                    </span>
+                    <span class:list={['app-badge', item.tone]}>{item.badge}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          <div class="app-card">
+            <h2 class="app-card-title">Atividade recente</h2>
+            <ul class="erp-activity">
+              {
+                activity.map(([text, when]) => (
+                  <li>
+                    {text}
+                    <time>{when}</time>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section role="tabpanel" id="painel-obrigacoes" aria-labelledby="tab-obrigacoes" hidden>
+        <div class="erp-toolbar">
+          <div class="app-chips" role="group" aria-label="Filtrar por situação">
+            {
+              filters.map((filter) => (
+                <button
+                  type="button"
+                  class="app-chip"
+                  data-filter={filter.id}
+                  aria-pressed={filter.id === 'todas' ? 'true' : 'false'}
+                >
+                  {filter.label}
+                </button>
+              ))
+            }
+          </div>
+        </div>
+        <div class="app-card">
+          <div class="app-table-wrap">
+            <table class="app-table">
+              <thead>
+                <tr>
+                  <th>Cliente</th>
+                  <th>Obrigação</th>
+                  <th>Vencimento</th>
+                  <th>Situação</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  obligations.map((item) => (
+                    <tr data-status={item.status}>
+                      <td>{item.client}</td>
+                      <td>{item.name}</td>
+                      <td>{item.due}</td>
+                      <td>
+                        <span class:list={['app-badge', statusTone[item.status]]}>{item.status}</span>
+                      </td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section role="tabpanel" id="painel-documentos" aria-labelledby="tab-documentos" hidden>
+        <div class="erp-toolbar">
+          <p class="app-sub">Mostrando {docs.length} dos 14 documentos recebidos na semana.</p>
+          <div class="erp-actions">
+            <span class="app-sim">Simulação</span>
+            <button type="button" class="app-btn is-primary" id="classify">Classificar com IA</button>
+          </div>
+        </div>
+        <div class="app-card">
+          <ul class="erp-docs">
+            {
+              docs.map((doc) => (
+                <li class="erp-doc" data-doc={doc.id}>
+                  <div class="erp-doc-file">
+                    <strong>{doc.file}</strong>
+                    <span>{doc.client}</span>
+                  </div>
+                  <div class="erp-doc-result">
+                    <span class="app-badge">A classificar</span>
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+          <p class="erp-note" id="classify-summary" role="status" hidden></p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    import '../../../scripts/demos/erp.js';
+  </script>
+</DemoLayout>

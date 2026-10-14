@@ -28,6 +28,7 @@ const whatsappMessagesByOrigin = {
 export const whatsappLinkFor = (origin) =>
   whatsappUrl(whatsappMessagesByOrigin[origin] ?? defaultWhatsappMessage);
 export const whatsappContactLink = whatsappUrl();
+export const whatsappLinkWith = (message) => whatsappUrl(message);
 
 export const navItems = [
   { key: 'servicos', label: 'Serviços', href: '/servicos.html' },

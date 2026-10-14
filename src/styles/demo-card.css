@@ -1,0 +1,79 @@
+.demo-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.demo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.demo-card-thumb {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  background:
+    radial-gradient(420px 220px at 85% 0%, rgba(201, 162, 39, 0.22), transparent 60%),
+    var(--black);
+}
+
+.demo-card-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--gold);
+  color: var(--black);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 9px;
+}
+
+.demo-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 22px 24px 26px;
+}
+
+.demo-card-body h3 {
+  margin-bottom: 6px;
+}
+
+.demo-card-body p {
+  flex: 1;
+  margin-bottom: 16px;
+  font-size: 14.5px;
+}
+
+.demo-card-body .btn {
+  align-self: flex-start;
+}
+
+.demo-notice {
+  padding: 18px 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.demo-notice h3 {
+  margin-bottom: 6px;
+  font-size: 1.05rem;
+}
+
+.demo-notice p {
+  max-width: 78ch;
+  font-size: 14.5px;
+}
