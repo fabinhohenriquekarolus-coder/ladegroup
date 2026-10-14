@@ -29,7 +29,7 @@ footer {
 }
 
 .footer-brand span {
-  font-family: var(--font-sans);
+  font-family: var(--font-heading);
   font-weight: 700;
   color: #fff;
   font-size: 16px;
@@ -45,7 +45,7 @@ footer {
 }
 
 .footer-col h3 {
-  font-family: var(--font-mono);
+  font-family: var(--font-heading);
   font-size: 12px;
   line-height: 1.6;
   letter-spacing: 0.1em;
@@ -74,14 +74,19 @@ footer {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.footer-bottom a {
-  text-decoration: underline;
-  text-decoration-color: rgba(255, 255, 255, 0.28);
-  text-underline-offset: 3px;
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
 }
 
-.footer-bottom a:hover {
-  color: rgba(255, 255, 255, 0.8);
+.footer-legal a {
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 600;
+}
+
+.footer-legal a:hover {
+  color: var(--gold);
 }
 
 @media (max-width: 620px) {

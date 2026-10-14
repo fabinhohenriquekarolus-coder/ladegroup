@@ -25,7 +25,7 @@
 }
 
 .hex-frame-inner .num {
-  font-family: var(--font-mono);
+  font-family: var(--font-heading);
   font-weight: 600;
   font-size: 19px;
   color: var(--gold-text);

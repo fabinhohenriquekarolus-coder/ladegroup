@@ -1,21 +1,19 @@
 ---
-import HexFrame from './HexFrame.astro';
-import Icon from './Icon.astro';
+import { Picture } from 'astro:assets';
 
-const { title, text, href, icon, gradient, product } = Astro.props;
+const { title, text, href, product, cover, detail } = Astro.props;
+const sizes = '(max-width: 860px) calc(100vw - 48px), 560px';
 ---
 
 <article class="demo-card">
-  <div class="demo-card-thumb" style={gradient ? `background:${gradient}` : undefined}>
+  <div class="demo-card-media">
+    <Picture src={cover} alt="" widths={[480, 720, 1080]} sizes={sizes} formats={['avif', 'webp']} loading="lazy" class="demo-card-shot" />
+    <Picture src={detail} alt="" widths={[480, 720, 1080]} sizes={sizes} formats={['avif', 'webp']} loading="lazy" class="demo-card-shot is-detail" />
     <span class="demo-card-tag">Demonstração</span>
-    <HexFrame filled>
-      <Icon name={icon} />
-    </HexFrame>
-    {product && <span class="demo-card-product">{product}</span>}
   </div>
   <div class="demo-card-body">
-    <h3>{title}</h3>
+    <p class="demo-card-product">{product}</p>
+    <h3><a class="demo-card-link" href={href}>{title}</a></h3>
     <p>{text}</p>
-    <a class="btn btn-secondary btn-sm" href={href}>Abrir demonstração</a>
   </div>
 </article>

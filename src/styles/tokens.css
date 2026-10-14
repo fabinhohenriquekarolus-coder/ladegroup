@@ -12,8 +12,9 @@
   --line-strong: #d6d6dc;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 10px 30px -12px rgba(0, 0, 0, 0.22);
-  --radius: 16px;
+  --radius: 8px;
+  --radius-sm: 6px;
   --cut: 18px;
-  --font-sans: 'Space Grotesk Variable', ui-sans-serif, system-ui, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace;
+  --font-heading: 'Montserrat Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Open Sans Variable', ui-sans-serif, system-ui, sans-serif;
 }

@@ -38,7 +38,11 @@ const year = new Date().getFullYear();
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© {year} {site.name} · <a href="/privacidade.html">Política de Privacidade</a> · <a href="/termos.html">Termos de Uso</a></span>
+      <div class="footer-legal">
+        <span>© {year} {site.name}</span>
+        <a href="/privacidade.html">Política de Privacidade</a>
+        <a href="/termos.html">Termos de Uso</a>
+      </div>
       <span>{site.footerMeta}</span>
     </div>
   </div>

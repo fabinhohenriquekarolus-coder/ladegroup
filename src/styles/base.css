@@ -51,15 +51,20 @@ body {
 h1,
 h2,
 h3 {
-  font-family: var(--font-sans);
+  font-family: var(--font-heading);
   font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: -0.01em;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
   color: var(--black);
 }
 
+h3 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
 h1 {
-  font-size: clamp(2.3rem, 1.4rem + 4.2vw, 4rem);
+  font-size: clamp(2.2rem, 1.4rem + 3.4vw, 3.5rem);
 }
 
 h2 {

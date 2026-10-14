@@ -28,7 +28,7 @@
 }
 
 .nav-brand span {
-  font-family: var(--font-sans);
+  font-family: var(--font-heading);
   font-weight: 700;
   font-size: 17px;
   letter-spacing: 0.02em;

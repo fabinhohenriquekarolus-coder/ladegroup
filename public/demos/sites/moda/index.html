@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meia-Luz, loja de moda | Demonstração Lade Group</title>
+    <meta name="description" content="Demonstração com marca fictícia de uma loja de moda com coleção filtrável, escolha de cor e tamanho e sacola de compras." />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#17161a" />
+    <link rel="icon" type="image/svg+xml" href="../../../favicon.svg" />
+    <link rel="preload" href="fonts/cormorant-garamond-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../comum/demo.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="js/app.js"></script>
+  </head>
+  <body>
+    <a class="demo-skip" href="#conteudo">Ir para a demonstração</a>
+    <div class="demo-bar" role="region" aria-label="Sobre esta demonstração">
+      <div class="demo-bar-inner">
+        <div class="demo-bar-id">
+          <a class="demo-bar-logo" href="../../../index.html"><svg viewBox="0 0 56 56" aria-hidden="true"><polygon points="54,28 41,50.5 15,50.5 2,28 15,5.5 41,5.5" fill="#FFFFFF"></polygon><polygon points="48,28 38,45.3 18,45.3 8,28 18,10.7 38,10.7" fill="#0D0D0D"></polygon><polygon points="41,28 34.5,39.3 21.5,39.3 15,28 21.5,16.7 34.5,16.7" fill="#C9A227"></polygon></svg><span>LADE GROUP</span></a>
+          <span class="demo-tag">Demonstração</span>
+          <span class="demo-note">Marca e dados fictícios</span>
+        </div>
+        <div class="demo-bar-actions">
+          <a class="demo-back" href="../../../portfolio.html#sites"><span class="demo-long">Voltar ao portfólio</span><span class="demo-short">Portfólio</span></a>
+          <a class="demo-cta" href="https://wa.me/5547991065421?text=Ol%C3%A1%21%20Vi%20a%20demonstra%C3%A7%C3%A3o%20%22Loja%20de%20moda%22%20no%20site%20da%20Lade%20Group%20e%20quero%20conversar%20sobre%20um%20site%20parecido%20para%20o%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">Quero um site assim</a>
+        </div>
+      </div>
+    </div>
+    <div class="ml" id="ml" data-free="35000">
+      <div class="ml-strip"><span>Frete grátis acima de R$ 350</span><span>Troca em 30 dias</span><span>Séries pequenas</span></div>
+
+      <header class="ml-head">
+        <nav class="ml-nav" aria-label="Seções do site">
+        <a href="#colecao">Coleção</a>
+        <a href="#lookbook">Lookbook</a>
+        <a href="#atelie">Ateliê</a>
+        </nav>
+        <a class="ml-mark" href="#ml">Meia-Luz<small>ateliê</small></a>
+        <div class="ml-tools">
+          <button type="button" class="ml-bag-btn" id="open-bag" aria-haspopup="dialog">Sacola <b id="bag-count">0</b></button>
+        </div>
+      </header>
+
+      <main id="conteudo">
+        <section class="ml-hero">
+          <div class="ml-hero-copy">
+            <p class="ml-no">Coleção nº 07, Entretempo</p>
+            <h1>Roupa para o dia que ainda não escolheu o clima.</h1>
+            <p class="ml-lead">Peças de corte limpo e tecidos leves, pensadas para trocar de camada sem trocar de ideia.</p>
+            <a class="ml-link" href="#colecao">Ver a coleção</a>
+          </div>
+          <div class="ml-hero-art" aria-hidden="true">
+            <div class="ml-panel is-one"><span>01</span><svg class="ml-hero-garment" viewBox="0 0 200 250" aria-hidden="true"><path d="M82 22c4 14 32 14 36 0l10 4-6 62 34 138H44L78 88 72 26Z" class="g"/><path d="M78 88h44" class="ln"/><path d="M82 22c4 14 32 14 36 0" class="ln"/></svg></div>
+            <div class="ml-panel is-two"><span>02</span><svg class="ml-hero-garment" viewBox="0 0 200 250" aria-hidden="true"><path d="M68 24 34 54l10 74 20-8v114h72V120l20 8 10-74-34-30-32 40Z" class="g"/><path d="M100 64v174" class="ln"/><circle cx="108" cy="110" r="3" class="dot"/><circle cx="108" cy="150" r="3" class="dot"/><circle cx="108" cy="190" r="3" class="dot"/><path d="M68 24l32 40 32-40" class="ln"/></svg></div>
+            <div class="ml-panel is-three"><span>03</span><svg class="ml-hero-garment" viewBox="0 0 200 250" aria-hidden="true"><path d="M74 96V72a26 26 0 0 1 52 0v24" fill="none" class="hd"/><path d="M48 96h104l10 128H38Z" class="g"/><path d="M48 124h104" class="ln"/></svg></div>
+          </div>
+        </section>
+
+        <div class="ml-ribbon" aria-hidden="true">
+          <span>Entretempo</span><i></i><span>Entretempo</span><i></i><span>Entretempo</span><i></i><span>Entretempo</span>
+        </div>
+
+        <section class="ml-shop" id="colecao" aria-labelledby="titulo-colecao">
+          <div class="ml-wrap">
+            <div class="ml-shop-head">
+              <h2 id="titulo-colecao">A coleção</h2>
+              <p class="ml-count" id="count" aria-live="polite">12 peças</p>
+            </div>
+            <div class="ml-filters" role="group" aria-label="Categoria">
+              <button type="button" data-cat="todos" aria-pressed="true">Tudo</button>
+              <button type="button" data-cat="vestidos" aria-pressed="false">Vestidos</button>
+              <button type="button" data-cat="camisas" aria-pressed="false">Camisas</button>
+              <button type="button" data-cat="calcas" aria-pressed="false">Calças</button>
+              <button type="button" data-cat="casacos" aria-pressed="false">Casacos</button>
+              <button type="button" data-cat="acessorios" aria-pressed="false">Acessórios</button>
+            </div>
+            <div class="ml-grid" id="grid">
+            <article class="item" data-id="aurora" data-cat="vestidos" data-name="Vestido Aurora" data-price="38900" style="--g:#b4532a">
+              <div class="item-art" style="background:#ecd9cc">
+                <svg class="item-garment" viewBox="0 0 200 250" aria-hidden="true"><path d="M82 22c4 14 32 14 36 0l10 4-6 62 34 138H44L78 88 72 26Z" class="g"/><path d="M78 88h44" class="ln"/><path d="M82 22c4 14 32 14 36 0" class="ln"/></svg>
+                <button type="button" class="item-fav" aria-pressed="false" aria-label="Favoritar Vestido Aurora"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.6 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10Z"></path></svg></button>
+                <button type="button" class="item-add" data-add>Adicionar à sacola<span class="sr-only">: Vestido Aurora</span></button>
+              </div>
+              <div class="item-info">
+                <h3>Vestido Aurora</h3>
+                <span class="item-price">R$ 389,00</span>
+              </div>
+              <div class="item-opts">
+                <div class="swatches" role="group" aria-label="Cor de Vestido Aurora">
+                    <button type="button" class="swatch" data-color="ferrugem" data-hex="#b4532a" aria-pressed="true" aria-label="Ferrugem" style="--s:#b4532a"></button>
+                    <button type="button" class="swatch" data-color="noite" data-hex="#232a3b" aria-pressed="false" aria-label="Noite" style="--s:#232a3b"></button>
+                    <button type="button" class="swatch" data-color="areia" data-hex="#d9cdb8" aria-pressed="false" aria-label="Areia" style="--s:#d9cdb8"></button>
+                </div>
+                <div class="sizes" role="group" aria-label="Tamanho de Vestido Aurora">
+                    <button type="button" data-size="P" aria-pressed="false" aria-label="Tamanho P">P</button>
+                    <button type="button" data-size="M" aria-pressed="true" aria-label="Tamanho M">M</button>
+                    <button type="button" data-size="G" aria-pressed="false" aria-label="Tamanho G">G</button>
+                </div>
+              </div>
+            </article>
+            <article class="item" data-id="lua" data-cat="vestidos" data-name="Vestido Lua Cheia" data-price="42900" style="--g:#98a58d">
+              <div class="item-art" style="background:#dfe3d6">
+                <svg class="item-garment" viewBox="0 0 200 250" aria-hidden="true"><path d="M82 22c4 14 32 14 36 0l10 4-6 62 34 138H44L78 88 72 26Z" class="g"/><path d="M78 88h44" class="ln"/><path d="M82 22c4 14 32 14 36 0" class="ln"/></svg>
+                <button type="button" class="item-fav" aria-pressed="false" aria-label="Favoritar Vestido Lua Cheia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.6 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10Z"></path></svg></button>
+                <button type="button" class="item-add" data-add>Adicionar à sacola<span class="sr-only">: Vestido Lua Cheia</span></button>
+              </div>
+              <div class="item-info">
+                <h3>Vestido Lua Cheia</h3>
+                <span class="item-price">R$ 429,00</span>
+              </div>
+              <div class="item-opts">
+                <div class="swatches" role="group" aria-label="Cor de Vestido Lua Cheia">
+                    <button type="button" class="swatch" data-color="salvia" data-hex="#98a58d" aria-pressed="true" aria-label="Sálvia" style="--s:#98a58d"></button>
+                    <button type="button" class="swatch" data-color="blush" data-hex="#e8c9bc" aria-pressed="false" aria-label="Blush" style="--s:#e8c9bc"></button>
+                    <button type="button" class="swatch" data-color="grafite" data-hex="#3b3a40" aria-pressed="false" aria-label="Grafite" style="--s:#3b3a40"></button>
+                </div>
+                <div class="sizes" role="group" aria-label="Tamanho de Vestido Lua Cheia">
+                    <button type="button" data-size="P" aria-pressed="false" aria-label="Tamanho P">P</button>
+                    <button type="button" data-size="M" aria-pressed="true" aria-label="Tamanho M">M</button>
+                    <button type="button" data-size="G" aria-pressed="false" aria-label="Tamanho G">G</button>
+                </div>
+              </div>
+            </article>
+            <article class="item" data-id="prado" data-cat="camisas" data-name="Camisa Linho Prado" data-price="25900" style="--g:#efe6d3">
+              <div class="item-art" style="background:#e3e9ef">
+                <svg class="item-garment" viewBox="0 0 200 250" aria-hidden="true"><path d="M72 24 38 52l14 36 22-10v134h52V78l22 10 14-36-34-28c-6 14-34 14-40 0Z" class="g"/><path d="M100 40v192" class="ln"/><circle cx="106" cy="90" r="2.6" class="dot"/><circle cx="106" cy="130" r="2.6" class="dot"/><circle cx="106" cy="170" r="2.6" class="dot"/><path d="M72 24c6 14 34 14 40 0" class="ln"/></svg>
+                <button type="button" class="item-fav" aria-pressed="false" aria-label="Favoritar Camisa Linho Prado"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.6 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10Z"></path></svg></button>
+                <button type="button" class="item-add" data-add>Adicionar à sacola<span class="sr-only">: Camisa Linho Prado</span></button>
+              </div>
+              <div class="item-info">
+                <h3>Camisa Linho Prado</h3>
+                <span class="item-price">R$ 259,00</span>
+              </div>
+              <div class="item-opts">
+                <div class="swatches" role="group" aria-label="Cor de Camisa Linho Prado">
+                    <button type="button" class="swatch" data-color="cru" data-hex="#efe6d3" aria-pressed="true" aria-label="Cru" style="--s:#efe6d3"></button>
+                    <button type="button" class="swatch" data-color="giz" data-hex="#9db3c9" aria-pressed="false" aria-label="Azul-giz" style="--s:#9db3c9"></button>
+                    <button type="button" class="swatch" data-color="ferrugem" data-hex="#b4532a" aria-pressed="false" aria-label="Ferrugem" style="--s:#b4532a"></button>
+                </div>
+                <div class="sizes" role="group" aria-label="Tamanho de Camisa Linho Prado">
+                    <button type="button" data-size="P" aria-pressed="false" aria-label="Tamanho P">P</button>
+                    <button type="button" data-size="M" aria-pressed="true" aria-label="Tamanho M">M</button>
+                    <button type="button" data-size="G" aria-pressed="false" aria-label="Tamanho G">G</button>
+                </div>
+              </div>
+            </article>
+            <article class="item" data-id="ripa" data-cat="camisas" data-name="Camisa Ripa" data-price="23900" style="--g:#232a3b">
+              <div class="item-art" style="background:#ece5d8">
+                <svg class="item-garment" viewBox="0 0 200 250" aria-hidden="true"><path d="M72 24 38 52l14 36 22-10v134h52V78l22 10 14-36-34-28c-6 14-34 14-40 0Z" class="g"/><path d="M100 40v192" class="ln"/><circle cx="106" cy="90" r="2.6" class="dot"/><circle cx="106" cy="130" r="2.6" class="dot"/><circle cx="106" cy="170" r="2.6" class="dot"/><path d="M72 24c6 14 34 14 40 0" class="ln"/></svg>
+                <button type="button" class="item-fav" aria-pressed="false" aria-label="Favoritar Camisa Ripa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.6 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10Z"></path></svg></button>
+                <button type="button" class="item-add" data-add>Adicionar à sacola<span class="sr-only">: Camisa Ripa</span></button>
+              </div>
+              <div class="item-info">
+                <h3>Camisa Ripa</h3>
+                <span class="item-price">R$ 239,00</span>
+              </div>
+              <div class="item-opts">
+                <div class="swatches" role="group" aria-label="Cor de Camisa Ripa">
+                    <button type="button" class="swatch" data-color="noite" data-hex="#232a3b" aria-pressed="true" aria-label="Noite" style="--s:#232a3b"></button>
+                    <button type="button" class="swatch" data-color="areia" data-hex="#d9cdb8" aria-pressed="false" aria-label="Areia" style="--s:#d9cdb8"></button>
+                    <button type="button" class="swatch" data-color="salvia" data-hex="#98a58d" aria-pressed="false" aria-label="Sálvia" style="--s:#98a58d"></button>
+                </div>
+                <div class="sizes" role="group" aria-label="Tamanho de Camisa Ripa">
+                    <button type="button" data-size="P" aria-pressed="false" aria-label="Tamanho P">P</button>
+                    <button type="button" data-size="M" aria-pressed="true" aria-label="Tamanho M">M</button>
+                    <button type="button" data-size="G" aria-pressed="false" aria-label="Tamanho G">G</button>
+                </div>
+              </div>
+            </article>
+            <article class="item" data-id="dia" data-cat="calcas" data-name="Calça Alfaiataria Dia" data-price="32900" style="--g:#3b3a40">
+              <div class="item-art" style="background:#e6e0d6">
+                <svg class="item-garment" viewBox="0 0 200 250" aria-hidden="true"><path d="M64 26h72l8 34-10 176h-34l-6-120-6 120H58L56 60Z" class="g"/><path d="M64 46h72" class="ln"/><path d="M100 46v70" class="ln"/></svg>
+                <button type="button" class="item-fav" aria-pressed="false" aria-label="Favoritar Calça Alfaiataria Dia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.6 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10Z"></path></svg></button>
+                <button type="button" class="item-add" data-add>Adicionar à sacola<span class="sr-only">: Calça Alfaiataria Dia</span></button>
+              </div>
+              <div class="item-info">
+                <h3>Calça Alfaiataria Dia</h3>
+                <span class="item-price">R$ 329,00</span>
+              </div>
+              <div class="item-opts">
+                <div class="swatches" role="group" aria-label="Cor de Calça Alfaiataria Dia">
+                    <button type="button" class="swatch" data-color="grafite" data-hex="#3b3a40" aria-pressed="true" aria-label="Grafite" style="--s:#3b3a40"></button>
+                    <button type="button" class="swatch" data-color="areia" data-hex="#d9cdb8" aria-pressed="false" aria-label="Areia" style="--s:#d9cdb8"></button>
+                    <button type="button" class="swatch" data-color="noite" data-hex="#232a3b" aria-pressed="false" aria-label="Noite" style="--s:#232a3b"></button>
+                </div>
+                <div class="sizes" role="group" aria-label="Tamanho de Calça Alfaiataria Dia">
+                    <button type="button" data-size="P" aria-pressed="false" aria-label="Tamanho P">P</button>
+                    <button type="button" data-size="M" aria-pressed="true" aria-label="Tamanho M">M</button>
+                    <button type="button" data-size="G" aria-pressed="false" aria-label="Tamanho G">G</button>
+                </div>
+              </div>
+            </article>
+            <article class="item" data-id="sol" data-cat="calcas" data-name="Calça Pregas Sol" data-price="34900" style="--g:#efe6d3">
+              <div class="item-art" style="background:#f0dfd2">
+                <svg class="item-garment" viewBox="0 0 200 250" aria-hidden="true"><path d="M64 26h72l8 34-10 176h-34l-6-120-6 120H58L56 60Z" class="g"/><path d="M64 46h72" class="ln"/><path d="M100 46v70" class="ln"/></svg>
+                <button type="button" class="item-fav" aria-pressed="false" aria-label="Favoritar Calça Pregas Sol"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.6 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10Z"></path></svg></button>
+                <button type="button" class="item-add" data-add>Adicionar à sacola<span class="sr-only">: Calça Pregas Sol</span></button>
+              </div>
+              <div class="item-info">
+                <h3>Calça Pregas Sol</h3>
+                <span class="item-price">R$ 349,00</span>
+              </div>
+              <div class="item-opts">
+                <div class="swatches" role="group" aria-label="Cor de Calça Pregas Sol">
+                    <button type="button" class="swatch" data-color="cru" data-hex="#efe6d3" aria-pressed="true" aria-label="Cru" style="--s:#efe6d3"></button>
+                    <button type="button" class="swatch" data-color="ferrugem" data-hex="#b4532a" aria-pressed="false" aria-label="Ferrugem" style="--s:#b4532a"></button>
+                    <button type="button" class="swatch" data-color="salvia" data-hex="#98a58d" aria-pressed="false" aria-label="Sálvia" style="--s:#98a58d"></button>
+                </div>
+                <div class="sizes" role="group" aria-label="Tamanho de Calça Pregas Sol">
+                    <button type="button" data-size="P" aria-pressed="false" aria-label="Tamanho P">P</button>
+                    <button type="button" data-size="M" aria-pressed="true" aria-label="Tamanho M">M</button>
+                    <button type="button" data-size="G" aria-pressed="false" aria-label="Tamanho G">G</button>
+                </div>
+              </div>
+            </article>
+            <article class="item" data-id="entretempo" data-cat="casacos" data-name="Casaco Entretempo" data-price="58900" style="--g:#232a3b">
+              <div class="item-art" style="background:#d8dce6">
+                <svg class="item-garment" viewBox="0 0 200 250" aria-hidden="true"><path d="M68 24 34 54l10 74 20-8v114h72V120l20 8 10-74-34-30-32 40Z" class="g"/><path d="M100 64v174" class="ln"/><circle cx="108" cy="110" r="3" class="dot"/><circle cx="108" cy="150" r="3" class="dot"/><circle cx="108" cy="190" r="3" class="dot"/><path d="M68 24l32 40 32-40" class="ln"/></svg>
+                <button type="button" class="item-fav" aria-pressed="false" aria-label="Favoritar Casaco Entretempo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.6 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10Z"></path></svg></button>
+                <button type="button" class="item-add" data-add>Adicionar à sacola<span class="sr-only">: Casaco Entretempo</span></button>
+              </div>
+              <div class="item-info">
+                <h3>Casaco Entretempo</h3>
+                <span class="item-price">R$ 589,00</span>
+              </div>
+              <div class="item-opts">
+                <div class="swatches" role="group" aria-label="Cor de Casaco Entretempo">
+                    <button type="button" class="swatch" data-color="noite" data-hex="#232a3b" aria-pressed="true" aria-label="Noite" style="--s:#232a3b"></button>
+                    <button type="button" class="swatch" data-color="areia" data-hex="#d9cdb8" aria-pressed="false" aria-label="Areia" style="--s:#d9cdb8"></button>
+                    <button type="button" class="swatch" data-color="ferrugem" data-hex="#b4532a" aria-pressed="false" aria-label="Ferrugem" style="--s:#b4532a"></button>
+                </div>
+                <div class="sizes" role="group" aria-label="Tamanho de Casaco Entretempo">
+                    <button type="button" data-size="P" aria-pressed="false" aria-label="Tamanho P">P</button>
+                    <button type="button" data-size="M" aria-pressed="true" aria-label="Tamanho M">M</button>
+                    <button type="button" data-size="G" aria-pressed="false" aria-label="Tamanho G">G</button>
+                </div>
+              </div>
+            </article>
+            <article class="item" data-id="trench" data-cat="casacos" data-name="Trench Leve" data-price="64900" style="--g:#d9cdb8">
+              <div class="item-art" style="background:#ebe3d4">
+                <svg class="item-garment" viewBox="0 0 200 250" aria-hidden="true"><path d="M68 24 34 54l10 74 20-8v114h72V120l20 8 10-74-34-30-32 40Z" class="g"/><path d="M100 64v174" class="ln"/><circle cx="108" cy="110" r="3" class="dot"/><circle cx="108" cy="150" r="3" class="dot"/><circle cx="108" cy="190" r="3" class="dot"/><path d="M68 24l32 40 32-40" class="ln"/></svg>
+                <button type="button" class="item-fav" aria-pressed="false" aria-label="Favoritar Trench Leve"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.6 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10Z"></path></svg></button>
+                <button type="button" class="item-add" data-add>Adicionar à sacola<span class="sr-only">: Trench Leve</span></button>
+              </div>
+              <div class="item-info">
+                <h3>Trench Leve</h3>
+                <span class="item-price">R$ 649,00</span>
+              </div>
+              <div class="item-opts">
+                <div class="swatches" role="group" aria-label="Cor de Trench Leve">
+                    <button type="button" class="swatch" data-color="areia" data-hex="#d9cdb8" aria-pressed="true" aria-label="Areia" style="--s:#d9cdb8"></button>
+                    <button type="button" class="swatch" data-color="grafite" data-hex="#3b3a40" aria-pressed="false" aria-label="Grafite" style="--s:#3b3a40"></button>
+                    <button type="button" class="swatch" data-color="blush" data-hex="#e8c9bc" aria-pressed="false" aria-label="Blush" style="--s:#e8c9bc"></button>
+                </div>
+                <div class="sizes" role="group" aria-label="Tamanho de Trench Leve">
+                    <button type="button" data-size="P" aria-pressed="false" aria-label="Tamanho P">P</button>
+                    <button type="button" data-size="M" aria-pressed="true" aria-label="Tamanho M">M</button>
+                    <button type="button" data-size="G" aria-pressed="false" aria-label="Tamanho G">G</button>
+                </div>
+              </div>
+            </article>
+            <article class="item" data-id="meialua" data-cat="acessorios" data-name="Bolsa Meia-Lua" data-price="27900" style="--g:#b4532a">
+              <div class="item-art" style="background:#e7d3c6">
+                <svg class="item-garment" viewBox="0 0 200 250" aria-hidden="true"><path d="M74 96V72a26 26 0 0 1 52 0v24" fill="none" class="hd"/><path d="M48 96h104l10 128H38Z" class="g"/><path d="M48 124h104" class="ln"/></svg>
+                <button type="button" class="item-fav" aria-pressed="false" aria-label="Favoritar Bolsa Meia-Lua"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.6 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10Z"></path></svg></button>
+                <button type="button" class="item-add" data-add>Adicionar à sacola<span class="sr-only">: Bolsa Meia-Lua</span></button>
+              </div>
+              <div class="item-info">
+                <h3>Bolsa Meia-Lua</h3>
+                <span class="item-price">R$ 279,00</span>
+              </div>
+              <div class="item-opts">
+                <div class="swatches" role="group" aria-label="Cor de Bolsa Meia-Lua">
+                    <button type="button" class="swatch" data-color="ferrugem" data-hex="#b4532a" aria-pressed="true" aria-label="Ferrugem" style="--s:#b4532a"></button>
+                    <button type="button" class="swatch" data-color="grafite" data-hex="#3b3a40" aria-pressed="false" aria-label="Grafite" style="--s:#3b3a40"></button>
+                    <button type="button" class="swatch" data-color="cru" data-hex="#efe6d3" aria-pressed="false" aria-label="Cru" style="--s:#efe6d3"></button>
+                </div>
+                <div class="sizes" role="group" aria-label="Tamanho de Bolsa Meia-Lua">
+                    <button type="button" data-size="P" aria-pressed="false" aria-label="Tamanho P">P</button>
+                    <button type="button" data-size="M" aria-pressed="true" aria-label="Tamanho M">M</button>
+                    <button type="button" data-size="G" aria-pressed="false" aria-label="Tamanho G">G</button>
+                </div>
+              </div>
+            </article>
+            <article class="item" data-id="cesto" data-cat="acessorios" data-name="Bolsa Cesto" data-price="21900" style="--g:#d9cdb8">
+              <div class="item-art" style="background:#e4e8dc">
+                <svg class="item-garment" viewBox="0 0 200 250" aria-hidden="true"><path d="M74 96V72a26 26 0 0 1 52 0v24" fill="none" class="hd"/><path d="M48 96h104l10 128H38Z" class="g"/><path d="M48 124h104" class="ln"/></svg>
+                <button type="button" class="item-fav" aria-pressed="false" aria-label="Favoritar Bolsa Cesto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.6 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10Z"></path></svg></button>
+                <button type="button" class="item-add" data-add>Adicionar à sacola<span class="sr-only">: Bolsa Cesto</span></button>
+              </div>
+              <div class="item-info">
+                <h3>Bolsa Cesto</h3>
+                <span class="item-price">R$ 219,00</span>
+              </div>
+              <div class="item-opts">
+                <div class="swatches" role="group" aria-label="Cor de Bolsa Cesto">
+                    <button type="button" class="swatch" data-color="areia" data-hex="#d9cdb8" aria-pressed="true" aria-label="Areia" style="--s:#d9cdb8"></button>
+                    <button type="button" class="swatch" data-color="salvia" data-hex="#98a58d" aria-pressed="false" aria-label="Sálvia" style="--s:#98a58d"></button>
+                    <button type="button" class="swatch" data-color="noite" data-hex="#232a3b" aria-pressed="false" aria-label="Noite" style="--s:#232a3b"></button>
+                </div>
+                <div class="sizes" role="group" aria-label="Tamanho de Bolsa Cesto">
+                    <button type="button" data-size="P" aria-pressed="false" aria-label="Tamanho P">P</button>
+                    <button type="button" data-size="M" aria-pressed="true" aria-label="Tamanho M">M</button>
+                    <button type="button" data-size="G" aria-pressed="false" aria-label="Tamanho G">G</button>
+                </div>
+              </div>
+            </article>
+            <article class="item" data-id="seda" data-cat="acessorios" data-name="Lenço Seda Mate" data-price="13900" style="--g:#e8c9bc">
+              <div class="item-art" style="background:#e9dde6">
+                <svg class="item-garment" viewBox="0 0 200 250" aria-hidden="true"><path d="M38 70c26-22 50 22 76 0s40-22 52-10l-8 40c-12-12-26-12-44 4s-52 10-66-8Z" class="g"/><path d="M96 112l-8 108h30l-4-100Z" class="g"/><path d="M52 78c20-12 38 14 60 0" class="ln"/></svg>
+                <button type="button" class="item-fav" aria-pressed="false" aria-label="Favoritar Lenço Seda Mate"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.6 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10Z"></path></svg></button>
+                <button type="button" class="item-add" data-add>Adicionar à sacola<span class="sr-only">: Lenço Seda Mate</span></button>
+              </div>
+              <div class="item-info">
+                <h3>Lenço Seda Mate</h3>
+                <span class="item-price">R$ 139,00</span>
+              </div>
+              <div class="item-opts">
+                <div class="swatches" role="group" aria-label="Cor de Lenço Seda Mate">
+                    <button type="button" class="swatch" data-color="blush" data-hex="#e8c9bc" aria-pressed="true" aria-label="Blush" style="--s:#e8c9bc"></button>
+                    <button type="button" class="swatch" data-color="giz" data-hex="#9db3c9" aria-pressed="false" aria-label="Azul-giz" style="--s:#9db3c9"></button>
+                    <button type="button" class="swatch" data-color="ferrugem" data-hex="#b4532a" aria-pressed="false" aria-label="Ferrugem" style="--s:#b4532a"></button>
+                </div>
+                <div class="sizes" role="group" aria-label="Tamanho de Lenço Seda Mate">
+                    <button type="button" data-size="P" aria-pressed="false" aria-label="Tamanho P">P</button>
+                    <button type="button" data-size="M" aria-pressed="true" aria-label="Tamanho M">M</button>
+                    <button type="button" data-size="G" aria-pressed="false" aria-label="Tamanho G">G</button>
+                </div>
+              </div>
+            </article>
+            <article class="item" data-id="brisa" data-cat="acessorios" data-name="Lenço Brisa" data-price="11900" style="--g:#9db3c9">
+              <div class="item-art" style="background:#dde6e8">
+                <svg class="item-garment" viewBox="0 0 200 250" aria-hidden="true"><path d="M38 70c26-22 50 22 76 0s40-22 52-10l-8 40c-12-12-26-12-44 4s-52 10-66-8Z" class="g"/><path d="M96 112l-8 108h30l-4-100Z" class="g"/><path d="M52 78c20-12 38 14 60 0" class="ln"/></svg>
+                <button type="button" class="item-fav" aria-pressed="false" aria-label="Favoritar Lenço Brisa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.6 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10Z"></path></svg></button>
+                <button type="button" class="item-add" data-add>Adicionar à sacola<span class="sr-only">: Lenço Brisa</span></button>
+              </div>
+              <div class="item-info">
+                <h3>Lenço Brisa</h3>
+                <span class="item-price">R$ 119,00</span>
+              </div>
+              <div class="item-opts">
+                <div class="swatches" role="group" aria-label="Cor de Lenço Brisa">
+                    <button type="button" class="swatch" data-color="giz" data-hex="#9db3c9" aria-pressed="true" aria-label="Azul-giz" style="--s:#9db3c9"></button>
+                    <button type="button" class="swatch" data-color="cru" data-hex="#efe6d3" aria-pressed="false" aria-label="Cru" style="--s:#efe6d3"></button>
+                    <button type="button" class="swatch" data-color="noite" data-hex="#232a3b" aria-pressed="false" aria-label="Noite" style="--s:#232a3b"></button>
+                </div>
+                <div class="sizes" role="group" aria-label="Tamanho de Lenço Brisa">
+                    <button type="button" data-size="P" aria-pressed="false" aria-label="Tamanho P">P</button>
+                    <button type="button" data-size="M" aria-pressed="true" aria-label="Tamanho M">M</button>
+                    <button type="button" data-size="G" aria-pressed="false" aria-label="Tamanho G">G</button>
+                </div>
+              </div>
+            </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="ml-look" id="lookbook" aria-labelledby="titulo-look">
+          <div class="ml-wrap">
+            <h2 id="titulo-look">Lookbook</h2>
+            <div class="ml-looks">
+            <figure class="look" style="--bg:#e8c9bc">
+              <div class="look-art" aria-hidden="true"><svg class="look-a" style="--g:#b4532a" viewBox="0 0 200 250" aria-hidden="true"><path d="M82 22c4 14 32 14 36 0l10 4-6 62 34 138H44L78 88 72 26Z" class="g"/><path d="M78 88h44" class="ln"/><path d="M82 22c4 14 32 14 36 0" class="ln"/></svg><svg class="look-b" style="--g:#d9cdb8" viewBox="0 0 200 250" aria-hidden="true"><path d="M68 24 34 54l10 74 20-8v114h72V120l20 8 10-74-34-30-32 40Z" class="g"/><path d="M100 64v174" class="ln"/><circle cx="108" cy="110" r="3" class="dot"/><circle cx="108" cy="150" r="3" class="dot"/><circle cx="108" cy="190" r="3" class="dot"/><path d="M68 24l32 40 32-40" class="ln"/></svg></div>
+              <figcaption><b>Look 01</b><strong>Aurora e Trench Leve</strong><span>Para o fim de tarde que esfria sem avisar.</span></figcaption>
+            </figure>
+            <figure class="look" style="--bg:#9db3c9">
+              <div class="look-art" aria-hidden="true"><svg class="look-a" style="--g:#efe6d3" viewBox="0 0 200 250" aria-hidden="true"><path d="M72 24 38 52l14 36 22-10v134h52V78l22 10 14-36-34-28c-6 14-34 14-40 0Z" class="g"/><path d="M100 40v192" class="ln"/><circle cx="106" cy="90" r="2.6" class="dot"/><circle cx="106" cy="130" r="2.6" class="dot"/><circle cx="106" cy="170" r="2.6" class="dot"/><path d="M72 24c6 14 34 14 40 0" class="ln"/></svg><svg class="look-b" style="--g:#3b3a40" viewBox="0 0 200 250" aria-hidden="true"><path d="M64 26h72l8 34-10 176h-34l-6-120-6 120H58L56 60Z" class="g"/><path d="M64 46h72" class="ln"/><path d="M100 46v70" class="ln"/></svg></div>
+              <figcaption><b>Look 02</b><strong>Linho Prado e Alfaiataria</strong><span>A camisa que atravessa a semana inteira.</span></figcaption>
+            </figure>
+            <figure class="look" style="--bg:#98a58d">
+              <div class="look-art" aria-hidden="true"><svg class="look-a" style="--g:#232a3b" viewBox="0 0 200 250" aria-hidden="true"><path d="M82 22c4 14 32 14 36 0l10 4-6 62 34 138H44L78 88 72 26Z" class="g"/><path d="M78 88h44" class="ln"/><path d="M82 22c4 14 32 14 36 0" class="ln"/></svg><svg class="look-b" style="--g:#b4532a" viewBox="0 0 200 250" aria-hidden="true"><path d="M74 96V72a26 26 0 0 1 52 0v24" fill="none" class="hd"/><path d="M48 96h104l10 128H38Z" class="g"/><path d="M48 124h104" class="ln"/></svg></div>
+              <figcaption><b>Look 03</b><strong>Lua Cheia e Meia-Lua</strong><span>Uma noite longa, sem pressa de ir embora.</span></figcaption>
+            </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="ml-atelie" id="atelie" aria-labelledby="titulo-atelie">
+          <div class="ml-wrap">
+            <h2 id="titulo-atelie">Feito com calma</h2>
+            <ol class="ml-promises">
+            <li><b aria-hidden="true">01</b><h3>Séries pequenas</h3><p>Cada peça é produzida em poucas unidades. Quando acaba, acaba.</p></li>
+            <li><b aria-hidden="true">02</b><h3>Troca em 30 dias</h3><p>Não serviu ou não era o que você imaginou? A troca é por nossa conta.</p></li>
+            <li><b aria-hidden="true">03</b><h3>Frete grátis</h3><p>Em compras acima de R$ 350, para qualquer endereço do país.</p></li>
+            </ol>
+          </div>
+        </section>
+      </main>
+
+      <footer class="ml-foot">
+        <div class="ml-wrap ml-foot-grid">
+          <p class="ml-foot-mark">Meia-Luz</p>
+          <p>Rua das Oficinas, 77, Cidade Exemplo<br />Segunda a sábado, das 10h às 19h</p>
+          <p>(00) 0000-0000</p>
+        </div>
+        <p class="ml-fine">Ateliê Meia-Luz é uma marca fictícia criada pela Lade Group para esta demonstração.</p>
+      </footer>
+    </div>
+
+    <div class="ml-scrim" id="scrim" hidden></div>
+    <aside class="ml-bag" id="bag" role="dialog" aria-modal="true" aria-labelledby="titulo-sacola" hidden>
+      <header class="ml-bag-head">
+        <h2 id="titulo-sacola">Sacola</h2>
+        <button type="button" id="close-bag">Fechar</button>
+      </header>
+      <p class="ml-bag-empty" id="bag-empty">Sua sacola está vazia.</p>
+      <ul class="ml-bag-lines" id="bag-lines"></ul>
+      <footer class="ml-bag-foot">
+        <p class="ml-ship" id="ship" aria-live="polite"></p>
+        <div class="ml-meter" aria-hidden="true"><i id="meter"></i></div>
+        <div class="ml-bag-total"><span>Total</span><strong id="bag-total">R$ 0,00</strong></div>
+        <button type="button" class="ml-checkout" id="bag-checkout" disabled>Finalizar compra</button>
+      </footer>
+    </aside>
+    <p class="demo-badge" aria-hidden="true">Demonstração</p>
+  </body>
+</html>

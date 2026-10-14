@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cumeeira, CRM imobiliário | Demonstração Lade Group</title>
+    <meta name="description" content="Demonstração com dados fictícios de um CRM imobiliário com funil de vendas, conversa com o cliente e assistente de IA simulado." />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#123b2c" />
+    <link rel="icon" type="image/svg+xml" href="../../../favicon.svg" />
+    <link rel="preload" href="fonts/plus-jakarta-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../comum/demo.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="js/app.js"></script>
+  </head>
+  <body>
+    <a class="demo-skip" href="#conteudo">Ir para a demonstração</a>
+    <div class="demo-bar" role="region" aria-label="Sobre esta demonstração">
+      <div class="demo-bar-inner">
+        <div class="demo-bar-id">
+          <a class="demo-bar-logo" href="../../../index.html"><svg viewBox="0 0 56 56" aria-hidden="true"><polygon points="54,28 41,50.5 15,50.5 2,28 15,5.5 41,5.5" fill="#FFFFFF"></polygon><polygon points="48,28 38,45.3 18,45.3 8,28 18,10.7 38,10.7" fill="#0D0D0D"></polygon><polygon points="41,28 34.5,39.3 21.5,39.3 15,28 21.5,16.7 34.5,16.7" fill="#C9A227"></polygon></svg><span>LADE GROUP</span></a>
+          <span class="demo-tag">Demonstração</span>
+          <span class="demo-note">Marca e dados fictícios</span>
+        </div>
+        <div class="demo-bar-actions">
+          <a class="demo-back" href="../../../portfolio.html#sistemas"><span class="demo-long">Voltar ao portfólio</span><span class="demo-short">Portfólio</span></a>
+          <a class="demo-cta" href="https://wa.me/5547991065421?text=Ol%C3%A1%21%20Vi%20a%20demonstra%C3%A7%C3%A3o%20%22CRM%20imobili%C3%A1rio%20com%20IA%22%20no%20site%20da%20Lade%20Group%20e%20quero%20conversar%20sobre%20um%20sistema%20parecido%20para%20o%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">Quero um sistema assim</a>
+        </div>
+      </div>
+    </div>
+    <div class="cum" id="conteudo">
+      <div id="app">
+        <header class="cum-top">
+          <div class="cum-top-inner">
+            <div class="cum-logo">
+              <svg viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M3 16 16 5l13 11" fill="none" stroke="#b8862b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M7 15v12h18V15" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"></path>
+                <rect x="13.5" y="19" width="5" height="8" fill="#b8862b"></rect>
+              </svg>
+              <span>Cumeeira</span>
+            </div>
+            <nav class="cum-nav" aria-label="Menu do sistema">
+              <button type="button" aria-current="page">Funil</button>
+              <button type="button" data-demo-action="Nesta demonstração, só o funil é navegável.">Imóveis</button>
+              <button type="button" data-demo-action="Nesta demonstração, só o funil é navegável.">Agenda</button>
+              <button type="button" data-demo-action="Nesta demonstração, só o funil é navegável.">Relatórios</button>
+            </nav>
+            <button type="button" class="cum-search" data-demo-action="A busca não funciona nesta demonstração.">Buscar contato ou imóvel</button>
+            <span class="cum-user" aria-hidden="true">CM</span>
+          </div>
+        </header>
+
+        <section class="cum-stats" id="stats" aria-label="Indicadores do funil"></section>
+
+        <main class="cum-main">
+          <div class="cum-title">
+            <h1>Funil de vendas</h1>
+            <p>Imobiliária Exemplo. Arraste os cartões entre as etapas ou abra um contato e troque a etapa pela ficha.</p>
+          </div>
+          <div class="cum-board" id="board"></div>
+        </main>
+      </div>
+
+      <div class="cum-scrim" id="scrim" hidden></div>
+      <aside class="cum-drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" hidden></aside>
+    </div>
+    <p class="demo-badge" aria-hidden="true">Demonstração</p>
+  </body>
+</html>
