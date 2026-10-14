@@ -1,141 +1,129 @@
 ---
+import '@fontsource-variable/plus-jakarta-sans';
 import DemoLayout from '../../../layouts/DemoLayout.astro';
-import AppSide from '../../../components/demo/AppSide.astro';
-import { services, days, clients } from '../../../data/demos/agenda.js';
-import '../../../styles/demos/demo-app.css';
-import '../../../styles/demos/demo-agenda.css';
+import { services } from '../../../data/demos/agenda.js';
+import '../../../styles/demos/compasso.css';
 
-const menu = [
-  { label: 'Agenda', icon: 'calendar', active: true },
-  { label: 'Clientes', icon: 'home' },
-  { label: 'Serviços', icon: 'file' },
-  { label: 'Relatórios', icon: 'bars' },
+const weekdays = ['S', 'T', 'Q', 'Q', 'S', 'S', 'D'];
+const firstOffset = 3;
+const monthDays = 31;
+const cells = [
+  ...Array.from({ length: firstOffset }, () => null),
+  ...Array.from({ length: monthDays }, (_, i) => i + 1),
 ];
 
-const clientFilters = [
+const cellClass = (day) =>
+  [
+    day >= 12 && day <= 17 ? 'in-week' : '',
+    day === 12 ? 'is-first' : '',
+    day === 17 ? 'is-last' : '',
+    day === 14 ? 'is-today' : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+const chips = [
   ['todos', 'Todos'],
   ['recorrente', 'Recorrentes'],
-  ['nova', 'Novas'],
+  ['nova', 'Novos'],
 ];
 ---
 
 <DemoLayout
   title="Agendamento e cadastro de clientes (demonstração) — Lade Group"
-  description="Demonstração com dados fictícios de um sistema de agendamento e cadastro de clientes com horários que respeitam a duração de cada serviço."
+  description="Demonstração com dados fictícios de um sistema de agendamento e cadastro de clientes com agenda semanal, conflito de horários e ficha dos clientes."
   kind="sistema"
   name="Agendamento e cadastro de clientes"
 >
-  <div class="app">
-    <AppSide product="Agenda & Clientes" items={menu} />
-    <main class="app-main">
-      <header class="app-head">
-        <div>
-          <h1 class="app-title">Agenda</h1>
-          <p class="app-sub">Estúdio Exemplo · semana fictícia · dados ilustrativos</p>
+  <div class="cp">
+    <header class="cp-top">
+      <div class="cp-top-inner">
+        <div class="cp-brand">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <rect width="32" height="32" rx="10" fill="#0a6fb0"></rect>
+            <circle cx="16" cy="16" r="9" fill="none" stroke="#fff" stroke-width="2"></circle>
+            <path d="M16 8.5 19 16l-3 7.5L13 16Z" fill="#fff"></path>
+            <path d="M16 8.5 19 16h-6Z" fill="#7fe0c3"></path>
+          </svg>
+          Compasso
+          <span class="cp-studio">Estúdio Lúmen</span>
         </div>
-      </header>
+        <div class="cp-switch" role="group" aria-label="Seção">
+          <button type="button" data-view="agenda" aria-pressed="true">Agenda</button>
+          <button type="button" data-view="clientes" aria-pressed="false">Clientes</button>
+        </div>
+        <div class="cp-week">
+          <span>Semana</span><b>12 – 17 out</b>
+          <div class="cp-user" aria-hidden="true">RC</div>
+        </div>
+      </div>
+    </header>
 
-      <div class="agenda-layout">
-        <section class="app-card" aria-labelledby="titulo-novo">
-          <h2 class="app-card-title" id="titulo-novo">Novo agendamento</h2>
-
-          <div class="agenda-field">
-            <span class="agenda-label" id="rotulo-servico">Serviço</span>
-            <div class="app-chips" role="group" aria-labelledby="rotulo-servico">
-              {
-                services.map((service, index) => (
-                  <button
-                    type="button"
-                    class="app-chip agenda-service-chip"
-                    data-service={service.id}
-                    aria-pressed={index === 0 ? 'true' : 'false'}
-                  >
-                    {service.name}
-                    <span class="agenda-service-line">
-                      {service.minutes} min · {service.price}
-                    </span>
-                  </button>
-                ))
-              }
+    <div class="cp-stage">
+      <div class="cp-agenda" id="view-agenda">
+        <aside class="cp-side" aria-label="Filtros">
+          <section class="card mini-card" aria-label="Calendário do mês">
+            <div class="mini-head"><h2>Outubro 2026</h2><span>semana 42</span></div>
+            <div class="mini">
+              {weekdays.map((d) => <span class="dow">{d}</span>)}
+              {cells.map((day) => <span class={day ? cellClass(day) : ''}>{day}</span>)}
             </div>
-          </div>
-
-          <div class="agenda-field">
-            <span class="agenda-label" id="rotulo-dia">Dia</span>
-            <div class="app-chips" role="group" aria-labelledby="rotulo-dia">
-              {
-                days.map((day, index) => (
-                  <button
-                    type="button"
-                    class="app-chip"
-                    data-day={day.id}
-                    aria-pressed={index === 0 ? 'true' : 'false'}
-                  >
-                    {day.label}
-                  </button>
-                ))
-              }
-            </div>
-          </div>
-
-          <div class="agenda-field">
-            <span class="agenda-label" id="rotulo-horario">Horário</span>
-            <div class="agenda-slots" id="slots" role="group" aria-labelledby="rotulo-horario"></div>
-          </div>
-
-          <div class="agenda-field">
-            <label class="agenda-label" for="client">Cliente</label>
-            <select class="agenda-select" id="client">
-              {clients.map((client) => <option value={client.id}>{client.name}</option>)}
-            </select>
-          </div>
-
-          <button type="button" class="app-btn is-primary" id="book" disabled>Agendar</button>
-        </section>
-
-        <div>
-          <section class="app-card" aria-labelledby="day-title">
-            <h2 class="app-card-title" id="day-title">Agenda do dia</h2>
-            <ul class="agenda-list" id="day-list"></ul>
           </section>
 
-          <section class="app-card agenda-clients-card" aria-labelledby="titulo-clientes">
-            <div class="app-card-title-row">
-              <h2 class="app-card-title" id="titulo-clientes">Clientes</h2>
-            </div>
-            <div class="app-chips" role="group" aria-label="Filtrar clientes">
+          <section class="card" aria-labelledby="titulo-equipe">
+            <h2 id="titulo-equipe">Equipe</h2>
+            <ul class="pro-list" id="pro-filter"></ul>
+          </section>
+
+          <section class="card svc-card" aria-labelledby="titulo-servicos">
+            <h2 id="titulo-servicos">Serviços</h2>
+            <ul class="svc-list">
               {
-                clientFilters.map(([key, label]) => (
-                  <button
-                    type="button"
-                    class="app-chip"
-                    data-client-filter={key}
-                    aria-pressed={key === 'todos' ? 'true' : 'false'}
-                  >
-                    {label}
-                  </button>
-                ))
-              }
-            </div>
-            <ul class="agenda-clients">
-              {
-                clients.map((client) => (
-                  <li class="agenda-client" data-client-kind={client.kind}>
-                    <strong>{client.name}</strong>
-                    <span class="agenda-meta">
-                      {client.visits} {client.visits === 1 ? 'visita' : 'visitas'} · última {client.last}
-                    </span>
-                    <span class:list={['app-badge', client.kind === 'recorrente' ? 'is-ok' : '']}>
-                      {client.kind === 'recorrente' ? 'Recorrente' : 'Nova'}
-                    </span>
-                  </li>
+                Object.values(services).map((service) => (
+                  <li><span>{service.name}</span><em>{service.minutes} min · {service.price}</em></li>
                 ))
               }
             </ul>
           </section>
-        </div>
+        </aside>
+
+        <section class="cp-center" aria-labelledby="titulo-agenda">
+          <div class="cp-bar">
+            <div>
+              <h1 id="titulo-agenda">Agenda da semana</h1>
+              <p>Clique em um espaço vazio para marcar. Listrado: aguardando confirmação.</p>
+            </div>
+            <button type="button" class="btn is-primary" data-new>Novo agendamento</button>
+          </div>
+          <div id="grid" role="region" aria-label="Agenda semanal"></div>
+        </section>
+
+        <aside class="card cp-panel" id="panel" aria-live="polite" aria-label="Detalhes do atendimento"></aside>
       </div>
-    </main>
+
+      <div class="cp-clients" id="view-clientes" hidden>
+        <section aria-labelledby="titulo-clientes">
+          <div class="cp-clients-head">
+            <h1 id="titulo-clientes">Clientes</h1>
+            <div class="filters" role="group" aria-label="Filtrar clientes">
+              {chips.map(([key, label]) => <button type="button" data-client-filter={key} aria-pressed={key === 'todos' ? 'true' : 'false'}>{label}</button>)}
+            </div>
+          </div>
+          <ul id="client-list"></ul>
+        </section>
+
+        <form class="card cp-form" id="new-client">
+          <h2>Novo cliente</h2>
+          <label>Nome<input name="name" required autocomplete="off" maxlength="60" /></label>
+          <label>
+            Prefere
+            <select name="pref">{Object.values(services).map((service) => <option value={service.name}>{service.name}</option>)}</select>
+          </label>
+          <button type="submit" class="btn is-primary">Cadastrar cliente</button>
+          <p>Nesta demonstração os dados ficam só no seu navegador e somem ao recarregar.</p>
+        </form>
+      </div>
+    </div>
   </div>
 
   <script>

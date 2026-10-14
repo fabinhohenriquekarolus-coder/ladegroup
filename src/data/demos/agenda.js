@@ -1,37 +1,61 @@
-export const services = [
-  { id: 'corte', name: 'Corte', minutes: 40, price: 'R$ 70' },
-  { id: 'coloracao', name: 'Coloração', minutes: 90, price: 'R$ 180' },
-  { id: 'manicure', name: 'Manicure', minutes: 45, price: 'R$ 45' },
-  { id: 'escova', name: 'Escova', minutes: 30, price: 'R$ 55' },
-];
+export const services = {
+  corte: { name: 'Corte', minutes: 40, price: 'R$ 70' },
+  coloracao: { name: 'Coloração', minutes: 90, price: 'R$ 180' },
+  manicure: { name: 'Manicure', minutes: 45, price: 'R$ 45' },
+  escova: { name: 'Escova', minutes: 30, price: 'R$ 55' },
+};
+
+export const pros = {
+  ana: { name: 'Ana', color: '#0a6fb0', soft: '#d6eaf7' },
+  beto: { name: 'Beto', color: '#13806a', soft: '#d2f0e7' },
+  carla: { name: 'Carla', color: '#b8651b', soft: '#fbe5cf' },
+};
 
 export const days = [
-  { id: 'seg', label: 'Seg 12' },
-  { id: 'ter', label: 'Ter 13' },
-  { id: 'qua', label: 'Qua 14' },
-  { id: 'qui', label: 'Qui 15' },
-  { id: 'sex', label: 'Sex 16' },
+  { id: 0, short: 'Seg', number: 12 },
+  { id: 1, short: 'Ter', number: 13 },
+  { id: 2, short: 'Qua', number: 14, today: true },
+  { id: 3, short: 'Qui', number: 15 },
+  { id: 4, short: 'Sex', number: 16 },
+  { id: 5, short: 'Sáb', number: 17 },
 ];
 
-export const firstHour = 9;
-export const slotCount = 18;
-
 export const clients = [
-  { id: 'c1', name: 'Fernanda L.', visits: 12, last: 'há 9 dias', kind: 'recorrente' },
-  { id: 'c2', name: 'Rita C.', visits: 7, last: 'há 3 semanas', kind: 'recorrente' },
-  { id: 'c3', name: 'Bianca O.', visits: 1, last: 'há 5 dias', kind: 'nova' },
-  { id: 'c4', name: 'Marcela P.', visits: 15, last: 'há 12 dias', kind: 'recorrente' },
-  { id: 'c5', name: 'Sônia R.', visits: 2, last: 'há 1 mês', kind: 'nova' },
-  { id: 'c6', name: 'Tatiane V.', visits: 5, last: 'há 2 semanas', kind: 'recorrente' },
+  { id: 'c1', name: 'Fernanda Lima', since: '2023', visits: 24, last: 'há 9 dias', pref: 'Corte', tags: ['recorrente'], note: 'Prefere horários no fim da tarde.' },
+  { id: 'c2', name: 'Rita Campos', since: '2024', visits: 11, last: 'há 3 semanas', pref: 'Coloração', tags: ['recorrente'], note: 'Alérgica a amônia. Usar linha sem amônia.' },
+  { id: 'c3', name: 'Bianca Oliveira', since: '2026', visits: 2, last: 'há 5 dias', pref: 'Manicure', tags: ['nova'], note: 'Primeira visita indicada por Fernanda.' },
+  { id: 'c4', name: 'Marcela Paiva', since: '2022', visits: 38, last: 'há 12 dias', pref: 'Escova', tags: ['recorrente'], note: 'Gosta de café com leite na chegada.' },
+  { id: 'c5', name: 'Sônia Ribeiro', since: '2026', visits: 3, last: 'há 1 mês', pref: 'Coloração', tags: ['nova'], note: 'Quer testar tons mais claros.' },
+  { id: 'c6', name: 'Tatiane Vieira', since: '2024', visits: 9, last: 'há 2 semanas', pref: 'Corte', tags: ['recorrente'], note: 'Prefere atendimento com a Ana.' },
 ];
 
 export const appointments = [
-  { day: 'seg', time: '09:00', service: 'corte', client: 'c1' },
-  { day: 'seg', time: '10:30', service: 'coloracao', client: 'c2' },
-  { day: 'seg', time: '14:00', service: 'manicure', client: 'c3' },
-  { day: 'ter', time: '09:30', service: 'escova', client: 'c4' },
-  { day: 'ter', time: '15:00', service: 'corte', client: 'c6' },
-  { day: 'qua', time: '11:00', service: 'coloracao', client: 'c5' },
-  { day: 'qui', time: '10:00', service: 'manicure', client: 'c1' },
-  { day: 'sex', time: '16:00', service: 'escova', client: 'c3' },
+  { day: 0, start: '09:00', service: 'corte', pro: 'ana', client: 'c1', status: 'confirmado' },
+  { day: 0, start: '09:30', service: 'manicure', pro: 'carla', client: 'c3', status: 'confirmado' },
+  { day: 0, start: '10:30', service: 'coloracao', pro: 'beto', client: 'c2', status: 'confirmado' },
+  { day: 0, start: '14:00', service: 'escova', pro: 'ana', client: 'c4', status: 'aguardando' },
+  { day: 0, start: '15:00', service: 'manicure', pro: 'carla', client: 'c5', status: 'confirmado' },
+  { day: 1, start: '09:00', service: 'escova', pro: 'beto', client: 'c4', status: 'confirmado' },
+  { day: 1, start: '10:00', service: 'corte', pro: 'ana', client: 'c6', status: 'confirmado' },
+  { day: 1, start: '11:00', service: 'coloracao', pro: 'carla', client: 'c2', status: 'aguardando' },
+  { day: 1, start: '15:30', service: 'corte', pro: 'beto', client: 'c1', status: 'confirmado' },
+  { day: 2, start: '08:30', service: 'manicure', pro: 'carla', client: 'c3', status: 'confirmado' },
+  { day: 2, start: '09:30', service: 'coloracao', pro: 'ana', client: 'c5', status: 'confirmado' },
+  { day: 2, start: '11:00', service: 'corte', pro: 'beto', client: 'c6', status: 'aguardando' },
+  { day: 2, start: '11:30', service: 'escova', pro: 'carla', client: 'c4', status: 'confirmado' },
+  { day: 2, start: '14:00', service: 'corte', pro: 'ana', client: 'c1', status: 'confirmado' },
+  { day: 2, start: '16:00', service: 'manicure', pro: 'beto', client: 'c2', status: 'aguardando' },
+  { day: 3, start: '10:00', service: 'corte', pro: 'beto', client: 'c3', status: 'confirmado' },
+  { day: 3, start: '13:30', service: 'coloracao', pro: 'ana', client: 'c4', status: 'confirmado' },
+  { day: 3, start: '16:30', service: 'escova', pro: 'carla', client: 'c6', status: 'aguardando' },
+  { day: 4, start: '09:00', service: 'coloracao', pro: 'carla', client: 'c1', status: 'confirmado' },
+  { day: 4, start: '11:30', service: 'corte', pro: 'ana', client: 'c2', status: 'confirmado' },
+  { day: 4, start: '14:30', service: 'manicure', pro: 'beto', client: 'c5', status: 'aguardando' },
+  { day: 4, start: '17:00', service: 'escova', pro: 'ana', client: 'c3', status: 'confirmado' },
+  { day: 5, start: '09:00', service: 'corte', pro: 'ana', client: 'c6', status: 'confirmado' },
+  { day: 5, start: '10:00', service: 'coloracao', pro: 'beto', client: 'c4', status: 'confirmado' },
+  { day: 5, start: '12:00', service: 'manicure', pro: 'carla', client: 'c5', status: 'aguardando' },
 ];
+
+export const openHour = 8;
+export const closeHour = 18;

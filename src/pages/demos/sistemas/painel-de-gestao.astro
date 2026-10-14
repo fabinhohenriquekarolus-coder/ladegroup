@@ -1,16 +1,9 @@
 ---
+import '@fontsource-variable/bricolage-grotesque';
+import '@fontsource/dm-mono/400.css';
+import '@fontsource/dm-mono/500.css';
 import DemoLayout from '../../../layouts/DemoLayout.astro';
-import AppSide from '../../../components/demo/AppSide.astro';
-import { orders } from '../../../data/demos/painel.js';
-import '../../../styles/demos/demo-app.css';
-import '../../../styles/demos/demo-painel.css';
-
-const menu = [
-  { label: 'Visão geral', icon: 'bars', active: true },
-  { label: 'Vendas', icon: 'file' },
-  { label: 'Clientes', icon: 'home' },
-  { label: 'Agenda', icon: 'calendar' },
-];
+import '../../../styles/demos/mare.css';
 
 const periods = [
   ['7', '7 dias'],
@@ -21,71 +14,77 @@ const periods = [
 
 <DemoLayout
   title="Painel de gestão (demonstração) — Lade Group"
-  description="Demonstração com dados fictícios de um painel de gestão com indicadores, gráfico de faturamento e produtos mais vendidos."
+  description="Demonstração com dados fictícios de um painel de gestão com faturamento, canais de venda, mapa de calor, metas e pedidos."
   kind="sistema"
   name="Painel de gestão"
 >
-  <div class="app">
-    <AppSide product="Painel de Gestão" items={menu} />
-    <main class="app-main">
-      <header class="app-head">
-        <div>
-          <h1 class="app-title">Visão geral</h1>
-          <p class="app-sub">Loja Exemplo · <span id="period-caption">Últimos 7 dias</span> · dados fictícios</p>
-        </div>
-        <div class="app-seg" role="group" aria-label="Período">
-          {
-            periods.map(([key, label]) => (
-              <button type="button" data-period={key} aria-pressed={key === '7' ? 'true' : 'false'}>
-                {label}
-              </button>
-            ))
-          }
-        </div>
-      </header>
+  <div class="mare">
+    <header class="mare-top">
+      <div class="mare-top-inner">
+      <div class="mare-logo">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="20" fill="#2b1240"></circle>
+          <path d="M6 24c4-6 7-6 11 0s7 6 11 0 5-5 6-4" fill="none" stroke="#ff5c7a" stroke-width="3.2" stroke-linecap="round"></path>
+          <path d="M6 16c4-6 7-6 11 0s7 6 11 0 5-5 6-4" fill="none" stroke="#ffb199" stroke-width="3.2" stroke-linecap="round" opacity=".7"></path>
+        </svg>
+        Maré
+      </div>
+      <nav class="mare-nav" aria-label="Seções">
+        <a href="#resumo">Resumo</a>
+        <a href="#canais">Canais</a>
+        <a href="#horarios">Horários</a>
+        <a href="#pedidos">Pedidos</a>
+      </nav>
+      <div class="mare-period" role="group" aria-label="Período">
+        {periods.map(([key, label]) => <button type="button" data-period={key} aria-pressed={key === '7' ? 'true' : 'false'}>{label}</button>)}
+      </div>
+      </div>
+    </header>
 
-      <div class="app-kpis" id="kpis"></div>
+    <main class="mare-page">
+      <section class="card hero" id="resumo" aria-labelledby="hero-label">
+        <span class="hero-label" id="hero-label">Faturamento</span>
+        <strong class="hero-total" id="hero-total">R$ 0</strong>
+        <span class="hero-delta" id="hero-delta"></span>
+        <div class="hero-stats">
+          <div><span>Pedidos</span><strong id="hero-orders" class="mono"></strong></div>
+          <div><span>Ticket médio</span><strong id="hero-ticket" class="mono"></strong></div>
+          <div><span>Clientes novos</span><strong id="hero-customers" class="mono"></strong></div>
+        </div>
+        <div class="chart" id="chart"></div>
+      </section>
 
-      <div class="painel-grid">
-        <section class="app-card painel-chart" aria-labelledby="titulo-grafico">
-          <h2 class="app-card-title" id="titulo-grafico">Faturamento no período</h2>
-          <div id="chart"></div>
-          <table class="sr-only" id="chart-table"></table>
+      <div class="side">
+        <section class="card today">
+          <h2>Pedido chegando?</h2>
+          <p>Veja o painel reagir quando entra uma venda nova.</p>
+          <button type="button" class="btn-sim" id="simulate">Simular novo pedido</button>
         </section>
-        <section class="app-card" aria-labelledby="titulo-top">
-          <h2 class="app-card-title" id="titulo-top">Mais vendidos (unidades)</h2>
-          <ol class="painel-top" id="top"></ol>
+        <section class="card" aria-labelledby="titulo-metas">
+          <h2 id="titulo-metas">Metas do mês</h2>
+          <ul class="goals" id="goals"></ul>
         </section>
       </div>
 
-      <section class="app-card" aria-labelledby="titulo-pedidos">
-        <h2 class="app-card-title" id="titulo-pedidos">Últimos pedidos</h2>
-        <div class="app-table-wrap">
-          <table class="app-table">
-            <thead>
-              <tr>
-                <th>Pedido</th>
-                <th>Cliente</th>
-                <th>Valor</th>
-                <th>Situação</th>
-              </tr>
-            </thead>
-            <tbody>
-              {
-                orders.map((order) => (
-                  <tr>
-                    <td>{order.id}</td>
-                    <td>{order.client}</td>
-                    <td>{order.value}</td>
-                    <td>
-                      <span class:list={['app-badge', order.tone]}>{order.status}</span>
-                    </td>
-                  </tr>
-                ))
-              }
-            </tbody>
-          </table>
-        </div>
+      <section class="card channels" id="canais" aria-labelledby="titulo-canais">
+        <h2 id="titulo-canais">Canais de venda</h2>
+        <div class="donut-wrap" id="donut"></div>
+      </section>
+
+      <section class="card heatmap" id="horarios" aria-labelledby="titulo-heat">
+        <h2 id="titulo-heat">Quando as vendas acontecem</h2>
+        <div id="heat"></div>
+        <p class="heat-note" id="heat-note">Passe o mouse ou foque em um horário para ver o faturamento.</p>
+      </section>
+
+      <section class="card ranking" aria-labelledby="titulo-top">
+        <h2 id="titulo-top">Mais vendidos</h2>
+        <ol class="top" id="top"></ol>
+      </section>
+
+      <section class="card live" id="pedidos" aria-labelledby="titulo-feed">
+        <h2 id="titulo-feed">Pedidos recentes</h2>
+        <ul class="feed" id="feed"></ul>
       </section>
     </main>
   </div>

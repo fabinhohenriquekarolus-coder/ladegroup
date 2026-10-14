@@ -4,6 +4,7 @@ import { whatsappLinkWith } from '../../data/site.js';
 
 const { kind, name } = Astro.props;
 const noun = kind === 'sistema' ? 'um sistema' : 'um site';
+const back = kind === 'sistema' ? '/portfolio.html#sistemas' : '/portfolio.html#sites';
 const link = whatsappLinkWith(
   `Olá! Vi a demonstração "${name}" no site da Lade Group e quero conversar sobre ${noun} parecido para o meu negócio.`,
 );
@@ -17,7 +18,7 @@ const link = whatsappLinkWith(
       <span class="demo-note">Marca e dados fictícios</span>
     </div>
     <div class="demo-bar-actions">
-      <a class="demo-ghost" href="/portfolio.html"><span class="demo-long">Voltar ao portfólio</span><span class="demo-short">Portfólio</span></a>
+      <a class="demo-ghost" href={back}><span class="demo-long">Voltar ao portfólio</span><span class="demo-short">Portfólio</span></a>
       <a class="demo-cta" href={link} target="_blank" rel="noopener">Quero {noun} assim</a>
     </div>
   </div>

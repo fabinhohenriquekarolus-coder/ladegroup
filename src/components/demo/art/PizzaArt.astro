@@ -1,0 +1,61 @@
+---
+const { variant = 'margherita', class: className = '' } = Astro.props;
+
+const recipes = {
+  margherita: { sauce: '#cf3b22', cheese: '#fff0cf', tops: [['mozz', 9], ['leaf', 7]] },
+  calabresa: { sauce: '#c93a1f', cheese: '#f8d88a', tops: [['slice', 11], ['onion', 7]] },
+  queijos: { sauce: '#e6b04a', cheese: '#fde7a6', tops: [['mozz', 8], ['blue', 6], ['slice-y', 6]] },
+  portuguesa: { sauce: '#c93a1f', cheese: '#f6d583', tops: [['ham', 8], ['olive', 8], ['egg', 3], ['onion', 5]] },
+  frango: { sauce: '#d6502b', cheese: '#fbe3a4', tops: [['shred', 14], ['mozz', 5]] },
+  funghi: { sauce: '#b8381f', cheese: '#f6e0a8', tops: [['mush', 8], ['leaf', 8]] },
+  chocolate: { sauce: '#4a2418', cheese: '#6b3624', tops: [['straw', 9], ['choc', 8]] },
+  banana: { sauce: '#e8c07a', cheese: '#f3d79a', tops: [['banana', 9], ['cinn', 12]] },
+  romeu: { sauce: '#ffd8d0', cheese: '#f7bfb4', tops: [['guava', 9], ['mozz', 6]] },
+};
+const recipe = recipes[variant] ?? recipes.margherita;
+
+const golden = Math.PI * (3 - Math.sqrt(5));
+const queues = recipe.tops.map(([kind, count]) => Array.from({ length: count }, () => kind));
+const kinds = [];
+while (queues.some((queue) => queue.length)) {
+  queues.forEach((queue) => {
+    if (queue.length) kinds.push(queue.shift());
+  });
+}
+const marks = kinds.map((kind, index) => {
+  const radius = Math.sqrt((index + 0.6) / kinds.length) * 60;
+  const angle = index * golden;
+  return [kind, 100 + Math.cos(angle) * radius, 100 + Math.sin(angle) * radius, (index * 47) % 180];
+});
+
+const shape = ([kind, x, y, r]) => {
+  const t = `transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${r})"`;
+  switch (kind) {
+    case 'mozz': return `<circle ${t} r="6.5" fill="#fffaf0"/>`;
+    case 'leaf': return `<ellipse ${t} rx="7.5" ry="3.4" fill="#3d7a2c"/>`;
+    case 'slice': return `<g ${t}><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g>`;
+    case 'slice-y': return `<circle ${t} r="5" fill="#f2c24d"/>`;
+    case 'blue': return `<ellipse ${t} rx="5.5" ry="4" fill="#d9e4ef"/>`;
+    case 'onion': return `<path ${t} d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/>`;
+    case 'ham': return `<rect ${t} x="-6" y="-4" width="12" height="8" rx="3" fill="#e58a94"/>`;
+    case 'olive': return `<circle ${t} r="4.2" fill="#2e2a26"/><circle ${t} r="1.4" fill="#cf3b22"/>`;
+    case 'egg': return `<g ${t}><circle r="8" fill="#fff"/><circle r="3.6" fill="#f0a919"/></g>`;
+    case 'shred': return `<path ${t} d="M-7 0q3.5-4 7 0t7 0" fill="none" stroke="#f4dba8" stroke-width="3.2" stroke-linecap="round"/>`;
+    case 'mush': return `<g ${t}><path d="M-7 1a7 6 0 0 1 14 0Z" fill="#c9a98a"/><rect x="-2" y="1" width="4" height="5" fill="#e6d2bd"/></g>`;
+    case 'straw': return `<g ${t}><path d="M0 7C-8 2-7-5 0-6c7 1 8 8 0 13Z" fill="#d6243a"/><circle cx="-2" cy="0" r=".9" fill="#ffd2d6"/><circle cx="2" cy="2" r=".9" fill="#ffd2d6"/></g>`;
+    case 'choc': return `<circle ${t} r="5" fill="#2a120b"/>`;
+    case 'banana': return `<ellipse ${t} rx="7" ry="4.6" fill="#f6d54a"/>`;
+    case 'cinn': return `<circle ${t} r="2" fill="#a2602a"/>`;
+    case 'guava': return `<rect ${t} x="-5" y="-5" width="10" height="10" rx="2" fill="#a8243a"/>`;
+    default: return '';
+  }
+};
+---
+
+<svg class={className} viewBox="0 0 200 200" aria-hidden="true">
+  <circle cx="100" cy="100" r="96" fill="#d89a4a"></circle>
+  <circle cx="100" cy="100" r="90" fill="#eab35f"></circle>
+  <circle cx="100" cy="100" r="78" fill={recipe.sauce}></circle>
+  <circle cx="100" cy="100" r="72" fill={recipe.cheese} opacity=".92"></circle>
+  <Fragment set:html={marks.map(shape).join('')} />
+</svg>

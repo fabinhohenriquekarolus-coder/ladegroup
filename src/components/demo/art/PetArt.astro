@@ -1,0 +1,39 @@
+---
+const { kind = 'dog', class: className = '' } = Astro.props;
+---
+
+{
+  kind === 'dog' ? (
+    <svg class={className} viewBox="0 0 200 200" aria-hidden="true">
+      <ellipse cx="44" cy="98" rx="24" ry="48" fill="#8a5a2b" transform="rotate(12 44 98)"></ellipse>
+      <ellipse cx="156" cy="98" rx="24" ry="48" fill="#8a5a2b" transform="rotate(-12 156 98)"></ellipse>
+      <circle cx="100" cy="104" r="62" fill="#e9b074"></circle>
+      <circle cx="124" cy="94" r="18" fill="#8a5a2b" opacity=".4"></circle>
+      <ellipse cx="100" cy="130" rx="34" ry="28" fill="#fbe3c2"></ellipse>
+      <circle cx="78" cy="96" r="7.5" fill="#2b2a33"></circle>
+      <circle cx="122" cy="96" r="7.5" fill="#2b2a33"></circle>
+      <circle cx="80.5" cy="93" r="2.4" fill="#fff"></circle>
+      <circle cx="124.5" cy="93" r="2.4" fill="#fff"></circle>
+      <path d="M92 138q8 22 16 0Z" fill="#ef7a8c"></path>
+      <ellipse cx="100" cy="116" rx="12" ry="8.5" fill="#2b2a33"></ellipse>
+      <path d="M100 124v9M86 133q14 12 28 0" fill="none" stroke="#2b2a33" stroke-width="3.5" stroke-linecap="round"></path>
+    </svg>
+  ) : (
+    <svg class={className} viewBox="0 0 200 200" aria-hidden="true">
+      <path d="M40 92 46 36l40 28Z" fill="#f0a24a"></path>
+      <path d="M160 92 154 36l-40 28Z" fill="#f0a24a"></path>
+      <path d="M52 78 54 52l22 16Z" fill="#f6b4b4"></path>
+      <path d="M148 78 146 52l-22 16Z" fill="#f6b4b4"></path>
+      <ellipse cx="100" cy="112" rx="66" ry="58" fill="#f0a24a"></ellipse>
+      <path d="M100 56v20M84 60l4 16M116 60l-4 16" stroke="#c9741f" stroke-width="5" stroke-linecap="round"></path>
+      <ellipse cx="100" cy="134" rx="30" ry="22" fill="#fde7c8"></ellipse>
+      <ellipse cx="76" cy="104" rx="10" ry="12" fill="#7ac28d"></ellipse>
+      <ellipse cx="124" cy="104" rx="10" ry="12" fill="#7ac28d"></ellipse>
+      <ellipse cx="76" cy="104" rx="3.2" ry="9" fill="#2b2a33"></ellipse>
+      <ellipse cx="124" cy="104" rx="3.2" ry="9" fill="#2b2a33"></ellipse>
+      <path d="M93 124h14l-7 8Z" fill="#e0567b"></path>
+      <path d="M100 132v6M90 140q10 6 10-2M110 140q-10 6-10-2" fill="none" stroke="#2b2a33" stroke-width="3" stroke-linecap="round"></path>
+      <path d="M62 130 30 124M62 138 32 144M138 130l32-6M138 138l30 6" stroke="#2b2a33" stroke-width="2.5" stroke-linecap="round"></path>
+    </svg>
+  )
+}

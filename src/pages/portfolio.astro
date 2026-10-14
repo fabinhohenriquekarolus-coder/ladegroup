@@ -3,18 +3,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBand from '../components/CtaBand.astro';
 import DemoCard from '../components/DemoCard.astro';
 import PageHero from '../components/PageHero.astro';
-import { systemDemos } from '../data/demos/index.js';
+import { systemDemos, siteDemos } from '../data/demos/index.js';
 ---
 
 <BaseLayout
   title="Portfólio — Lade Group"
-  description="O LaCar, sistema próprio da Lade Group em produção, e demonstrações de sistemas com dados fictícios para você ver o que podemos criar."
+  description="O LaCar, sistema próprio da Lade Group em produção, e demonstrações de sistemas e sites com marcas e dados fictícios para você ver o que podemos criar."
   path="/portfolio.html"
   current="portfolio"
 >
   <PageHero
     title="O que a gente constrói, funcionando"
-    lead="O LaCar está em produção. Os sistemas abaixo são demonstrações com dados fictícios, feitas para você ver como o seu negócio poderia ficar."
+    lead="O LaCar está em produção. Os sistemas e sites abaixo são demonstrações com marcas e dados fictícios, feitas para você ver como o seu negócio poderia ficar."
   />
 
   <section class="tight" id="lacar">
@@ -42,7 +42,19 @@ import { systemDemos } from '../data/demos/index.js';
     </div>
   </section>
 
-  <section class="tight">
+  <section class="tight" id="sites">
+    <div class="container">
+      <div class="section-head">
+        <h2>Sites exemplo</h2>
+        <p>Cada site tem identidade própria e interações reais: pedido, agendamento, sacola e cotação.</p>
+      </div>
+      <div class="grid-2">
+        {siteDemos.map((demo) => <DemoCard {...demo} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="tight section-alt">
     <div class="container">
       <div class="demo-notice">
         <h3>Sobre as demonstrações</h3>

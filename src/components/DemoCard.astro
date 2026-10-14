@@ -2,7 +2,7 @@
 import HexFrame from './HexFrame.astro';
 import Icon from './Icon.astro';
 
-const { title, text, href, icon, gradient } = Astro.props;
+const { title, text, href, icon, gradient, product } = Astro.props;
 ---
 
 <article class="demo-card">
@@ -11,6 +11,7 @@ const { title, text, href, icon, gradient } = Astro.props;
     <HexFrame filled>
       <Icon name={icon} />
     </HexFrame>
+    {product && <span class="demo-card-product">{product}</span>}
   </div>
   <div class="demo-card-body">
     <h3>{title}</h3>

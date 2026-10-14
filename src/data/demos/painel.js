@@ -1,73 +1,100 @@
+const lcg = (seed) => {
+  let state = seed;
+  return () => {
+    state = (state * 1664525 + 1013904223) % 4294967296;
+    return state / 4294967296;
+  };
+};
+
+const makeSeries = (count, total, seed) => {
+  const rand = lcg(seed);
+  const weekly = [0.9, 0.92, 0.95, 1, 1.2, 1.38, 1.12];
+  const raw = Array.from({ length: count }, (_, i) => weekly[i % 7] * (0.86 + (i / count) * 0.28) * (0.9 + rand() * 0.2));
+  const sum = raw.reduce((a, b) => a + b, 0);
+  const values = raw.map((v) => Math.round((v / sum) * total));
+  values[count - 1] += total - values.reduce((a, b) => a + b, 0);
+  return values;
+};
+
+const weekdays = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'];
+
 export const periods = {
   7: {
-    label: 'Últimos 7 dias',
-    kpis: { faturamento: 18420, pedidos: 126, ticket: 146, novos: 34 },
-    deltas: { faturamento: 8.4, pedidos: 5.0, ticket: 3.2, novos: 12.0 },
-    series: [
-      ['Seg', 2100],
-      ['Ter', 2450],
-      ['Qua', 2300],
-      ['Qui', 2650],
-      ['Sex', 3400],
-      ['Sáb', 3200],
-      ['Dom', 2320],
-    ],
-    top: [
-      ['Camiseta básica', 38],
-      ['Calça jeans', 27],
-      ['Kit de meias', 25],
-      ['Jaqueta leve', 19],
-      ['Boné', 17],
-    ],
+    label: 'últimos 7 dias',
+    total: 18420,
+    orders: 126,
+    ticket: 146,
+    customers: 34,
+    delta: 8.4,
+    labels: weekdays,
+    values: makeSeries(7, 18420, 11),
+    channels: [46, 24, 18, 12],
+    top: [38, 27, 25, 19, 17],
   },
   30: {
-    label: 'Últimos 30 dias',
-    kpis: { faturamento: 74900, pedidos: 512, ticket: 146, novos: 118 },
-    deltas: { faturamento: 6.1, pedidos: 4.2, ticket: 1.8, novos: 9.5 },
-    series: [
-      ['Sem 1', 17200],
-      ['Sem 2', 18100],
-      ['Sem 3', 19400],
-      ['Sem 4', 20200],
-    ],
-    top: [
-      ['Camiseta básica', 151],
-      ['Calça jeans', 112],
-      ['Kit de meias', 98],
-      ['Jaqueta leve', 77],
-      ['Boné', 74],
-    ],
+    label: 'últimos 30 dias',
+    total: 74900,
+    orders: 512,
+    ticket: 146,
+    customers: 118,
+    delta: 6.1,
+    labels: Array.from({ length: 30 }, (_, i) => `Dia ${i + 1}`),
+    values: makeSeries(30, 74900, 23),
+    channels: [44, 26, 18, 12],
+    top: [151, 112, 98, 77, 74],
   },
   90: {
-    label: 'Últimos 90 dias',
-    kpis: { faturamento: 231300, pedidos: 1585, ticket: 146, novos: 342 },
-    deltas: { faturamento: 11.3, pedidos: 9.7, ticket: 1.5, novos: 14.8 },
-    series: [
-      ['1º mês', 71200],
-      ['2º mês', 76800],
-      ['3º mês', 83300],
-    ],
-    top: [
-      ['Camiseta básica', 468],
-      ['Calça jeans', 351],
-      ['Kit de meias', 302],
-      ['Jaqueta leve', 244],
-      ['Boné', 220],
-    ],
+    label: 'últimos 90 dias',
+    total: 231300,
+    orders: 1585,
+    ticket: 146,
+    customers: 342,
+    delta: 11.3,
+    labels: Array.from({ length: 13 }, (_, i) => `Semana ${i + 1}`),
+    values: makeSeries(13, 231300, 37),
+    channels: [41, 28, 19, 12],
+    top: [468, 351, 302, 244, 220],
   },
 };
 
-export const kpiLabels = [
-  ['faturamento', 'Faturamento', 'money'],
-  ['pedidos', 'Pedidos', 'int'],
-  ['ticket', 'Ticket médio', 'money'],
-  ['novos', 'Clientes novos', 'int'],
+export const channels = [
+  { name: 'Loja física', color: '#2b1240' },
+  { name: 'Instagram', color: '#ff5c7a' },
+  { name: 'Site', color: '#7c4bb5' },
+  { name: 'WhatsApp', color: '#ffb199' },
 ];
 
-export const orders = [
-  { id: '#4821', client: 'Juliana M.', value: 'R$ 189,90', status: 'Enviado', tone: 'is-ok' },
-  { id: '#4820', client: 'Pedro H.', value: 'R$ 96,00', status: 'Pago', tone: 'is-ok' },
-  { id: '#4819', client: 'Camila R.', value: 'R$ 312,50', status: 'Aguardando pagamento', tone: 'is-warn' },
-  { id: '#4818', client: 'Diego S.', value: 'R$ 74,90', status: 'Enviado', tone: 'is-ok' },
-  { id: '#4817', client: 'Aline T.', value: 'R$ 158,00', status: 'Pago', tone: 'is-ok' },
+export const products = ['Camiseta básica', 'Calça jeans', 'Kit de meias', 'Jaqueta leve', 'Boné'];
+
+export const bands = ['9h', '11h', '13h', '15h', '17h', '19h', '21h'];
+
+const heatRand = lcg(91);
+const dayWeight = [0.7, 0.75, 0.8, 0.9, 1.1, 1.35, 1.0];
+const bandWeight = [0.4, 0.7, 0.8, 0.9, 1.15, 1.3, 0.7];
+
+export const heat = weekdays.map((day, d) =>
+  bands.map((band, b) => {
+    const strength = dayWeight[d] * bandWeight[b] * (0.85 + heatRand() * 0.3);
+    return { day, band, value: Math.round(strength * 1100), orders: Math.round(strength * 8) };
+  }),
+);
+
+export const goals = [
+  { id: 'receita', label: 'Faturamento do mês', current: 74900, target: 90000, money: true },
+  { id: 'pedidos', label: 'Pedidos do mês', current: 512, target: 600, money: false },
+  { id: 'clientes', label: 'Clientes novos', current: 118, target: 150, money: false },
+];
+
+export const feed = [
+  { who: 'Juliana M.', what: '2 camisetas básicas', value: 189.9, when: 'há 4 min' },
+  { who: 'Pedro H.', what: 'Kit de meias', value: 96, when: 'há 11 min' },
+  { who: 'Camila R.', what: 'Jaqueta leve e boné', value: 312.5, when: 'há 26 min' },
+  { who: 'Diego S.', what: 'Calça jeans', value: 74.9, when: 'há 41 min' },
+];
+
+export const incoming = [
+  { who: 'Aline T.', what: 'Calça jeans e camiseta', value: 158 },
+  { who: 'Marcos V.', what: 'Jaqueta leve', value: 229.9 },
+  { who: 'Renata B.', what: '3 kits de meias', value: 144 },
+  { who: 'Otávio L.', what: 'Boné', value: 59.9 },
 ];

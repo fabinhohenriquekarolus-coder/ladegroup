@@ -1,0 +1,17 @@
+---
+const { kind = 'dress', class: className = '', style } = Astro.props;
+
+const shapes = {
+  dress: `<path d="M82 22c4 14 32 14 36 0l10 4-6 62 34 138H44L78 88 72 26Z" class="g"/><path d="M78 88h44" class="ln"/><path d="M82 22c4 14 32 14 36 0" class="ln"/>`,
+  shirt: `<path d="M72 24 38 52l14 36 22-10v134h52V78l22 10 14-36-34-28c-6 14-34 14-40 0Z" class="g"/><path d="M100 40v192" class="ln"/><circle cx="106" cy="90" r="2.6" class="dot"/><circle cx="106" cy="130" r="2.6" class="dot"/><circle cx="106" cy="170" r="2.6" class="dot"/><path d="M72 24c6 14 34 14 40 0" class="ln"/>`,
+  pants: `<path d="M64 26h72l8 34-10 176h-34l-6-120-6 120H58L56 60Z" class="g"/><path d="M64 46h72" class="ln"/><path d="M100 46v70" class="ln"/>`,
+  coat: `<path d="M68 24 34 54l10 74 20-8v114h72V120l20 8 10-74-34-30-32 40Z" class="g"/><path d="M100 64v174" class="ln"/><circle cx="108" cy="110" r="3" class="dot"/><circle cx="108" cy="150" r="3" class="dot"/><circle cx="108" cy="190" r="3" class="dot"/><path d="M68 24l32 40 32-40" class="ln"/>`,
+  bag: `<path d="M74 96V72a26 26 0 0 1 52 0v24" fill="none" class="hd"/><path d="M48 96h104l10 128H38Z" class="g"/><path d="M48 124h104" class="ln"/>`,
+  scarf: `<path d="M38 70c26-22 50 22 76 0s40-22 52-10l-8 40c-12-12-26-12-44 4s-52 10-66-8Z" class="g"/><path d="M96 112l-8 108h30l-4-100Z" class="g"/><path d="M52 78c20-12 38 14 60 0" class="ln"/>`,
+};
+const markup = shapes[kind] ?? shapes.dress;
+---
+
+<svg class={className} style={style} viewBox="0 0 200 250" aria-hidden="true">
+  <Fragment set:html={markup} />
+</svg>
