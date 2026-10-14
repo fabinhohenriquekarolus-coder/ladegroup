@@ -21,10 +21,6 @@
   z-index: -1;
 }
 
-.about-story .lead + .lead {
-  margin-top: 20px;
-}
-
 .values-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

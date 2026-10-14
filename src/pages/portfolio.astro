@@ -2,61 +2,28 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBand from '../components/CtaBand.astro';
 import PageHero from '../components/PageHero.astro';
-import PortCard from '../components/PortCard.astro';
-import { demos } from '../data/portfolio.js';
 ---
 
 <BaseLayout
   title="Portfólio — Lade Group"
-  description="Sites reais que a Lade Group já colocou no ar para comércios de Joinville e região. Veja as demonstrações."
+  description="O LaCar, sistema próprio da Lade Group em produção, e demonstrações do que podemos criar para o seu negócio."
   path="/portfolio.html"
   current="portfolio"
 >
   <PageHero
-    eyebrow="Portfólio"
-    title="O que a gente já construiu"
-    lead="Um produto próprio em produção e sete sites reais feitos pra comércios de Joinville que não tinham presença online. Nada aqui é mockup — clique e veja."
+    title="O que a gente constrói, funcionando"
+    lead="O LaCar é o nosso sistema próprio, em produção."
   />
 
-  <section class="tight is-flush-bottom" id="lacar">
+  <section class="tight" id="lacar">
     <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Produto próprio</p>
-        <h2>Automação não é só discurso</h2>
-      </div>
-      <div class="product-feature">
+      <div class="product-feature is-brand">
         <span class="eyebrow-alt">Produto próprio · em produção</span>
-        <h3>LaCar</h3>
+        <h2>LaCar</h2>
         <p>
           Bot de WhatsApp + painel de gestão para lava-rápido e estética automotiva. A gente não só
           recomenda automação pros clientes — constrói e mantém a nossa própria, rodando de verdade.
         </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="tight">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Demonstrações</p>
-        <h2>Sete negócios, sete identidades diferentes</h2>
-        <p>
-          Rodamos o bairro Vila Nova (e vizinhança) em Joinville e montamos sites reais pra comércios
-          que não tinham nenhum. São demonstrações — nenhum é cliente fechado ainda — mas todos estão
-          no ar de verdade.
-        </p>
-      </div>
-      <div class="grid-2">
-        {
-          demos.map((demo) => (
-            <PortCard
-              title={demo.title}
-              text={demo.text}
-              gradient={demo.gradient}
-              href={demo.href}
-            />
-          ))
-        }
       </div>
     </div>
   </section>
