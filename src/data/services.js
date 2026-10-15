@@ -1,9 +1,4 @@
-export const coreServices = [
-  {
-    icon: 'compass',
-    title: 'Consultoria para o seu negócio',
-    text: 'Antes de construir, a gente mapeia a sua rotina, encontra onde tempo e dinheiro se perdem e entrega um plano de melhorias com prioridade, prazo e custo.',
-  },
+export const systemServices = [
   {
     icon: 'nodes',
     title: 'Sistema sob medida',
@@ -21,10 +16,22 @@ export const coreServices = [
   },
 ];
 
-export const onlineServices = [
+export const growthServices = [
+  {
+    icon: 'compass',
+    title: 'Consultoria para o seu negócio',
+    summary: 'Um olhar de fora sobre operação, atendimento e vendas, com plano de ação.',
+    text: 'A gente analisa como o seu negócio funciona, aponta onde estão os gargalos e entrega um plano com prioridades, prazos e custos. Serve para decidir melhor, com ou sem sistema novo.',
+    checklist: [
+      'Diagnóstico da operação, do atendimento e das vendas, a partir da sua rotina real.',
+      'Plano de melhorias em ordem de prioridade, com prazo e custo de cada item.',
+      'Acompanhamento da execução, na nossa mão ou na da sua equipe.',
+    ],
+  },
   {
     icon: 'browser',
     title: 'Sites e landing pages',
+    summary: 'Sites rápidos, profissionais e feitos sob medida, com WhatsApp em destaque.',
     text: 'O mesmo tipo de site que você está vendo agora: rápido, com cara profissional e feito sob medida, sem template genérico que parece com o de qualquer outro negócio.',
     checklist: [
       'Carrega rápido e funciona bem no celular, que é onde a maioria dos seus clientes vai te achar.',
@@ -35,6 +42,7 @@ export const onlineServices = [
   {
     icon: 'target',
     title: 'Tráfego pago',
+    summary: 'Google Ads e Meta Ads com garantia de resultado em 90 dias.',
     text: 'Google Ads e Meta Ads (Instagram/Facebook) configurados pro seu tipo de negócio (loja física, delivery ou serviço), mirando em quem está perto e pronto pra comprar.',
     checklist: [
       'Garantia de resultado em 90 dias, com meta e condições definidas na proposta.',
@@ -47,6 +55,7 @@ export const onlineServices = [
   {
     icon: 'pin',
     title: 'SEO e Google Meu Negócio',
+    summary: 'Perfil completo e busca local para aparecer no mapa e no Google.',
     text: 'Boa parte da busca local acontece no Google Maps antes de chegar num site. A gente organiza as duas pontas pra você aparecer nas duas.',
     checklist: [
       'Perfil do Google Meu Negócio completo: categoria certa, fotos, horário e descrição.',

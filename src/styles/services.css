@@ -2,11 +2,6 @@
   margin-bottom: 40px;
 }
 
-.services-group.is-secondary .group-title {
-  font-size: clamp(1.4rem, 1.1rem + 1.2vw, 1.9rem);
-  margin-bottom: 28px;
-}
-
 .service-row {
   --row-pad: 52px;
   display: grid;

@@ -32,6 +32,10 @@ section.tight {
   text-wrap: balance;
 }
 
+.section-head p {
+  margin-top: 14px;
+}
+
 .eyebrow {
   display: inline-flex;
   align-items: center;

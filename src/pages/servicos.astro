@@ -3,19 +3,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBand from '../components/CtaBand.astro';
 import PageHero from '../components/PageHero.astro';
 import ServiceRow from '../components/ServiceRow.astro';
-import { coreServices, onlineServices } from '../data/services.js';
+import { systemServices, growthServices } from '../data/services.js';
 ---
 
 <BaseLayout
   title="Serviços | Lade Group"
-  description="Consultoria, sistemas sob medida, gestão e controle e bot de atendimento no WhatsApp. Também sites, tráfego pago com garantia em 90 dias, Google Meu Negócio e SEO em Joinville e região."
+  description="Sistemas sob medida, gestão e controle e bot de atendimento no WhatsApp, além de consultoria, sites, tráfego pago com garantia em 90 dias, Google Meu Negócio e SEO em Joinville e região."
   path="/servicos.html"
   current="servicos"
   origin="servicos"
 >
   <PageHero
     title="Sistemas e melhorias para o seu negócio rodar melhor"
-    lead="Começamos pela rotina: o que trava, o que se repete, o que depende de planilha. Depois escolhemos o que construir."
+    lead="Começamos pela rotina: o que trava, o que se repete, o que depende de planilha. Depois escolhemos o que construir e como levar o seu negócio até quem procura."
   />
 
   <section class="tight services-group">
@@ -23,7 +23,7 @@ import { coreServices, onlineServices } from '../data/services.js';
       <h2 class="group-title">Sistemas, gestão e controle</h2>
       <div class="service-list">
         {
-          coreServices.map((service) => (
+          systemServices.map((service) => (
             <ServiceRow icon={service.icon} title={service.title}>
               {service.text}
             </ServiceRow>
@@ -33,13 +33,13 @@ import { coreServices, onlineServices } from '../data/services.js';
     </div>
   </section>
 
-  <section class="tight section-alt services-group is-secondary" id="presenca">
+  <section class="tight section-alt services-group" id="presenca">
     <div class="container">
-      <h2 class="group-title">Presença online</h2>
+      <h2 class="group-title">Consultoria, presença online e crescimento</h2>
       <div class="service-list">
         {
-          onlineServices.map((service) => (
-            <ServiceRow compact icon={service.icon} title={service.title} checklist={service.checklist}>
+          growthServices.map((service) => (
+            <ServiceRow icon={service.icon} title={service.title} checklist={service.checklist}>
               {service.text}
             </ServiceRow>
           ))
