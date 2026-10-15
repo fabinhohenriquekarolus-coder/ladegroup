@@ -1,0 +1,20 @@
+:root {
+  --bg: #f8f7f5;
+  --surface: #ffffff;
+  --ink: #16161a;
+  --ink-soft: #6b6b74;
+  --black: #0d0d0d;
+  --gold: #c9a227;
+  --gold-deep: #b8901f;
+  --gold-text: #8a6a00;
+  --green: #1f7a4d;
+  --line: #e4e4e8;
+  --line-strong: #d6d6dc;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 10px 30px -12px rgba(0, 0, 0, 0.22);
+  --radius: 8px;
+  --radius-sm: 6px;
+  --cut: 18px;
+  --font-heading: 'Montserrat Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Open Sans Variable', ui-sans-serif, system-ui, sans-serif;
+}

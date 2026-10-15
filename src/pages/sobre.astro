@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBand from '../components/CtaBand.astro';
+import HexFrame from '../components/HexFrame.astro';
+import Icon from '../components/Icon.astro';
+import Logo from '../components/Logo.astro';
+
+const values = [
+  {
+    icon: 'home',
+    title: 'Proximidade',
+    text: 'Somos de Joinville. Você fala direto no WhatsApp com quem está construindo o seu sistema, e não com um call center.',
+  },
+  {
+    icon: 'bars',
+    title: 'Transparência',
+    text: 'Você sabe o que entra primeiro, quanto custa e acompanha o andamento. Sem relatório que ninguém entende.',
+  },
+  {
+    icon: 'nodes',
+    title: 'Feito para durar',
+    text: 'Código organizado e documentado, com acompanhamento depois da entrega. O sistema cresce junto com o seu negócio.',
+  },
+];
+---
+
+<BaseLayout
+  title="Sobre | Lade Group"
+  description="A Lade Group cria sistemas para a rotina de empresas de Joinville e região e mantém o LaCar, seu próprio sistema, em produção. Conheça como a gente trabalha."
+  path="/sobre.html"
+  current="sobre"
+>
+  <section class="hero is-compact">
+    <div class="container about-hero">
+      <div>
+        <p class="eyebrow">Sobre a Lade Group</p>
+        <h1>Negócio bom não deveria depender de planilha e mensagem solta.</h1>
+        <p class="lead">
+          A Lade Group cria sistemas para a rotina de empresas de Joinville e região: atendimento no
+          WhatsApp, agenda, clientes e números do negócio num lugar só. A gente começa entendendo como
+          o seu dia funciona e constrói a partir disso.
+        </p>
+      </div>
+      <div class="about-hex-art">
+        <Logo />
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container">
+      <div class="product-feature is-brand">
+        <span class="eyebrow-alt">Nosso próprio sistema</span>
+        <h2>O LaCar roda todo dia em lava-rápidos de verdade.</h2>
+        <p>
+          Ele atende clientes no WhatsApp, agenda lavagens e organiza agenda, clientes e caixa. A gente
+          cuida dele todos os dias, com o mesmo cuidado que vai para o sistema do seu negócio.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">O que guia o trabalho</p>
+        <h2>Três coisas de que não abrimos mão</h2>
+      </div>
+      <div class="values-grid">
+        {
+          values.map((value) => (
+            <div class="card">
+              <HexFrame>
+                <Icon name={value.icon} />
+              </HexFrame>
+              <h3>{value.title}</h3>
+              <p>{value.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Vamos conversar sobre o seu negócio?"
+    text="Conta pra gente como está hoje. A gente escuta antes de propor qualquer coisa."
+  />
+</BaseLayout>

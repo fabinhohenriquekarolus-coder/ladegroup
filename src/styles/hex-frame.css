@@ -1,0 +1,45 @@
+.hex-frame {
+  --hex-size: 76px;
+  width: var(--hex-size);
+  height: calc(var(--hex-size) * 0.866);
+  clip-path: polygon(100% 50%, 75% 100%, 25% 100%, 0% 50%, 25% 0%, 75% 0%);
+  background: var(--black);
+  padding: calc(var(--hex-size) * 0.11);
+  flex-shrink: 0;
+}
+
+.hex-frame-inner {
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(100% 50%, 75% 100%, 25% 100%, 0% 50%, 25% 0%, 75% 0%);
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hex-frame-inner svg {
+  width: 30px;
+  height: 30px;
+  color: var(--black);
+}
+
+.hex-frame-inner .num {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 19px;
+  color: var(--gold-text);
+}
+
+.hex-frame.is-filled {
+  background: var(--gold);
+}
+
+.hex-frame.is-filled .hex-frame-inner {
+  background: var(--gold);
+}
+
+.hex-frame.is-filled .hex-frame-inner svg,
+.hex-frame.is-filled .hex-frame-inner .num {
+  color: var(--black);
+}

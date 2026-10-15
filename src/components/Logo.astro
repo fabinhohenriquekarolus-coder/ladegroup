@@ -1,0 +1,16 @@
+---
+const { tone = 'dark', class: className } = Astro.props;
+
+const palettes = {
+  dark: { outer: '#0D0D0D', middle: '#F8F7F5', core: '#C9A227' },
+  light: { outer: '#FFFFFF', middle: '#0D0D0D', core: '#C9A227' },
+};
+
+const { outer, middle, core } = palettes[tone];
+---
+
+<svg viewBox="0 0 56 56" class={className} aria-hidden="true">
+  <polygon class="l1" points="54,28 41,50.5 15,50.5 2,28 15,5.5 41,5.5" fill={outer} />
+  <polygon class="l2" points="48,28 38,45.3 18,45.3 8,28 18,10.7 38,10.7" fill={middle} />
+  <polygon class="l3" points="41,28 34.5,39.3 21.5,39.3 15,28 21.5,16.7 34.5,16.7" fill={core} />
+</svg>

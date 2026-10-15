@@ -1,0 +1,24 @@
+.page-hero {
+  padding: 56px 0 64px;
+  border-bottom: 1px solid var(--line);
+}
+
+.page-hero.is-short {
+  padding-bottom: 24px;
+}
+
+.page-hero.is-borderless {
+  border-bottom: none;
+}
+
+.page-hero .eyebrow {
+  margin-bottom: 16px;
+}
+
+.page-hero h1 {
+  margin-bottom: 18px;
+}
+
+.page-hero p.lead {
+  max-width: 62ch;
+}

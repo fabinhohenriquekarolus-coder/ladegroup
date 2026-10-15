@@ -1,0 +1,12 @@
+---
+import { whatsappLinkFor } from '../data/site.js';
+
+const { variant = 'primary', small = false, label = 'Falar no WhatsApp', origin } = Astro.props;
+---
+
+<a
+  class:list={['btn', `btn-${variant}`, { 'btn-sm': small }]}
+  href={whatsappLinkFor(origin)}
+  target="_blank"
+  rel="noopener">{label}</a
+>

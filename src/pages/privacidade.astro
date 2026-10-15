@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import { site, whatsappContactLink } from '../data/site.js';
+
+const items = [
+  {
+    title: 'O que este site coleta',
+    text: 'Este site não tem formulário de contato, não usa cookies e não instala nenhum script de rastreamento ou analytics. A única forma de contato é o botão do WhatsApp, que leva pra fora deste site, pra plataforma da Meta. A partir daí, a conversa segue a política de privacidade do próprio WhatsApp. As demonstrações do Portfólio têm campos de exemplo que funcionam só no seu navegador: nada do que você escolhe ou clica nelas é enviado ou guardado.',
+  },
+  {
+    title: 'O que fazemos com o que você manda no WhatsApp',
+    text: 'Usamos seu nome, número e o conteúdo da conversa só pra te responder e entender o seu negócio. Não vendemos, alugamos nem compartilhamos esse contato com terceiros.',
+  },
+  {
+    title: 'Cookies',
+    text: 'Este site não usa cookies de rastreamento, de terceiros, nem ferramentas de analytics.',
+  },
+  {
+    title: 'Seus direitos',
+    text: 'Você pode pedir pra saber o que temos sobre você, corrigir ou apagar esse dado a qualquer momento. É só chamar no WhatsApp e pedir.',
+  },
+  {
+    title: 'Mudanças nesta política',
+    text: 'Se algo mudar, por exemplo se passarmos a usar formulário ou analytics, atualizamos esta página e a data no topo.',
+  },
+];
+---
+
+<BaseLayout
+  title="Política de Privacidade | Lade Group"
+  description="Como a Lade Group trata dados de quem visita este site e entra em contato pelo WhatsApp."
+  path="/privacidade.html"
+>
+  <PageHero eyebrow="Legal" title="Política de Privacidade" lead="Última atualização: 17 de setembro de 2026." short />
+
+  <section class="tight">
+    <div class="container container-narrow legal">
+      {
+        items.map((item) => (
+          <div>
+            <h2>{item.title}</h2>
+            <p class="lead">{item.text}</p>
+          </div>
+        ))
+      }
+      <div>
+        <h2>Contato</h2>
+        <p class="lead">Dúvida sobre privacidade? Chama no WhatsApp: <a class="link-accent" href={whatsappContactLink} target="_blank" rel="noopener">{site.phoneLabel}</a>.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

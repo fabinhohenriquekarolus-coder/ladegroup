@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBand from '../components/CtaBand.astro';
+import DemoCard from '../components/DemoCard.astro';
+import PageHero from '../components/PageHero.astro';
+import { lacarDemo, systemDemos, siteDemos } from '../data/demos/index.js';
+---
+
+<BaseLayout
+  title="Portfólio | Lade Group"
+  description="Sistemas e sites criados pela Lade Group, com identidade visual, regras de negócio e telas pensadas do zero. Navegue e teste cada projeto."
+  path="/portfolio.html"
+  current="portfolio"
+>
+  <PageHero
+    title="O que a gente constrói, funcionando"
+    lead="Cada projeto foi pensado do zero: identidade visual, regras do negócio e cada tela. Navegue, clique e teste como se fosse o seu. Os projetos de demonstração usam marcas e dados fictícios."
+  />
+
+  <section class="tight" id="sistemas">
+    <div class="container">
+      <div class="section-head">
+        <h2>Sistemas que desenvolvemos</h2>
+        <p>
+          Do atendimento no WhatsApp à gestão do caixa: sistemas que organizam a rotina de quem atende,
+          vende e agenda.
+        </p>
+      </div>
+      <div class="grid-2">
+        {[lacarDemo, ...systemDemos].map((demo, index) => <DemoCard {...demo} priority={index === 0} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="tight section-alt" id="sites">
+    <div class="container">
+      <div class="section-head">
+        <h2>Sites institucionais</h2>
+        <p>
+          Sites completos para negócios que querem ser encontrados e escolhidos: apresentação,
+          serviços, avaliações, localização e a função que cada negócio precisa.
+        </p>
+      </div>
+      <div class="grid-2">
+        {siteDemos.map((demo) => <DemoCard {...demo} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container">
+      <div class="demo-notice">
+        <h3>Sobre as demonstrações</h3>
+        <p>
+          Marcas, nomes, números e dados das demonstrações são fictícios e foram criados pela Lade
+          Group apenas para mostrar o que podemos desenvolver. Qualquer semelhança com empresas ou
+          pessoas reais é coincidência.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Quer algo assim para o seu negócio?"
+    text="Conta o que o seu negócio precisa e a gente indica por onde começar."
+  />
+</BaseLayout>

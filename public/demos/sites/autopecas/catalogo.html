@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Catálogo para lojistas, Eixo Norte Autopeças | Demonstração Lade Group</title>
+    <meta name="description" content="Demonstração com marca fictícia: catálogo de autopeças para lojistas, com busca por código, filtros de categoria, linha e estoque, e cotação com desconto por volume e validação de CNPJ." />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#1b242c" />
+    <link rel="icon" type="image/svg+xml" href="../../../favicon.svg" />
+    <link rel="preload" href="fonts/roboto-condensed-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/roboto-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../comum/demo.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="js/site.js"></script>
+    <script type="module" src="js/app.js"></script>
+  </head>
+  <body>
+    <a class="demo-skip" href="#conteudo">Ir para a demonstração</a>
+    <div class="demo-bar" role="region" aria-label="Sobre esta demonstração">
+      <div class="demo-bar-inner">
+        <div class="demo-bar-id">
+          <a class="demo-bar-logo" href="../../../index.html"><svg viewBox="0 0 56 56" aria-hidden="true"><polygon points="54,28 41,50.5 15,50.5 2,28 15,5.5 41,5.5" fill="#FFFFFF"></polygon><polygon points="48,28 38,45.3 18,45.3 8,28 18,10.7 38,10.7" fill="#0D0D0D"></polygon><polygon points="41,28 34.5,39.3 21.5,39.3 15,28 21.5,16.7 34.5,16.7" fill="#C9A227"></polygon></svg><span>LADE GROUP</span></a>
+          <span class="demo-tag">Demonstração</span>
+          <span class="demo-note">Marca e dados fictícios</span>
+        </div>
+        <div class="demo-bar-actions">
+          <a class="demo-back" href="../../../portfolio.html#sites"><span class="demo-long">Voltar ao portfólio</span><span class="demo-short">Portfólio</span></a>
+          <a class="demo-cta" href="https://wa.me/5547991065421?text=Ol%C3%A1%21%20Vi%20a%20demonstra%C3%A7%C3%A3o%20%22Autope%C3%A7as%20B2B%22%20no%20site%20da%20Lade%20Group%20e%20quero%20conversar%20sobre%20um%20site%20parecido%20para%20o%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">Quero um site assim</a>
+        </div>
+      </div>
+    </div>
+    <div class="en" id="topo">
+      <header class="en-head" data-head>
+        <div class="en-head-top">
+          <div class="en-head-inner">
+            <a class="en-logo" href="index.html">
+              <svg viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M16 2 28 9v14l-12 7L4 23V9Z" fill="#ff6a00"></path>
+                <path d="M16 8v16M9 12l7-4 7 4" fill="none" stroke="#1b242c" stroke-width="3" stroke-linecap="square"></path>
+              </svg>
+              <span>Eixo Norte<small>Autopeças</small></span>
+            </a>
+            <form class="en-search" role="search" id="search-form" action="catalogo.html" method="get">
+              <label class="sr-only" for="busca">Buscar no catálogo por código, peça ou aplicação</label>
+              <input id="busca" name="q" type="search" placeholder="Código, peça ou aplicação" autocomplete="off" />
+              <button type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m15.5 15.5 5 5"></path></svg><span class="sr-only">Buscar</span></button>
+            </form>
+            <div class="en-head-actions">
+              <button type="button" class="en-ghost" data-demo-action="Nesta demonstração não há área do lojista.">Área do lojista</button>
+              <a class="en-quote-link" href="#cotacao"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 3h12v18H6z"></path><path d="M9 8h6M9 12h6M9 16h3"></path></svg><span class="en-quote-text">Cotação</span> <b id="quote-count">0</b></a>
+              <button type="button" class="en-menu-btn" aria-expanded="false" aria-controls="menu-principal" data-menu-toggle><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"></path></svg><span class="en-menu-text">Menu</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="en-head-nav" id="menu-principal">
+          <div class="en-head-inner">
+            <nav class="en-nav" aria-label="Principal">
+              <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#empresa">Empresa</a></li>
+                <li><a href="index.html#linhas">Linhas</a></li>
+                <li><a href="index.html#lojistas">Para lojistas</a></li>
+                <li><a href="catalogo.html" aria-current="page">Catálogo</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+              </ul>
+            </nav>
+            <p class="en-head-phone">Comercial <b>(00) 0000-0000</b><span>, segunda a sexta, das 7h30 às 18h</span></p>
+          </div>
+        </div>
+      </header>
+
+      <main id="conteudo">
+        <section class="en-page-head" aria-labelledby="titulo-pagina">
+          <div class="en-wrap">
+            <nav class="en-crumbs" aria-label="Você está em">
+              <ol>
+                <li><a href="index.html">Início</a></li>
+                <li><span aria-current="page">Catálogo</span></li>
+              </ol>
+            </nav>
+            <div class="en-page-head-grid">
+              <div>
+                <h1 id="titulo-pagina">Catálogo para lojistas</h1>
+                <p class="en-lead">Consulte código, aplicação e estoque. Monte a cotação com desconto por volume e envie com o CNPJ da empresa.</p>
+              </div>
+              <dl class="en-page-facts">
+                <div><dt>10 ou mais unidades</dt><dd>5% de desconto no código</dd></div>
+                <div><dt>50 ou mais unidades</dt><dd>8% de desconto no código</dd></div>
+                <div><dt>Sob encomenda</dt><dd>Chega em até 5 dias úteis</dd></div>
+              </dl>
+            </div>
+          </div>
+          <div class="en-hazard" aria-hidden="true"></div>
+        </section>
+
+        <div class="en-main" id="catalogo">
+          <div class="en-layout">
+            <section class="en-catalog" aria-labelledby="titulo-catalogo">
+              <div class="en-bar">
+                <h2 id="titulo-catalogo" tabindex="-1">Consulta de peças</h2>
+                <p class="en-count" id="count" aria-live="polite">15 itens</p>
+              </div>
+              <div class="en-filters">
+                <div class="en-field en-field-search">
+                  <label for="q">Buscar</label>
+                  <input id="q" type="search" placeholder="Código, peça ou aplicação" autocomplete="off" />
+                </div>
+                <div class="en-field">
+                  <label for="line">Linha</label>
+                  <select id="line">
+                    <option value="todas">Todas as linhas</option>
+                    <option value="leve">Linha leve</option>
+                    <option value="pesada">Linha pesada</option>
+                  </select>
+                </div>
+                <label class="en-toggle"><input type="checkbox" id="only-stock" /><span>Só com estoque</span></label>
+                <div class="en-chips-row">
+                  <span class="en-chips-label" id="rotulo-categoria">Categoria</span>
+                  <div class="en-chips" role="group" aria-labelledby="rotulo-categoria">
+                    <button type="button" data-cat="todas" aria-pressed="true">Todas</button>
+                    <button type="button" data-cat="freios" aria-pressed="false">Freios</button>
+                    <button type="button" data-cat="filtros" aria-pressed="false">Filtros</button>
+                    <button type="button" data-cat="suspensao" aria-pressed="false">Suspensão</button>
+                    <button type="button" data-cat="motor" aria-pressed="false">Motor</button>
+                    <button type="button" data-cat="eletrica" aria-pressed="false">Elétrica</button>
+                  </div>
+                </div>
+              </div>
+              <div class="en-table-wrap" role="region" aria-labelledby="titulo-catalogo" tabindex="0">
+                <table class="en-table">
+                  <caption class="sr-only">Catálogo de peças com código, aplicação, estoque e preço de tabela</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Código</th>
+                      <th scope="col">Peça</th>
+                      <th scope="col">Aplicação</th>
+                      <th scope="col">Linha</th>
+                      <th scope="col">Estoque</th>
+                      <th scope="col" class="num">Tabela</th>
+                      <th scope="col">Qtd</th>
+                      <th scope="col"><span class="sr-only">Ação</span></th>
+                    </tr>
+                  </thead>
+                  <tbody id="parts">
+                    <tr class="part" data-code="EN-1042" data-name="Pastilha de freio dianteira" data-app="Compactos e sedãs 1.0 a 1.6, 2010 a 2021" data-cat="freios" data-line="leve" data-stock="240" data-price="8990">
+                      <td data-label="Código" class="code">EN-1042</td>
+                      <td data-label="Peça"><strong>Pastilha de freio dianteira</strong></td>
+                      <td data-label="Aplicação" class="app">Compactos e sedãs 1.0 a 1.6, 2010 a 2021</td>
+                      <td data-label="Linha">Leve</td>
+                      <td data-label="Estoque"><span class="stock is-ok">240 un</span></td>
+                      <td data-label="Tabela" class="num">R$ 89,90</td>
+                      <td data-label="Qtd"><input class="qty" type="number" min="1" max="999" value="1" inputmode="numeric" aria-label="Quantidade de EN-1042" /></td>
+                      <td class="act"><button type="button" class="en-add" data-add>Cotar<span class="sr-only"> EN-1042</span></button></td>
+                    </tr>
+                    <tr class="part" data-code="EN-1055" data-name="Disco de freio ventilado 280 mm" data-app="Sedãs médios e SUVs compactos, 2012 a 2022" data-cat="freios" data-line="leve" data-stock="86" data-price="21900">
+                      <td data-label="Código" class="code">EN-1055</td>
+                      <td data-label="Peça"><strong>Disco de freio ventilado 280 mm</strong></td>
+                      <td data-label="Aplicação" class="app">Sedãs médios e SUVs compactos, 2012 a 2022</td>
+                      <td data-label="Linha">Leve</td>
+                      <td data-label="Estoque"><span class="stock is-ok">86 un</span></td>
+                      <td data-label="Tabela" class="num">R$ 219,00</td>
+                      <td data-label="Qtd"><input class="qty" type="number" min="1" max="999" value="1" inputmode="numeric" aria-label="Quantidade de EN-1055" /></td>
+                      <td class="act"><button type="button" class="en-add" data-add>Cotar<span class="sr-only"> EN-1055</span></button></td>
+                    </tr>
+                    <tr class="part" data-code="EN-1218" data-name="Lona de freio traseira" data-app="Caminhões leves e médios, eixo traseiro" data-cat="freios" data-line="pesada" data-stock="34" data-price="15450">
+                      <td data-label="Código" class="code">EN-1218</td>
+                      <td data-label="Peça"><strong>Lona de freio traseira</strong></td>
+                      <td data-label="Aplicação" class="app">Caminhões leves e médios, eixo traseiro</td>
+                      <td data-label="Linha">Pesada</td>
+                      <td data-label="Estoque"><span class="stock is-low">34 un</span></td>
+                      <td data-label="Tabela" class="num">R$ 154,50</td>
+                      <td data-label="Qtd"><input class="qty" type="number" min="1" max="999" value="1" inputmode="numeric" aria-label="Quantidade de EN-1218" /></td>
+                      <td class="act"><button type="button" class="en-add" data-add>Cotar<span class="sr-only"> EN-1218</span></button></td>
+                    </tr>
+                    <tr class="part" data-code="EN-3001" data-name="Filtro de óleo rosca M20" data-app="Motores 1.0 a 2.0 flex" data-cat="filtros" data-line="leve" data-stock="620" data-price="2790">
+                      <td data-label="Código" class="code">EN-3001</td>
+                      <td data-label="Peça"><strong>Filtro de óleo rosca M20</strong></td>
+                      <td data-label="Aplicação" class="app">Motores 1.0 a 2.0 flex</td>
+                      <td data-label="Linha">Leve</td>
+                      <td data-label="Estoque"><span class="stock is-ok">620 un</span></td>
+                      <td data-label="Tabela" class="num">R$ 27,90</td>
+                      <td data-label="Qtd"><input class="qty" type="number" min="1" max="999" value="1" inputmode="numeric" aria-label="Quantidade de EN-3001" /></td>
+                      <td class="act"><button type="button" class="en-add" data-add>Cotar<span class="sr-only"> EN-3001</span></button></td>
+                    </tr>
+                    <tr class="part" data-code="EN-3014" data-name="Filtro de ar do motor" data-app="Compactos e hatches 1.0 a 1.6" data-cat="filtros" data-line="leve" data-stock="410" data-price="3980">
+                      <td data-label="Código" class="code">EN-3014</td>
+                      <td data-label="Peça"><strong>Filtro de ar do motor</strong></td>
+                      <td data-label="Aplicação" class="app">Compactos e hatches 1.0 a 1.6</td>
+                      <td data-label="Linha">Leve</td>
+                      <td data-label="Estoque"><span class="stock is-ok">410 un</span></td>
+                      <td data-label="Tabela" class="num">R$ 39,80</td>
+                      <td data-label="Qtd"><input class="qty" type="number" min="1" max="999" value="1" inputmode="numeric" aria-label="Quantidade de EN-3014" /></td>
+                      <td class="act"><button type="button" class="en-add" data-add>Cotar<span class="sr-only"> EN-3014</span></button></td>
+                    </tr>
+                    <tr class="part" data-code="EN-3077" data-name="Filtro de combustível diesel" data-app="Utilitários e caminhões leves a diesel" data-cat="filtros" data-line="pesada" data-stock="128" data-price="6850">
+                      <td data-label="Código" class="code">EN-3077</td>
+                      <td data-label="Peça"><strong>Filtro de combustível diesel</strong></td>
+                      <td data-label="Aplicação" class="app">Utilitários e caminhões leves a diesel</td>
+                      <td data-label="Linha">Pesada</td>
+                      <td data-label="Estoque"><span class="stock is-ok">128 un</span></td>
+                      <td data-label="Tabela" class="num">R$ 68,50</td>
+                      <td data-label="Qtd"><input class="qty" type="number" min="1" max="999" value="1" inputmode="numeric" aria-label="Quantidade de EN-3077" /></td>
+                      <td class="act"><button type="button" class="en-add" data-add>Cotar<span class="sr-only"> EN-3077</span></button></td>
+                    </tr>
+                    <tr class="part" data-code="EN-4120" data-name="Amortecedor dianteiro pressurizado" data-app="Sedãs e hatches médios, 2014 a 2022" data-cat="suspensao" data-line="leve" data-stock="52" data-price="18900">
+                      <td data-label="Código" class="code">EN-4120</td>
+                      <td data-label="Peça"><strong>Amortecedor dianteiro pressurizado</strong></td>
+                      <td data-label="Aplicação" class="app">Sedãs e hatches médios, 2014 a 2022</td>
+                      <td data-label="Linha">Leve</td>
+                      <td data-label="Estoque"><span class="stock is-ok">52 un</span></td>
+                      <td data-label="Tabela" class="num">R$ 189,00</td>
+                      <td data-label="Qtd"><input class="qty" type="number" min="1" max="999" value="1" inputmode="numeric" aria-label="Quantidade de EN-4120" /></td>
+                      <td class="act"><button type="button" class="en-add" data-add>Cotar<span class="sr-only"> EN-4120</span></button></td>
+                    </tr>
+                    <tr class="part" data-code="EN-4188" data-name="Bieleta da barra estabilizadora" data-app="Compactos e hatches, eixo dianteiro" data-cat="suspensao" data-line="leve" data-stock="305" data-price="4290">
+                      <td data-label="Código" class="code">EN-4188</td>
+                      <td data-label="Peça"><strong>Bieleta da barra estabilizadora</strong></td>
+                      <td data-label="Aplicação" class="app">Compactos e hatches, eixo dianteiro</td>
+                      <td data-label="Linha">Leve</td>
+                      <td data-label="Estoque"><span class="stock is-ok">305 un</span></td>
+                      <td data-label="Tabela" class="num">R$ 42,90</td>
+                      <td data-label="Qtd"><input class="qty" type="number" min="1" max="999" value="1" inputmode="numeric" aria-label="Quantidade de EN-4188" /></td>
+                      <td class="act"><button type="button" class="en-add" data-add>Cotar<span class="sr-only"> EN-4188</span></button></td>
+                    </tr>
+                    <tr class="part" data-code="EN-4310" data-name="Pivô de suspensão reforçado" data-app="Caminhões leves e vans de carga" data-cat="suspensao" data-line="pesada" data-stock="0" data-price="12700">
+                      <td data-label="Código" class="code">EN-4310</td>
+                      <td data-label="Peça"><strong>Pivô de suspensão reforçado</strong></td>
+                      <td data-label="Aplicação" class="app">Caminhões leves e vans de carga</td>
+                      <td data-label="Linha">Pesada</td>
+                      <td data-label="Estoque"><span class="stock is-order">Sob encomenda</span></td>
+                      <td data-label="Tabela" class="num">R$ 127,00</td>
+                      <td data-label="Qtd"><input class="qty" type="number" min="1" max="999" value="1" inputmode="numeric" aria-label="Quantidade de EN-4310" /></td>
+                      <td class="act"><button type="button" class="en-add" data-add>Cotar<span class="sr-only"> EN-4310</span></button></td>
+                    </tr>
+                    <tr class="part" data-code="EN-5005" data-name="Correia dentada 118 dentes" data-app="Motores 1.0 e 1.4, 8 e 16 válvulas" data-cat="motor" data-line="leve" data-stock="175" data-price="5490">
+                      <td data-label="Código" class="code">EN-5005</td>
+                      <td data-label="Peça"><strong>Correia dentada 118 dentes</strong></td>
+                      <td data-label="Aplicação" class="app">Motores 1.0 e 1.4, 8 e 16 válvulas</td>
+                      <td data-label="Linha">Leve</td>
+                      <td data-label="Estoque"><span class="stock is-ok">175 un</span></td>
+                      <td data-label="Tabela" class="num">R$ 54,90</td>
+                      <td data-label="Qtd"><input class="qty" type="number" min="1" max="999" value="1" inputmode="numeric" aria-label="Quantidade de EN-5005" /></td>
+                      <td class="act"><button type="button" class="en-add" data-add>Cotar<span class="sr-only"> EN-5005</span></button></td>
+                    </tr>
+                    <tr class="part" data-code="EN-5042" data-name="Kit de distribuição completo" data-app="Motores 1.6 e 1.8 flex" data-cat="motor" data-line="leve" data-stock="41" data-price="34900">
+                      <td data-label="Código" class="code">EN-5042</td>
+                      <td data-label="Peça"><strong>Kit de distribuição completo</strong></td>
+                      <td data-label="Aplicação" class="app">Motores 1.6 e 1.8 flex</td>
+                      <td data-label="Linha">Leve</td>
+                      <td data-label="Estoque"><span class="stock is-low">41 un</span></td>
+                      <td data-label="Tabela" class="num">R$ 349,00</td>
+                      <td data-label="Qtd"><input class="qty" type="number" min="1" max="999" value="1" inputmode="numeric" aria-label="Quantidade de EN-5042" /></td>
+                      <td class="act"><button type="button" class="en-add" data-add>Cotar<span class="sr-only"> EN-5042</span></button></td>
+                    </tr>
+                    <tr class="part" data-code="EN-5120" data-name="Vela de ignição de iridium" data-app="Motores flex 1.0 a 2.0" data-cat="motor" data-line="leve" data-stock="890" data-price="3490">
+                      <td data-label="Código" class="code">EN-5120</td>
+                      <td data-label="Peça"><strong>Vela de ignição de iridium</strong></td>
+                      <td data-label="Aplicação" class="app">Motores flex 1.0 a 2.0</td>
+                      <td data-label="Linha">Leve</td>
+                      <td data-label="Estoque"><span class="stock is-ok">890 un</span></td>
+                      <td data-label="Tabela" class="num">R$ 34,90</td>
+                      <td data-label="Qtd"><input class="qty" type="number" min="1" max="999" value="1" inputmode="numeric" aria-label="Quantidade de EN-5120" /></td>
+                      <td class="act"><button type="button" class="en-add" data-add>Cotar<span class="sr-only"> EN-5120</span></button></td>
+                    </tr>
+                    <tr class="part" data-code="EN-6003" data-name="Bateria 60 Ah livre de manutenção" data-app="Compactos, sedãs e hatches" data-cat="eletrica" data-line="leve" data-stock="64" data-price="41900">
+                      <td data-label="Código" class="code">EN-6003</td>
+                      <td data-label="Peça"><strong>Bateria 60 Ah livre de manutenção</strong></td>
+                      <td data-label="Aplicação" class="app">Compactos, sedãs e hatches</td>
+                      <td data-label="Linha">Leve</td>
+                      <td data-label="Estoque"><span class="stock is-ok">64 un</span></td>
+                      <td data-label="Tabela" class="num">R$ 419,00</td>
+                      <td data-label="Qtd"><input class="qty" type="number" min="1" max="999" value="1" inputmode="numeric" aria-label="Quantidade de EN-6003" /></td>
+                      <td class="act"><button type="button" class="en-add" data-add>Cotar<span class="sr-only"> EN-6003</span></button></td>
+                    </tr>
+                    <tr class="part" data-code="EN-6050" data-name="Alternador 90 A reforçado" data-app="Utilitários e caminhões leves" data-cat="eletrica" data-line="pesada" data-stock="12" data-price="89900">
+                      <td data-label="Código" class="code">EN-6050</td>
+                      <td data-label="Peça"><strong>Alternador 90 A reforçado</strong></td>
+                      <td data-label="Aplicação" class="app">Utilitários e caminhões leves</td>
+                      <td data-label="Linha">Pesada</td>
+                      <td data-label="Estoque"><span class="stock is-low">12 un</span></td>
+                      <td data-label="Tabela" class="num">R$ 899,00</td>
+                      <td data-label="Qtd"><input class="qty" type="number" min="1" max="999" value="1" inputmode="numeric" aria-label="Quantidade de EN-6050" /></td>
+                      <td class="act"><button type="button" class="en-add" data-add>Cotar<span class="sr-only"> EN-6050</span></button></td>
+                    </tr>
+                    <tr class="part" data-code="EN-6102" data-name="Sensor de temperatura do motor" data-app="Motores flex 1.0 a 1.8" data-cat="eletrica" data-line="leve" data-stock="0" data-price="4790">
+                      <td data-label="Código" class="code">EN-6102</td>
+                      <td data-label="Peça"><strong>Sensor de temperatura do motor</strong></td>
+                      <td data-label="Aplicação" class="app">Motores flex 1.0 a 1.8</td>
+                      <td data-label="Linha">Leve</td>
+                      <td data-label="Estoque"><span class="stock is-order">Sob encomenda</span></td>
+                      <td data-label="Tabela" class="num">R$ 47,90</td>
+                      <td data-label="Qtd"><input class="qty" type="number" min="1" max="999" value="1" inputmode="numeric" aria-label="Quantidade de EN-6102" /></td>
+                      <td class="act"><button type="button" class="en-add" data-add>Cotar<span class="sr-only"> EN-6102</span></button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="en-empty" id="empty" hidden>Nenhuma peça encontrada. Tente outro código ou limpe os filtros.</p>
+              <p class="en-note">Desconto por volume, por código: 10 ou mais unidades, 5%. 50 ou mais, 8%. Itens sob encomenda chegam em até 5 dias úteis.</p>
+            </section>
+
+            <aside class="en-quote" id="cotacao" aria-labelledby="titulo-cotacao">
+              <h2 id="titulo-cotacao">Sua cotação</h2>
+              <p class="en-quote-empty" id="quote-empty">Nenhum item ainda. Use o botão Cotar no catálogo.</p>
+              <ul class="en-quote-lines" id="quote-lines" aria-live="polite"></ul>
+              <dl class="en-sums">
+                <div><dt>Subtotal</dt><dd id="sum-sub">R$ 0,00</dd></div>
+                <div><dt>Desconto por volume</dt><dd id="sum-disc">R$ 0,00</dd></div>
+                <div class="is-total"><dt>Total</dt><dd id="sum-total">R$ 0,00</dd></div>
+              </dl>
+              <form id="quote-form" novalidate>
+                <label for="cnpj">CNPJ da empresa</label>
+                <input id="cnpj" name="cnpj" inputmode="numeric" autocomplete="off" placeholder="00.000.000/0000-00" maxlength="18" aria-describedby="quote-error" />
+                <p class="en-error" id="quote-error" role="alert" hidden></p>
+                <button type="submit" class="en-send">Solicitar cotação</button>
+              </form>
+              <p class="en-fine-print">Nesta demonstração nada é enviado e nenhum CNPJ é guardado.</p>
+            </aside>
+          </div>
+        </div>
+
+        <section class="en-section en-paper en-help" aria-labelledby="titulo-ajuda">
+          <div class="en-wrap">
+            <h2 id="titulo-ajuda">Antes de fazer o pedido</h2>
+            <ul class="en-help-list">
+              <li>
+                <h3>Cadastro com CNPJ</h3>
+                <p>Preço de lojista, faturamento em 28 dias e entrega na rota valem para empresas com cadastro aprovado.</p>
+                <a class="en-more" href="index.html#lojistas">Como funciona o cadastro</a>
+              </li>
+              <li>
+                <h3>Prazo de entrega</h3>
+                <p>Pedidos até 11h saem na rota da tarde na área urbana. Para as cidades vizinhas, as rotas têm dias fixos.</p>
+                <a class="en-more" href="index.html#cobertura">Ver regiões atendidas</a>
+              </li>
+              <li>
+                <h3>Dúvida de aplicação</h3>
+                <p>O balcão técnico confere a peça pelo código, pela medida ou pelo chassi antes do faturamento.</p>
+                <button type="button" class="en-more" data-demo-action="Nesta demonstração o telefone é fictício e nenhuma ligação é feita.">Ligar para o balcão técnico</button>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+
+      <footer class="en-foot">
+        <div class="en-wrap en-foot-grid">
+          <div class="en-foot-brand">
+            <p class="en-foot-name">Eixo Norte Autopeças</p>
+            <p>Distribuidora de peças de reposição para oficinas, centros automotivos, frotas e lojas.</p>
+          </div>
+          <nav class="en-foot-nav" aria-label="Rodapé">
+            <div>
+              <p class="en-foot-label">Institucional</p>
+              <ul>
+                <li><a href="index.html#empresa">Empresa</a></li>
+                <li><a href="index.html#linhas">Linhas de produtos</a></li>
+                <li><a href="index.html#cobertura">Cobertura de entrega</a></li>
+                <li><a href="index.html#perguntas">Perguntas frequentes</a></li>
+              </ul>
+            </div>
+            <div>
+              <p class="en-foot-label">Para lojistas</p>
+              <ul>
+                <li><a href="index.html#lojistas">Como funciona</a></li>
+                <li><a href="catalogo.html" aria-current="page">Catálogo</a></li>
+                <li><a href="#cotacao">Cotação</a></li>
+              </ul>
+            </div>
+          </nav>
+          <div>
+            <p class="en-foot-label">Atendimento</p>
+            <p>(00) 0000-0000</p>
+            <p>Segunda a sexta, das 7h30 às 18h</p>
+            <p>Sábado, das 8h às 12h, só balcão</p>
+          </div>
+          <div>
+            <p class="en-foot-label">Centro de distribuição</p>
+            <p>Avenida Exemplo, 2300</p>
+            <p>Distrito Industrial, Cidade Exemplo</p>
+            <p>CEP 00000-000</p>
+          </div>
+        </div>
+        <p class="en-fine">Eixo Norte Autopeças é uma marca fictícia criada pela Lade Group para esta demonstração. Códigos, preços, estoques, endereço, telefones e depoimentos são exemplos.</p>
+      </footer>
+    </div>
+    <p class="demo-badge" aria-hidden="true">Demonstração</p>
+  </body>
+</html>

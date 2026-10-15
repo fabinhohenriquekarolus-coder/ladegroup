@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import { site, whatsappContactLink } from '../data/site.js';
+
+const items = [
+  {
+    title: 'Sobre este site',
+    text: 'Este é o site institucional da Lade Group, empresa de desenvolvimento de sistemas e automação com sede em Joinville-SC. Ao usar este site, você concorda com estes termos.',
+  },
+  {
+    title: 'Conteúdo e propriedade',
+    text: 'Textos, identidade visual, logotipo e o design deste site pertencem à Lade Group. Os sistemas e sites de demonstração do Portfólio foram criados pela Lade Group, com marcas, nomes e dados fictícios, apenas para ilustrar o que podemos desenvolver, e continuam sendo trabalho nosso.',
+  },
+  {
+    title: 'Sobre os projetos mostrados',
+    text: 'Os sistemas e sites marcados como "demonstração" no Portfólio são exemplos fictícios. Não representam empresas, clientes ou pessoas reais, e qualquer semelhança é coincidência. O LaCar é produto próprio da Lade Group, em produção.',
+  },
+  {
+    title: 'Resultados e garantia',
+    text: 'Tráfego pago tem garantia de resultado em 90 dias, com meta e condições definidas na proposta de cada cliente. Fora dessa garantia, o resultado de um sistema, de uma automação ou de uma ação de marketing depende de fatores fora do nosso controle, como uso no dia a dia, orçamento, concorrência e mercado. Nada neste site é promessa de resultado além do que estiver na proposta.',
+  },
+  {
+    title: 'Links externos',
+    text: 'Os links para o WhatsApp levam a uma plataforma de terceiros. Não somos responsáveis pelo conteúdo ou pelas políticas dessas plataformas.',
+  },
+  {
+    title: 'Alterações',
+    text: 'Podemos atualizar estes termos quando necessário. A data no topo desta página sempre mostra a versão mais recente.',
+  },
+  {
+    title: 'Legislação aplicável',
+    text: 'Estes termos seguem a legislação brasileira, foro da comarca de Joinville-SC.',
+  },
+];
+---
+
+<BaseLayout
+  title="Termos de Uso | Lade Group"
+  description="Termos de uso do site institucional da Lade Group."
+  path="/termos.html"
+>
+  <PageHero eyebrow="Legal" title="Termos de Uso" lead="Última atualização: 15 de outubro de 2026." short />
+
+  <section class="tight">
+    <div class="container container-narrow legal">
+      {
+        items.map((item) => (
+          <div>
+            <h2>{item.title}</h2>
+            <p class="lead">{item.text}</p>
+          </div>
+        ))
+      }
+      <div>
+        <h2>Contato</h2>
+        <p class="lead">Dúvida sobre estes termos? Chama no WhatsApp: <a class="link-accent" href={whatsappContactLink} target="_blank" rel="noopener">{site.phoneLabel}</a>.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,36 @@
+.band {
+  background: var(--black);
+  background-image: radial-gradient(680px 360px at 12% 20%, rgba(201, 162, 39, 0.14), transparent 60%);
+  color: #fff;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.band h2 {
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.band p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.band-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.band-copy {
+  max-width: 480px;
+}
+
+@media (max-width: 620px) {
+  .band-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

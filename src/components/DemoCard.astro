@@ -1,0 +1,28 @@
+---
+import { Picture } from 'astro:assets';
+
+const { title, text, href, product, cover, detail, priority = false } = Astro.props;
+const sizes = '(max-width: 860px) calc(100vw - 48px), 560px';
+---
+
+<article class="demo-card">
+  <div class="demo-card-media">
+    <Picture
+      src={cover}
+      alt=""
+      widths={[480, 720, 1080]}
+      sizes={sizes}
+      formats={['avif', 'webp']}
+      loading={priority ? 'eager' : 'lazy'}
+      fetchpriority={priority ? 'high' : undefined}
+      class="demo-card-shot"
+    />
+    <Picture src={detail} alt="" widths={[480, 720, 1080]} sizes={sizes} formats={['avif', 'webp']} loading="lazy" class="demo-card-shot is-detail" />
+    <span class="demo-card-tag">Demonstração</span>
+  </div>
+  <div class="demo-card-body">
+    <p class="demo-card-product">{product}</p>
+    <h3><a class="demo-card-link" href={href}>{title}</a></h3>
+    <p>{text}</p>
+  </div>
+</article>

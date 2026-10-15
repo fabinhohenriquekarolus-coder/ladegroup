@@ -1,0 +1,32 @@
+.reasons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.reason {
+  border-top: 2px solid var(--black);
+  padding-top: 22px;
+}
+
+.reason h3 {
+  margin-bottom: 10px;
+}
+
+.reason p {
+  font-size: 15px;
+}
+
+@media (max-width: 980px) {
+  .reasons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 620px) {
+  .reasons {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}

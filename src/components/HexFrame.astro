@@ -1,0 +1,7 @@
+---
+const { filled = false } = Astro.props;
+---
+
+<div class:list={['hex-frame', { 'is-filled': filled }]}>
+  <div class="hex-frame-inner"><slot /></div>
+</div>

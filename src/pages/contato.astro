@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import PageHero from '../components/PageHero.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { site } from '../data/site.js';
+
+const facts = [
+  {
+    icon: 'whatsapp',
+    title: site.phoneLabel,
+    text: 'WhatsApp, com resposta direta e sem formulário',
+  },
+  {
+    icon: 'pin',
+    title: 'Joinville e região',
+    text: 'Atendimento presencial e remoto',
+  },
+  {
+    icon: 'message',
+    title: 'Primeiro contato sem compromisso',
+    text: 'A gente escuta antes de propor qualquer coisa',
+  },
+];
+---
+
+<BaseLayout
+  title="Contato | Lade Group"
+  description="Fale com a Lade Group pelo WhatsApp. Sistemas sob medida, bot de atendimento e painéis de gestão para negócios de Joinville e região."
+  path="/contato.html"
+  current="contato"
+>
+  <PageHero
+    eyebrow="Contato"
+    title="Fala com a gente"
+    lead="Sem formulário, sem espera. É tudo pelo WhatsApp, direto com quem vai cuidar do seu negócio."
+    short
+    borderless
+  />
+
+  <section class="tight">
+    <div class="container">
+      <div class="contact-panel">
+        <div>
+          <h2>Manda uma mensagem agora</h2>
+          <p>
+            Conta rapidamente o que é o seu negócio e o que você precisa. A gente responde e já
+            indica por onde começar.
+          </p>
+          <p class="contact-action">
+            <WhatsAppButton />
+          </p>
+        </div>
+        <div class="contact-facts">
+          {
+            facts.map((fact) => (
+              <div class="fact">
+                <Icon name={fact.icon} />
+                <div>
+                  <strong>{fact.title}</strong>
+                  <span>{fact.text}</span>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

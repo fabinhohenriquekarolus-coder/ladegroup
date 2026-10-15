@@ -1,0 +1,28 @@
+---
+import HexFrame from './HexFrame.astro';
+import Icon from './Icon.astro';
+
+const { icon, title, checklist = [], compact = false } = Astro.props;
+---
+
+<div class:list={['service-row', { 'is-compact': compact }]}>
+  <div class="service-row-head">
+    <HexFrame><Icon name={icon} /></HexFrame>
+    <h3 class="service-title">{title}</h3>
+  </div>
+  <div>
+    <p class="lead"><slot /></p>
+    {
+      checklist.length > 0 && (
+        <ul class="service-checklist">
+          {checklist.map((item) => (
+            <li>
+              <Icon name="check" />
+              {item}
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+</div>

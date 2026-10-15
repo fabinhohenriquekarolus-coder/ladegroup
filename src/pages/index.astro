@@ -1,0 +1,209 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBand from '../components/CtaBand.astro';
+import HexFrame from '../components/HexFrame.astro';
+import Icon from '../components/Icon.astro';
+import Logo from '../components/Logo.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { systemServices, growthServices } from '../data/services.js';
+
+const steps = [
+  {
+    num: '01',
+    title: 'Conversa',
+    text: 'Entendemos a sua rotina e onde o tempo e o dinheiro se perdem.',
+    output: 'Diagnóstico da rotina',
+  },
+  {
+    num: '02',
+    title: 'Proposta',
+    text: 'Definimos o que entra primeiro, quanto custa e quando fica pronto.',
+    output: 'Escopo, prazo e valor',
+  },
+  {
+    num: '03',
+    title: 'Desenvolvimento',
+    text: 'Construímos em etapas e você acompanha cada versão.',
+    output: 'Versões para testar',
+  },
+  {
+    num: '04',
+    title: 'Entrega e evolução',
+    text: 'Colocamos no ar, ensinamos a usar e seguimos ajustando.',
+    output: 'Sistema no ar e suporte',
+  },
+];
+
+const commitments = [
+  {
+    title: 'Sob medida de verdade',
+    text: 'Cada sistema nasce da sua rotina, não de um pacote pronto adaptado à força.',
+  },
+  {
+    title: 'Prazo e valor antes de começar',
+    text: 'A proposta diz o que entra, quanto custa e quando fica pronto. Sem surpresa no meio do caminho.',
+  },
+  {
+    title: 'Você testa enquanto construímos',
+    text: 'Versões para usar antes da entrega final, com ajustes a partir do seu uso.',
+  },
+  {
+    title: 'Suporte depois da entrega',
+    text: 'O sistema segue acompanhado e evolui junto com o seu negócio.',
+  },
+  {
+    title: 'Gente de Joinville, direto no WhatsApp',
+    text: 'Você fala com quem desenvolve, sem call center e sem formulário.',
+  },
+  {
+    title: 'A gente usa o que entrega',
+    text: 'O LaCar, sistema próprio da Lade, atende lava-rápidos no dia a dia.',
+  },
+];
+---
+
+<BaseLayout
+  title="Lade Group | Sistemas sob medida e automação em Joinville"
+  description="A Lade Group desenvolve sistemas sob medida, bot de atendimento no WhatsApp e painéis de gestão, e também faz consultoria, sites, tráfego pago e Google Meu Negócio em Joinville e região."
+  path="/"
+  origin="home"
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Sistemas feitos sob medida para o seu negócio funcionar melhor.</h1>
+        <p class="lead">
+          Ainda roda em planilha e mensagem solta? Criamos o sistema certo para a sua rotina, aqui em
+          Joinville e região. Veja o que a Lade Group faz e comece pelo que mais pesa no seu dia.
+        </p>
+        <div class="hero-ctas">
+          <WhatsAppButton origin="home" />
+          <a class="btn btn-secondary" href="/servicos.html">Conhecer os serviços</a>
+        </div>
+        <div class="hero-meta">
+          <span class="dot"></span> Atendemos Joinville e região. Resposta direto no WhatsApp.
+        </div>
+      </div>
+      <div class="reticle" aria-hidden="true">
+        <Logo />
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container">
+      <div class="section-head">
+        <h2>O que fazemos pelo seu negócio</h2>
+      </div>
+      <div class="feature-list">
+        {
+          systemServices.map((item) => (
+            <div class="feature-item">
+              <HexFrame>
+                <Icon name={item.icon} />
+              </HexFrame>
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container">
+      <div class="product-feature is-brand">
+        <h2>LaCar: o nosso sistema, em produção</h2>
+        <p>
+          Bot de WhatsApp e painel de gestão para lava-rápidos e estéticas automotivas. Já roda no
+          dia a dia desses negócios.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt" id="crescimento">
+    <div class="container">
+      <div class="section-head">
+        <h2>Consultoria, presença online e crescimento</h2>
+        <p>
+          Além de construir o sistema, a gente leva o seu negócio até quem procura e ajuda a decidir o
+          que vale melhorar primeiro.
+        </p>
+      </div>
+      <div class="grid-4">
+        {
+          growthServices.map((item) => (
+            <div class="card">
+              <HexFrame>
+                <Icon name={item.icon} />
+              </HexFrame>
+              <h3>{item.title}</h3>
+              <p>{item.summary}</p>
+            </div>
+          ))
+        }
+      </div>
+      <p class="growth-action">
+        <a class="btn btn-secondary" href="/servicos.html#presenca">Ver como cada serviço funciona</a>
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>Como trabalhamos</h2>
+      </div>
+      <ol class="flow">
+        {
+          steps.map((step) => (
+            <li class="flow-step">
+              <div class="flow-node" aria-hidden="true">
+                <HexFrame filled>
+                  <span class="num">{step.num}</span>
+                </HexFrame>
+                <span class="flow-line" />
+              </div>
+              <div class="flow-body">
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+                <p class="flow-output">
+                  <span>Você recebe</span>
+                  <b>{step.output}</b>
+                </p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-head">
+        <h2>O que você pode esperar da gente</h2>
+      </div>
+      <div class="reasons">
+        {
+          commitments.map((reason) => (
+            <div class="reason">
+              <h3>{reason.title}</h3>
+              <p>{reason.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    origin="home"
+    title="Qual parte da sua rotina ainda depende de planilha?"
+    text="Conta pra gente pelo WhatsApp. A conversa é direta e sem compromisso."
+  />
+</BaseLayout>

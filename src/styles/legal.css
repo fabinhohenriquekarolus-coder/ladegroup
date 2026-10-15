@@ -1,0 +1,19 @@
+.legal {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.legal h2 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.link-accent {
+  color: var(--gold-text);
+  font-weight: 600;
+}
+
+.link-accent:hover {
+  color: var(--black);
+}

@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBand from '../components/CtaBand.astro';
+import PageHero from '../components/PageHero.astro';
+import ServiceRow from '../components/ServiceRow.astro';
+import { systemServices, growthServices } from '../data/services.js';
+---
+
+<BaseLayout
+  title="Serviços | Lade Group"
+  description="Sistemas sob medida, gestão e controle e bot de atendimento no WhatsApp, além de consultoria, sites, tráfego pago com garantia em 90 dias, Google Meu Negócio e SEO em Joinville e região."
+  path="/servicos.html"
+  current="servicos"
+  origin="servicos"
+>
+  <PageHero
+    title="Sistemas e melhorias para o seu negócio rodar melhor"
+    lead="Começamos pela rotina: o que trava, o que se repete, o que depende de planilha. Depois escolhemos o que construir e como levar o seu negócio até quem procura."
+  />
+
+  <section class="tight services-group">
+    <div class="container">
+      <h2 class="group-title">Sistemas, gestão e controle</h2>
+      <div class="service-list">
+        {
+          systemServices.map((service) => (
+            <ServiceRow icon={service.icon} title={service.title}>
+              {service.text}
+            </ServiceRow>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="tight section-alt services-group" id="presenca">
+    <div class="container">
+      <h2 class="group-title">Consultoria, presença online e crescimento</h2>
+      <div class="service-list">
+        {
+          growthServices.map((service) => (
+            <ServiceRow icon={service.icon} title={service.title} checklist={service.checklist}>
+              {service.text}
+            </ServiceRow>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    origin="servicos"
+    title="Não sabe por onde começar?"
+    text="Manda uma mensagem contando como é seu negócio hoje. A gente indica a frente certa pra começar."
+  />
+</BaseLayout>
