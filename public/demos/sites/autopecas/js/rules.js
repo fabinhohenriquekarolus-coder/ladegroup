@@ -1,6 +1,6 @@
 export const money = (cents) => (cents / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
-export const plain = (text) => text.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+export const plain = (text) => text.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
 
 export const matchesFilters = (part, { term, category, line, onlyStock }) => {
   const haystack = plain(`${part.code} ${part.name} ${part.app}`);

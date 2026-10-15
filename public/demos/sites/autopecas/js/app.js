@@ -54,7 +54,7 @@ const renderQuote = () => {
   lines.innerHTML = html`${state.entries.map((entry) => {
     const rate = discountRate(entry.qty, tiers);
     return html`<li data-code="${entry.code}"><div><b>${entry.code}</b><span>${entry.name}</span>${entry.stock === 0 ? html`<em>Sob encomenda, até 5 dias úteis</em>` : ''}${rate ? html`<em class="off">Desconto de ${rate * 100}% aplicado</em>` : ''}</div>
-      <div class="step"><button type="button" data-dec aria-label="Diminuir ${entry.code}">−</button><b>${entry.qty}<span class="sr-only"> unidades</span></b><button type="button" data-inc aria-label="Aumentar ${entry.code}">+</button></div>
+      <div class="step"><button type="button" data-dec aria-label="Diminuir ${entry.code}"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7h10" stroke="currentColor" stroke-width="2.4" fill="none"></path></svg></button><b>${entry.qty}<span class="sr-only"> unidades</span></b><button type="button" data-inc aria-label="Aumentar ${entry.code}"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7h10M7 2v10" stroke="currentColor" stroke-width="2.4" fill="none"></path></svg></button></div>
       <strong>${money(lineTotal(entry, tiers))}</strong></li>`;
   })}`;
   const summary = quoteSummary(state.entries, tiers);
