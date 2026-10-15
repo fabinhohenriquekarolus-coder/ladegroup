@@ -79,10 +79,6 @@ body {
   text-decoration: none;
 }
 
-.en p {
-  margin: 0;
-}
-
 .en :focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 2px;
@@ -401,8 +397,8 @@ body {
 }
 
 .en-hero h1 {
-  max-width: 15ch;
-  font-size: clamp(2.5rem, 1.3rem + 3.4vw, 4.4rem);
+  max-width: 17ch;
+  font-size: clamp(2.5rem, 1.4rem + 2.8vw, 4rem);
   line-height: 1;
 }
 
@@ -592,7 +588,7 @@ body {
 }
 
 .en-section-head {
-  max-width: 760px;
+  max-width: 900px;
   margin-bottom: 48px;
 }
 
@@ -985,6 +981,27 @@ body {
   height: auto;
   aspect-ratio: 1;
   margin: 0 auto;
+}
+
+.en-map-route,
+.en-map-ring,
+.en-loc-road {
+  paint-order: stroke;
+  stroke: #f3f5f7;
+  stroke-width: 6px;
+  stroke-linejoin: round;
+}
+
+.en-map-ring.is-near {
+  stroke: #ffdcc2;
+}
+
+.en-map-ring.is-mid {
+  stroke: #e1e6eb;
+}
+
+.en-loc-road {
+  stroke: #b9c2cb;
 }
 
 .en-map-route {

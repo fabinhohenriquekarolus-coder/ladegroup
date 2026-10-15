@@ -164,9 +164,12 @@ body {
 }
 
 .ml-textlink {
-  padding-bottom: 1px;
-  border-bottom: 1px solid currentColor;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.ml-textlink::after {
+  content: ' \2192';
 }
 
 .ml-textlink:hover {
@@ -1257,8 +1260,7 @@ body {
 }
 
 .ml-crumbs a {
-  padding-bottom: 1px;
-  border-bottom: 1px solid currentColor;
+  font-weight: 600;
 }
 
 .ml-crumbs a:hover {
@@ -1736,7 +1738,6 @@ body {
 .ml-line-remove {
   padding: 4px 0;
   border: 0;
-  border-bottom: 1px solid currentColor;
   background: transparent;
   color: var(--muted);
   font-size: 13px;
