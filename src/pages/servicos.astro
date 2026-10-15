@@ -3,11 +3,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBand from '../components/CtaBand.astro';
 import PageHero from '../components/PageHero.astro';
 import ServiceRow from '../components/ServiceRow.astro';
+import { coreServices, onlineServices } from '../data/services.js';
 ---
 
 <BaseLayout
   title="Serviços | Lade Group"
-  description="Sistemas sob medida, bot de atendimento no WhatsApp, painéis de gestão, sites, tráfego pago e SEO para negócios de Joinville e região."
+  description="Consultoria, sistemas sob medida, gestão e controle e bot de atendimento no WhatsApp. Também sites, tráfego pago com garantia em 90 dias, Google Meu Negócio e SEO em Joinville e região."
   path="/servicos.html"
   current="servicos"
   origin="servicos"
@@ -19,67 +20,30 @@ import ServiceRow from '../components/ServiceRow.astro';
 
   <section class="tight services-group">
     <div class="container">
-      <h2 class="group-title">Sistemas e melhorias</h2>
+      <h2 class="group-title">Sistemas, gestão e controle</h2>
       <div class="service-list">
-        <ServiceRow icon="whatsapp" title="Bot de atendimento no WhatsApp">
-          Responde na hora, qualifica o contato e passa para você só quem está pronto para fechar,
-          inclusive fora do expediente.
-        </ServiceRow>
-        <ServiceRow icon="bars" title="Painel de gestão">
-          Veja agendamentos, clientes e números do negócio num lugar só, sem depender de planilha
-          manual.
-        </ServiceRow>
-        <ServiceRow icon="nodes" title="Sistema sob medida">
-          O fluxo que é só do seu negócio, desenhado a partir da sua rotina.
-        </ServiceRow>
+        {
+          coreServices.map((service) => (
+            <ServiceRow icon={service.icon} title={service.title}>
+              {service.text}
+            </ServiceRow>
+          ))
+        }
       </div>
     </div>
   </section>
 
   <section class="tight section-alt services-group is-secondary" id="presenca">
     <div class="container">
-      <h2 class="group-title">Presença e ofertas</h2>
+      <h2 class="group-title">Presença online</h2>
       <div class="service-list">
-        <ServiceRow
-          compact
-          icon="browser"
-          title="Sites e landing pages"
-          checklist={[
-            'Carrega rápido e funciona bem no celular, que é onde a maioria dos seus clientes vai te achar.',
-            'Botão de WhatsApp em destaque: o visitante vira conversa, não só uma visita que some.',
-            'Identidade visual própria do seu negócio, não um layout reaproveitado.',
-          ]}
-        >
-          O mesmo tipo de site que você está vendo agora: rápido, com cara profissional e feito sob
-          medida, sem template genérico que parece com o de qualquer outro negócio.
-        </ServiceRow>
-        <ServiceRow
-          compact
-          icon="target"
-          title="Tráfego pago"
-          checklist={[
-            'Segmentação por bairro e cidade, pra não pagar clique de quem nunca vai chegar até você.',
-            'Campanha pensada pro seu tipo de negócio. O anúncio de um restaurante não é igual ao de uma loja.',
-            'Acompanhamento semanal, ajustando verba pro que está performando.',
-            'Otimização de campanha assistida por IA, cortando o que não está trazendo retorno.',
-          ]}
-        >
-          Google Ads e Meta Ads (Instagram/Facebook) configurados pro seu tipo de negócio (loja
-          física, delivery ou serviço), mirando em quem está perto e pronto pra comprar.
-        </ServiceRow>
-        <ServiceRow
-          compact
-          icon="pin"
-          title="SEO e Google Meu Negócio"
-          checklist={[
-            'Perfil do Google Meu Negócio completo: categoria certa, fotos, horário e descrição.',
-            'Site preparado pra busca local, com os termos que quem está perto realmente digita.',
-            'Orientação de como pedir e responder avaliação de cliente real, que pesa muito no mapa.',
-          ]}
-        >
-          Boa parte da busca local acontece no Google Maps antes de chegar num site. A gente organiza
-          as duas pontas pra você aparecer nas duas.
-        </ServiceRow>
+        {
+          onlineServices.map((service) => (
+            <ServiceRow compact icon={service.icon} title={service.title} checklist={service.checklist}>
+              {service.text}
+            </ServiceRow>
+          ))
+        }
       </div>
     </div>
   </section>

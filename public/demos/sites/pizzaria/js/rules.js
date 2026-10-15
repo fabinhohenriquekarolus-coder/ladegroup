@@ -21,3 +21,11 @@ export const cartSummary = (lines, fee) => {
 };
 
 export const sizeLabel = (size) => (size === 'grande' ? 'Grande' : size === 'media' ? 'Média' : '');
+
+export const itemsLabel = (count) => (count === 0 ? 'nenhum item' : count === 1 ? '1 item' : `${count} itens`);
+
+export const unitsLabel = (qty) => (qty === 1 ? '1 unidade' : `${qty} unidades`);
+
+const categories = { salgadas: 'Pizzas salgadas', doces: 'Pizzas doces', bebidas: 'Bebidas' };
+
+export const categoryTitle = (cat) => categories[cat] ?? '';

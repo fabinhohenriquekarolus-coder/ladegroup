@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Fornalha Vivo, pizzaria e delivery | Demonstração Lade Group</title>
-    <meta name="description" content="Demonstração com marca fictícia de um site de pizzaria e delivery com cardápio, pedido e taxa de entrega por bairro." />
+    <title>Fornalha Vivo, pizzaria a lenha | Demonstração Lade Group</title>
+    <meta name="description" content="Demonstração com marca fictícia do site institucional de uma pizzaria a lenha, com a história da casa, destaques do cardápio, entrega por bairro, avaliações, endereço e dúvidas frequentes." />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="theme-color" content="#1a1412" />
     <link rel="icon" type="image/svg+xml" href="../../../favicon.svg" />
@@ -12,7 +12,7 @@
     <link rel="preload" href="fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="../../comum/demo.css" />
     <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/site.js"></script>
   </head>
   <body>
     <a class="demo-skip" href="#conteudo">Ir para a demonstração</a>
@@ -32,273 +32,296 @@
     <div class="fv" id="topo">
       <header class="fv-top">
         <div class="fv-top-inner">
-          <a class="fv-logo" href="#topo">
-            <svg viewBox="0 0 32 32" aria-hidden="true">
-              <path d="M16 2c1.4 6 8 8.6 8 16.2A8 8 0 0 1 8 18c0-3.2 1.4-5.2 3.1-7 .6 2.4 1.9 3.5 3.3 3.8.4-5 .3-8.6 1.6-12.8Z" fill="#ff8a1f"></path>
-              <path d="M16 15c.7 2.4 4 3.6 4 7.4a4 4 0 0 1-8 0c0-1.8.9-2.8 1.8-3.6.4 1 1.2 1.4 1.7 1.5.5-2.2.2-3.7.5-5.3Z" fill="#fff4df"></path>
-            </svg>
-            <span>Fornalha Vivo</span>
-          </a>
-          <nav class="fv-nav" aria-label="Seções do site">
-          <a href="#cardapio">Cardápio</a>
-          <a href="#como">Como pedir</a>
-          <a href="#entrega">Entrega</a>
-          <a href="#contato">Endereço</a>
+          <a class="fv-logo" href="#topo"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2c1.4 6 8 8.6 8 16.2A8 8 0 0 1 8 18c0-3.2 1.4-5.2 3.1-7 .6 2.4 1.9 3.5 3.3 3.8.4-5 .3-8.6 1.6-12.8Z" fill="#ff8a1f"></path><path d="M16 15c.7 2.4 4 3.6 4 7.4a4 4 0 0 1-8 0c0-1.8.9-2.8 1.8-3.6.4 1 1.2 1.4 1.7 1.5.5-2.2.2-3.7.5-5.3Z" fill="#fff4df"></path></svg><span>Fornalha Vivo</span></a>
+          <button type="button" class="fv-menu-btn" popovertarget="menu-site"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="fv-menu-word">Menu</span></button>
+          <nav class="fv-nav" id="menu-site" popover aria-label="Principal">
+            <div class="fv-nav-head">
+              <span class="fv-nav-title">Fornalha Vivo</span>
+              <button type="button" class="fv-nav-close" popovertarget="menu-site" popovertargetaction="hide">Fechar<span class="sr-only"> menu</span></button>
+            </div>
+            <ul class="fv-nav-list">
+              <li><a href="#topo" aria-current="page">Início</a></li>
+              <li><a href="#sobre">Sobre</a></li>
+              <li><a href="cardapio.html">Cardápio</a></li>
+              <li><a href="#entrega">Entrega</a></li>
+              <li><a href="#contato">Contato</a></li>
+            </ul>
+            <p class="fv-nav-info">Terça a domingo, das 18h às 23h<br />(00) 0000-0000</p>
           </nav>
-          <a class="fv-cart-link" href="#pedido">Pedido <b id="cart-count">0</b><span id="cart-top">R$ 0,00</span></a>
+          <a class="fv-head-cta is-order" href="cardapio.html">Fazer pedido</a>
         </div>
       </header>
 
       <main id="conteudo">
-        <div class="fv-hero-wrap">
-          <section class="fv-hero">
+        <section class="fv-hero" aria-labelledby="titulo-inicio">
+          <div class="fv-hero-inner">
             <div class="fv-hero-copy">
-              <p class="fv-kicker">Pizzaria a lenha e delivery</p>
-              <h1>Massa de 48 horas, forno a lenha e na sua porta.</h1>
-              <p class="fv-lead">Ingredientes frescos, pizza saindo do forno a 400 °C e um pedido que você monta em dois minutos.</p>
+              <p class="fv-kicker">Pizzaria a lenha no Centro de Cidade Exemplo</p>
+              <h1 id="titulo-inicio">Pizza de forno a lenha, com massa de 48 horas.</h1>
+              <p class="fv-lead">Desde 2011, o forno acende às quatro da tarde e só apaga depois da última pizza. Venha ao salão ou peça em casa: a entrega é feita pela nossa equipe, em cinco bairros.</p>
               <div class="fv-actions">
-                <a class="fv-btn is-fire" href="#cardapio">Ver cardápio</a>
-                <button type="button" class="fv-btn is-line" data-demo-action="Nesta demonstração, o botão não abre uma conversa real.">Pedir pelo WhatsApp</button>
+                <a class="fv-btn is-fire" href="cardapio.html">Ver o cardápio e pedir</a>
+                <button type="button" class="fv-btn is-line" data-demo-action="Nesta demonstração, o botão não abre uma conversa real.">Chamar no WhatsApp</button>
               </div>
-              <p class="fv-from">Pizza média a partir de <strong>R$ 38,00</strong></p>
+              <ul class="fv-hero-facts">
+                <li><strong>Terça a domingo</strong> das 18h às 23h</li>
+                <li><strong>Salão e delivery</strong> 60 lugares e entrega própria</li>
+              </ul>
             </div>
             <div class="fv-hero-art">
-              <svg class="fv-hero-pizza" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="96" fill="#d89a4a"></circle><circle cx="100" cy="100" r="90" fill="#eab35f"></circle><circle cx="100" cy="100" r="78" fill="#c93a1f"></circle><circle cx="100" cy="100" r="72" fill="#f8d88a" opacity=".92"></circle><g transform="translate(111.0 100.0) rotate(0)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(86.8 112.1) rotate(47)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(102.0 77.3) rotate(94)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(116.3 121.3) rotate(141)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(70.1 94.7) rotate(8)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(128.2 82.0) rotate(55)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(90.6 135.1) rotate(102)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(82.0 65.4) rotate(149)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(139.0 114.2) rotate(16)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(59.5 116.7) rotate(63)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(119.5 58.3) rotate(110)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(114.4 146.0) rotate(157)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(56.6 74.8) rotate(24)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(150.9 88.8) rotate(71)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(68.9 144.2) rotate(118)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><g transform="translate(92.8 44.6) rotate(165)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><g transform="translate(144.1 137.1) rotate(32)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><g transform="translate(40.7 102.5) rotate(79)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g></svg>
-              <span class="fv-stamp" aria-hidden="true">Massa<br />48 h</span>
-            </div>
-          </section>
-        </div>
-
-        <div class="fv-strip" aria-hidden="true">
-          <span>Forno a lenha</span><i></i><span>Massa de longa fermentação</span><i></i><span>Entrega própria</span><i></i><span>Ingredientes frescos</span>
-        </div>
-
-        <section class="fv-menu" id="cardapio" aria-labelledby="titulo-cardapio">
-          <div class="fv-wrap">
-            <div class="fv-menu-head">
-              <h2 id="titulo-cardapio">Cardápio</h2>
-              <div class="fv-controls">
-                <div class="fv-tabs" role="group" aria-label="Categoria">
-                <button type="button" data-cat="salgadas" aria-pressed="true">Salgadas</button>
-                <button type="button" data-cat="doces" aria-pressed="false">Doces</button>
-                <button type="button" data-cat="bebidas" aria-pressed="false">Bebidas</button>
-                </div>
-                <div class="fv-sizes" id="sizes" role="group" aria-label="Tamanho da pizza">
-                <button type="button" data-size="media" aria-pressed="true">Média<small>6 fatias</small></button>
-                <button type="button" data-size="grande" aria-pressed="false">Grande<small>8 fatias</small></button>
-                </div>
-              </div>
-            </div>
-
-            <div class="fv-layout">
-              <div class="fv-dishes" id="dishes">
-            <article class="dish" data-id="margherita" data-cat="salgadas" data-name="Margherita da Casa" data-media="4400" data-grande="5600">
-              <svg class="dish-art" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="96" fill="#d89a4a"></circle><circle cx="100" cy="100" r="90" fill="#eab35f"></circle><circle cx="100" cy="100" r="78" fill="#cf3b22"></circle><circle cx="100" cy="100" r="72" fill="#fff0cf" opacity=".92"></circle><circle transform="translate(111.6 100.0) rotate(0)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(86.0 112.8) rotate(47)" rx="7.5" ry="3.4" fill="#3d7a2c"/><circle transform="translate(102.1 75.9) rotate(94)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(117.3 122.6) rotate(141)" rx="7.5" ry="3.4" fill="#3d7a2c"/><circle transform="translate(68.3 94.4) rotate(8)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(130.0 80.9) rotate(55)" rx="7.5" ry="3.4" fill="#3d7a2c"/><circle transform="translate(90.0 137.2) rotate(102)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(80.9 63.3) rotate(149)" rx="7.5" ry="3.4" fill="#3d7a2c"/><circle transform="translate(141.3 115.1) rotate(16)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(57.0 117.7) rotate(63)" rx="7.5" ry="3.4" fill="#3d7a2c"/><circle transform="translate(120.7 55.8) rotate(110)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(115.3 148.7) rotate(157)" rx="7.5" ry="3.4" fill="#3d7a2c"/><circle transform="translate(53.9 73.3) rotate(24)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(154.0 88.1) rotate(71)" rx="7.5" ry="3.4" fill="#3d7a2c"/><circle transform="translate(67.0 146.9) rotate(118)" r="6.5" fill="#fffaf0"/><circle transform="translate(92.4 41.2) rotate(165)" r="6.5" fill="#fffaf0"/></svg>
-              <div class="dish-body">
-                <h3>Margherita da Casa</h3>
-                <p>Tomate pelado, muçarela de búfala, manjericão e fio de azeite.</p>
-                <div class="dish-foot">
-                  <strong class="dish-price">R$ 44,00</strong>
-                  <button type="button" class="dish-add" data-add>Adicionar<span class="sr-only"> Margherita da Casa</span></button>
-                </div>
-              </div>
-            </article>
-            <article class="dish" data-id="calabresa" data-cat="salgadas" data-name="Calabresa Acebolada" data-media="4200" data-grande="5400">
-              <svg class="dish-art" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="96" fill="#d89a4a"></circle><circle cx="100" cy="100" r="90" fill="#eab35f"></circle><circle cx="100" cy="100" r="78" fill="#c93a1f"></circle><circle cx="100" cy="100" r="72" fill="#f8d88a" opacity=".92"></circle><g transform="translate(111.0 100.0) rotate(0)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(86.8 112.1) rotate(47)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(102.0 77.3) rotate(94)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(116.3 121.3) rotate(141)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(70.1 94.7) rotate(8)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(128.2 82.0) rotate(55)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(90.6 135.1) rotate(102)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(82.0 65.4) rotate(149)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(139.0 114.2) rotate(16)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(59.5 116.7) rotate(63)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(119.5 58.3) rotate(110)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(114.4 146.0) rotate(157)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(56.6 74.8) rotate(24)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(150.9 88.8) rotate(71)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(68.9 144.2) rotate(118)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><g transform="translate(92.8 44.6) rotate(165)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><g transform="translate(144.1 137.1) rotate(32)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><g transform="translate(40.7 102.5) rotate(79)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g></svg>
-              <div class="dish-body">
-                <h3>Calabresa Acebolada</h3>
-                <p>Calabresa curada, cebola roxa e orégano sobre muçarela.</p>
-                <div class="dish-foot">
-                  <strong class="dish-price">R$ 42,00</strong>
-                  <button type="button" class="dish-add" data-add>Adicionar<span class="sr-only"> Calabresa Acebolada</span></button>
-                </div>
-              </div>
-            </article>
-            <article class="dish" data-id="queijos" data-cat="salgadas" data-name="Quatro Queijos" data-media="4800" data-grande="6200">
-              <svg class="dish-art" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="96" fill="#d89a4a"></circle><circle cx="100" cy="100" r="90" fill="#eab35f"></circle><circle cx="100" cy="100" r="78" fill="#e6b04a"></circle><circle cx="100" cy="100" r="72" fill="#fde7a6" opacity=".92"></circle><circle transform="translate(110.4 100.0) rotate(0)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(87.5 111.5) rotate(47)" rx="5.5" ry="4" fill="#d9e4ef"/><circle transform="translate(101.9 78.4) rotate(94)" r="5" fill="#f2c24d"/><circle transform="translate(115.5 120.2) rotate(141)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(71.7 95.0) rotate(8)" rx="5.5" ry="4" fill="#d9e4ef"/><circle transform="translate(126.8 83.0) rotate(55)" r="5" fill="#f2c24d"/><circle transform="translate(91.1 133.3) rotate(102)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(83.0 67.2) rotate(149)" rx="5.5" ry="4" fill="#d9e4ef"/><circle transform="translate(137.0 113.5) rotate(16)" r="5" fill="#f2c24d"/><circle transform="translate(61.6 115.9) rotate(63)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(118.5 60.4) rotate(110)" rx="5.5" ry="4" fill="#d9e4ef"/><circle transform="translate(113.7 143.6) rotate(157)" r="5" fill="#f2c24d"/><circle transform="translate(58.8 76.1) rotate(24)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(148.3 89.4) rotate(71)" rx="5.5" ry="4" fill="#d9e4ef"/><circle transform="translate(70.5 141.9) rotate(118)" r="5" fill="#f2c24d"/><circle transform="translate(93.2 47.4) rotate(165)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(141.8 135.2) rotate(32)" rx="5.5" ry="4" fill="#d9e4ef"/><circle transform="translate(43.8 102.3) rotate(79)" r="5" fill="#f2c24d"/><circle transform="translate(141.0 59.2) rotate(126)" r="6.5" fill="#fffaf0"/><circle transform="translate(97.3 159.3) rotate(173)" r="6.5" fill="#fffaf0"/></svg>
-              <div class="dish-body">
-                <h3>Quatro Queijos</h3>
-                <p>Muçarela, provolone, gorgonzola e parmesão.</p>
-                <div class="dish-foot">
-                  <strong class="dish-price">R$ 48,00</strong>
-                  <button type="button" class="dish-add" data-add>Adicionar<span class="sr-only"> Quatro Queijos</span></button>
-                </div>
-              </div>
-            </article>
-            <article class="dish" data-id="portuguesa" data-cat="salgadas" data-name="Portuguesa do Forno" data-media="4600" data-grande="5900">
-              <svg class="dish-art" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="96" fill="#d89a4a"></circle><circle cx="100" cy="100" r="90" fill="#eab35f"></circle><circle cx="100" cy="100" r="78" fill="#c93a1f"></circle><circle cx="100" cy="100" r="72" fill="#f6d583" opacity=".92"></circle><rect transform="translate(109.5 100.0) rotate(0)" x="-6" y="-4" width="12" height="8" rx="3" fill="#e58a94"/><circle transform="translate(88.6 110.5) rotate(47)" r="4.2" fill="#2e2a26"/><circle transform="translate(88.6 110.5) rotate(47)" r="1.4" fill="#cf3b22"/><g transform="translate(101.7 80.3) rotate(94)"><circle r="8" fill="#fff"/><circle r="3.6" fill="#f0a919"/></g><path transform="translate(114.1 118.4) rotate(141)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><rect transform="translate(74.1 95.4) rotate(8)" x="-6" y="-4" width="12" height="8" rx="3" fill="#e58a94"/><circle transform="translate(124.5 84.4) rotate(55)" r="4.2" fill="#2e2a26"/><circle transform="translate(124.5 84.4) rotate(55)" r="1.4" fill="#cf3b22"/><g transform="translate(91.8 130.4) rotate(102)"><circle r="8" fill="#fff"/><circle r="3.6" fill="#f0a919"/></g><path transform="translate(84.4 70.0) rotate(149)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><rect transform="translate(133.7 112.3) rotate(16)" x="-6" y="-4" width="12" height="8" rx="3" fill="#e58a94"/><circle transform="translate(64.9 114.5) rotate(63)" r="4.2" fill="#2e2a26"/><circle transform="translate(64.9 114.5) rotate(63)" r="1.4" fill="#cf3b22"/><g transform="translate(116.9 63.9) rotate(110)"><circle r="8" fill="#fff"/><circle r="3.6" fill="#f0a919"/></g><path transform="translate(112.5 139.8) rotate(157)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><rect transform="translate(62.4 78.2) rotate(24)" x="-6" y="-4" width="12" height="8" rx="3" fill="#e58a94"/><circle transform="translate(144.1 90.3) rotate(71)" r="4.2" fill="#2e2a26"/><circle transform="translate(144.1 90.3) rotate(71)" r="1.4" fill="#cf3b22"/><path transform="translate(73.1 138.3) rotate(118)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><rect transform="translate(93.8 52.0) rotate(165)" x="-6" y="-4" width="12" height="8" rx="3" fill="#e58a94"/><circle transform="translate(138.2 132.2) rotate(32)" r="4.2" fill="#2e2a26"/><circle transform="translate(138.2 132.2) rotate(32)" r="1.4" fill="#cf3b22"/><path transform="translate(48.7 102.1) rotate(79)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><rect transform="translate(137.4 62.7) rotate(126)" x="-6" y="-4" width="12" height="8" rx="3" fill="#e58a94"/><circle transform="translate(97.5 154.2) rotate(173)" r="4.2" fill="#2e2a26"/><circle transform="translate(97.5 154.2) rotate(173)" r="1.4" fill="#cf3b22"/><rect transform="translate(64.4 57.3) rotate(40)" x="-6" y="-4" width="12" height="8" rx="3" fill="#e58a94"/><circle transform="translate(156.4 107.6) rotate(87)" r="4.2" fill="#2e2a26"/><circle transform="translate(156.4 107.6) rotate(87)" r="1.4" fill="#cf3b22"/><rect transform="translate(52.2 133.3) rotate(134)" x="-6" y="-4" width="12" height="8" rx="3" fill="#e58a94"/><circle transform="translate(113.1 42.0) rotate(1)" r="4.2" fill="#2e2a26"/><circle transform="translate(113.1 42.0) rotate(1)" r="1.4" fill="#cf3b22"/></svg>
-              <div class="dish-body">
-                <h3>Portuguesa do Forno</h3>
-                <p>Presunto, ovo, cebola, azeitona e muçarela.</p>
-                <div class="dish-foot">
-                  <strong class="dish-price">R$ 46,00</strong>
-                  <button type="button" class="dish-add" data-add>Adicionar<span class="sr-only"> Portuguesa do Forno</span></button>
-                </div>
-              </div>
-            </article>
-            <article class="dish" data-id="frango" data-cat="salgadas" data-name="Frango com Catupiry" data-media="4500" data-grande="5800">
-              <svg class="dish-art" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="96" fill="#d89a4a"></circle><circle cx="100" cy="100" r="90" fill="#eab35f"></circle><circle cx="100" cy="100" r="78" fill="#d6502b"></circle><circle cx="100" cy="100" r="72" fill="#fbe3a4" opacity=".92"></circle><path transform="translate(110.7 100.0) rotate(0)" d="M-7 0q3.5-4 7 0t7 0" fill="none" stroke="#f4dba8" stroke-width="3.2" stroke-linecap="round"/><circle transform="translate(87.2 111.8) rotate(47)" r="6.5" fill="#fffaf0"/><path transform="translate(101.9 77.9) rotate(94)" d="M-7 0q3.5-4 7 0t7 0" fill="none" stroke="#f4dba8" stroke-width="3.2" stroke-linecap="round"/><circle transform="translate(115.9 120.7) rotate(141)" r="6.5" fill="#fffaf0"/><path transform="translate(70.9 94.9) rotate(8)" d="M-7 0q3.5-4 7 0t7 0" fill="none" stroke="#f4dba8" stroke-width="3.2" stroke-linecap="round"/><circle transform="translate(127.5 82.5) rotate(55)" r="6.5" fill="#fffaf0"/><path transform="translate(90.8 134.2) rotate(102)" d="M-7 0q3.5-4 7 0t7 0" fill="none" stroke="#f4dba8" stroke-width="3.2" stroke-linecap="round"/><circle transform="translate(82.5 66.3) rotate(149)" r="6.5" fill="#fffaf0"/><path transform="translate(137.9 113.8) rotate(16)" d="M-7 0q3.5-4 7 0t7 0" fill="none" stroke="#f4dba8" stroke-width="3.2" stroke-linecap="round"/><circle transform="translate(60.6 116.3) rotate(63)" r="6.5" fill="#fffaf0"/><path transform="translate(119.0 59.4) rotate(110)" d="M-7 0q3.5-4 7 0t7 0" fill="none" stroke="#f4dba8" stroke-width="3.2" stroke-linecap="round"/><path transform="translate(114.0 144.7) rotate(157)" d="M-7 0q3.5-4 7 0t7 0" fill="none" stroke="#f4dba8" stroke-width="3.2" stroke-linecap="round"/><path transform="translate(57.7 75.5) rotate(24)" d="M-7 0q3.5-4 7 0t7 0" fill="none" stroke="#f4dba8" stroke-width="3.2" stroke-linecap="round"/><path transform="translate(149.6 89.1) rotate(71)" d="M-7 0q3.5-4 7 0t7 0" fill="none" stroke="#f4dba8" stroke-width="3.2" stroke-linecap="round"/><path transform="translate(69.8 143.0) rotate(118)" d="M-7 0q3.5-4 7 0t7 0" fill="none" stroke="#f4dba8" stroke-width="3.2" stroke-linecap="round"/><path transform="translate(93.0 46.1) rotate(165)" d="M-7 0q3.5-4 7 0t7 0" fill="none" stroke="#f4dba8" stroke-width="3.2" stroke-linecap="round"/><path transform="translate(142.9 136.1) rotate(32)" d="M-7 0q3.5-4 7 0t7 0" fill="none" stroke="#f4dba8" stroke-width="3.2" stroke-linecap="round"/><path transform="translate(42.3 102.4) rotate(79)" d="M-7 0q3.5-4 7 0t7 0" fill="none" stroke="#f4dba8" stroke-width="3.2" stroke-linecap="round"/><path transform="translate(142.1 58.1) rotate(126)" d="M-7 0q3.5-4 7 0t7 0" fill="none" stroke="#f4dba8" stroke-width="3.2" stroke-linecap="round"/></svg>
-              <div class="dish-body">
-                <h3>Frango com Catupiry</h3>
-                <p>Frango desfiado temperado e catupiry cremoso.</p>
-                <div class="dish-foot">
-                  <strong class="dish-price">R$ 45,00</strong>
-                  <button type="button" class="dish-add" data-add>Adicionar<span class="sr-only"> Frango com Catupiry</span></button>
-                </div>
-              </div>
-            </article>
-            <article class="dish" data-id="funghi" data-cat="salgadas" data-name="Funghi e Rúcula" data-media="4900" data-grande="6300">
-              <svg class="dish-art" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="96" fill="#d89a4a"></circle><circle cx="100" cy="100" r="90" fill="#eab35f"></circle><circle cx="100" cy="100" r="78" fill="#b8381f"></circle><circle cx="100" cy="100" r="72" fill="#f6e0a8" opacity=".92"></circle><g transform="translate(111.6 100.0) rotate(0)"><path d="M-7 1a7 6 0 0 1 14 0Z" fill="#c9a98a"/><rect x="-2" y="1" width="4" height="5" fill="#e6d2bd"/></g><ellipse transform="translate(86.0 112.8) rotate(47)" rx="7.5" ry="3.4" fill="#3d7a2c"/><g transform="translate(102.1 75.9) rotate(94)"><path d="M-7 1a7 6 0 0 1 14 0Z" fill="#c9a98a"/><rect x="-2" y="1" width="4" height="5" fill="#e6d2bd"/></g><ellipse transform="translate(117.3 122.6) rotate(141)" rx="7.5" ry="3.4" fill="#3d7a2c"/><g transform="translate(68.3 94.4) rotate(8)"><path d="M-7 1a7 6 0 0 1 14 0Z" fill="#c9a98a"/><rect x="-2" y="1" width="4" height="5" fill="#e6d2bd"/></g><ellipse transform="translate(130.0 80.9) rotate(55)" rx="7.5" ry="3.4" fill="#3d7a2c"/><g transform="translate(90.0 137.2) rotate(102)"><path d="M-7 1a7 6 0 0 1 14 0Z" fill="#c9a98a"/><rect x="-2" y="1" width="4" height="5" fill="#e6d2bd"/></g><ellipse transform="translate(80.9 63.3) rotate(149)" rx="7.5" ry="3.4" fill="#3d7a2c"/><g transform="translate(141.3 115.1) rotate(16)"><path d="M-7 1a7 6 0 0 1 14 0Z" fill="#c9a98a"/><rect x="-2" y="1" width="4" height="5" fill="#e6d2bd"/></g><ellipse transform="translate(57.0 117.7) rotate(63)" rx="7.5" ry="3.4" fill="#3d7a2c"/><g transform="translate(120.7 55.8) rotate(110)"><path d="M-7 1a7 6 0 0 1 14 0Z" fill="#c9a98a"/><rect x="-2" y="1" width="4" height="5" fill="#e6d2bd"/></g><ellipse transform="translate(115.3 148.7) rotate(157)" rx="7.5" ry="3.4" fill="#3d7a2c"/><g transform="translate(53.9 73.3) rotate(24)"><path d="M-7 1a7 6 0 0 1 14 0Z" fill="#c9a98a"/><rect x="-2" y="1" width="4" height="5" fill="#e6d2bd"/></g><ellipse transform="translate(154.0 88.1) rotate(71)" rx="7.5" ry="3.4" fill="#3d7a2c"/><g transform="translate(67.0 146.9) rotate(118)"><path d="M-7 1a7 6 0 0 1 14 0Z" fill="#c9a98a"/><rect x="-2" y="1" width="4" height="5" fill="#e6d2bd"/></g><ellipse transform="translate(92.4 41.2) rotate(165)" rx="7.5" ry="3.4" fill="#3d7a2c"/></svg>
-              <div class="dish-body">
-                <h3>Funghi e Rúcula</h3>
-                <p>Cogumelos salteados na manteiga, rúcula e lascas de parmesão.</p>
-                <div class="dish-foot">
-                  <strong class="dish-price">R$ 49,00</strong>
-                  <button type="button" class="dish-add" data-add>Adicionar<span class="sr-only"> Funghi e Rúcula</span></button>
-                </div>
-              </div>
-            </article>
-            <article class="dish" data-id="chocolate" data-cat="doces" data-name="Chocolate com Morango" data-media="4000" data-grande="5100" hidden>
-              <svg class="dish-art" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="96" fill="#d89a4a"></circle><circle cx="100" cy="100" r="90" fill="#eab35f"></circle><circle cx="100" cy="100" r="78" fill="#4a2418"></circle><circle cx="100" cy="100" r="72" fill="#6b3624" opacity=".92"></circle><g transform="translate(111.3 100.0) rotate(0)"><path d="M0 7C-8 2-7-5 0-6c7 1 8 8 0 13Z" fill="#d6243a"/><circle cx="-2" cy="0" r=".9" fill="#ffd2d6"/><circle cx="2" cy="2" r=".9" fill="#ffd2d6"/></g><circle transform="translate(86.4 112.4) rotate(47)" r="5" fill="#2a120b"/><g transform="translate(102.1 76.6) rotate(94)"><path d="M0 7C-8 2-7-5 0-6c7 1 8 8 0 13Z" fill="#d6243a"/><circle cx="-2" cy="0" r=".9" fill="#ffd2d6"/><circle cx="2" cy="2" r=".9" fill="#ffd2d6"/></g><circle transform="translate(116.8 121.9) rotate(141)" r="5" fill="#2a120b"/><g transform="translate(69.3 94.6) rotate(8)"><path d="M0 7C-8 2-7-5 0-6c7 1 8 8 0 13Z" fill="#d6243a"/><circle cx="-2" cy="0" r=".9" fill="#ffd2d6"/><circle cx="2" cy="2" r=".9" fill="#ffd2d6"/></g><circle transform="translate(129.1 81.5) rotate(55)" r="5" fill="#2a120b"/><g transform="translate(90.3 136.1) rotate(102)"><path d="M0 7C-8 2-7-5 0-6c7 1 8 8 0 13Z" fill="#d6243a"/><circle cx="-2" cy="0" r=".9" fill="#ffd2d6"/><circle cx="2" cy="2" r=".9" fill="#ffd2d6"/></g><circle transform="translate(81.5 64.4) rotate(149)" r="5" fill="#2a120b"/><g transform="translate(140.1 114.6) rotate(16)"><path d="M0 7C-8 2-7-5 0-6c7 1 8 8 0 13Z" fill="#d6243a"/><circle cx="-2" cy="0" r=".9" fill="#ffd2d6"/><circle cx="2" cy="2" r=".9" fill="#ffd2d6"/></g><circle transform="translate(58.3 117.2) rotate(63)" r="5" fill="#2a120b"/><g transform="translate(120.1 57.1) rotate(110)"><path d="M0 7C-8 2-7-5 0-6c7 1 8 8 0 13Z" fill="#d6243a"/><circle cx="-2" cy="0" r=".9" fill="#ffd2d6"/><circle cx="2" cy="2" r=".9" fill="#ffd2d6"/></g><circle transform="translate(114.8 147.3) rotate(157)" r="5" fill="#2a120b"/><g transform="translate(55.3 74.1) rotate(24)"><path d="M0 7C-8 2-7-5 0-6c7 1 8 8 0 13Z" fill="#d6243a"/><circle cx="-2" cy="0" r=".9" fill="#ffd2d6"/><circle cx="2" cy="2" r=".9" fill="#ffd2d6"/></g><circle transform="translate(152.4 88.5) rotate(71)" r="5" fill="#2a120b"/><g transform="translate(68.0 145.5) rotate(118)"><path d="M0 7C-8 2-7-5 0-6c7 1 8 8 0 13Z" fill="#d6243a"/><circle cx="-2" cy="0" r=".9" fill="#ffd2d6"/><circle cx="2" cy="2" r=".9" fill="#ffd2d6"/></g><circle transform="translate(92.6 43.0) rotate(165)" r="5" fill="#2a120b"/><g transform="translate(145.3 138.2) rotate(32)"><path d="M0 7C-8 2-7-5 0-6c7 1 8 8 0 13Z" fill="#d6243a"/><circle cx="-2" cy="0" r=".9" fill="#ffd2d6"/><circle cx="2" cy="2" r=".9" fill="#ffd2d6"/></g></svg>
-              <div class="dish-body">
-                <h3>Chocolate com Morango</h3>
-                <p>Ganache de chocolate meio amargo e morangos frescos.</p>
-                <div class="dish-foot">
-                  <strong class="dish-price">R$ 40,00</strong>
-                  <button type="button" class="dish-add" data-add>Adicionar<span class="sr-only"> Chocolate com Morango</span></button>
-                </div>
-              </div>
-            </article>
-            <article class="dish" data-id="banana" data-cat="doces" data-name="Banana com Canela" data-media="3800" data-grande="4800" hidden>
-              <svg class="dish-art" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="96" fill="#d89a4a"></circle><circle cx="100" cy="100" r="90" fill="#eab35f"></circle><circle cx="100" cy="100" r="78" fill="#e8c07a"></circle><circle cx="100" cy="100" r="72" fill="#f3d79a" opacity=".92"></circle><ellipse transform="translate(110.1 100.0) rotate(0)" rx="7" ry="4.6" fill="#f6d54a"/><circle transform="translate(87.8 111.2) rotate(47)" r="2" fill="#a2602a"/><ellipse transform="translate(101.8 79.0) rotate(94)" rx="7" ry="4.6" fill="#f6d54a"/><circle transform="translate(115.1 119.7) rotate(141)" r="2" fill="#a2602a"/><ellipse transform="translate(72.3 95.1) rotate(8)" rx="7" ry="4.6" fill="#f6d54a"/><circle transform="translate(126.1 83.4) rotate(55)" r="2" fill="#a2602a"/><ellipse transform="translate(91.3 132.5) rotate(102)" rx="7" ry="4.6" fill="#f6d54a"/><circle transform="translate(83.4 68.0) rotate(149)" r="2" fill="#a2602a"/><ellipse transform="translate(136.1 113.2) rotate(16)" rx="7" ry="4.6" fill="#f6d54a"/><circle transform="translate(62.5 115.5) rotate(63)" r="2" fill="#a2602a"/><ellipse transform="translate(118.1 61.4) rotate(110)" rx="7" ry="4.6" fill="#f6d54a"/><circle transform="translate(113.3 142.5) rotate(157)" r="2" fill="#a2602a"/><ellipse transform="translate(59.8 76.7) rotate(24)" rx="7" ry="4.6" fill="#f6d54a"/><circle transform="translate(147.2 89.6) rotate(71)" r="2" fill="#a2602a"/><ellipse transform="translate(71.2 140.9) rotate(118)" rx="7" ry="4.6" fill="#f6d54a"/><circle transform="translate(93.4 48.7) rotate(165)" r="2" fill="#a2602a"/><ellipse transform="translate(140.8 134.4) rotate(32)" rx="7" ry="4.6" fill="#f6d54a"/><circle transform="translate(45.1 102.3) rotate(79)" r="2" fill="#a2602a"/><circle transform="translate(140.0 60.2) rotate(126)" r="2" fill="#a2602a"/><circle transform="translate(97.3 157.9) rotate(173)" r="2" fill="#a2602a"/><circle transform="translate(61.9 54.4) rotate(40)" r="2" fill="#a2602a"/></svg>
-              <div class="dish-body">
-                <h3>Banana com Canela</h3>
-                <p>Banana caramelizada, canela e açúcar queimado.</p>
-                <div class="dish-foot">
-                  <strong class="dish-price">R$ 38,00</strong>
-                  <button type="button" class="dish-add" data-add>Adicionar<span class="sr-only"> Banana com Canela</span></button>
-                </div>
-              </div>
-            </article>
-            <article class="dish" data-id="romeu" data-cat="doces" data-name="Romeu e Julieta" data-media="3900" data-grande="4900" hidden>
-              <svg class="dish-art" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="96" fill="#d89a4a"></circle><circle cx="100" cy="100" r="90" fill="#eab35f"></circle><circle cx="100" cy="100" r="78" fill="#ffd8d0"></circle><circle cx="100" cy="100" r="72" fill="#f7bfb4" opacity=".92"></circle><rect transform="translate(112.0 100.0) rotate(0)" x="-5" y="-5" width="10" height="10" rx="2" fill="#a8243a"/><circle transform="translate(85.6 113.2) rotate(47)" r="6.5" fill="#fffaf0"/><rect transform="translate(102.2 75.1) rotate(94)" x="-5" y="-5" width="10" height="10" rx="2" fill="#a8243a"/><circle transform="translate(117.9 123.3) rotate(141)" r="6.5" fill="#fffaf0"/><rect transform="translate(67.3 94.2) rotate(8)" x="-5" y="-5" width="10" height="10" rx="2" fill="#a8243a"/><circle transform="translate(130.9 80.3) rotate(55)" r="6.5" fill="#fffaf0"/><rect transform="translate(89.7 138.4) rotate(102)" x="-5" y="-5" width="10" height="10" rx="2" fill="#a8243a"/><circle transform="translate(80.3 62.1) rotate(149)" r="6.5" fill="#fffaf0"/><rect transform="translate(142.7 115.6) rotate(16)" x="-5" y="-5" width="10" height="10" rx="2" fill="#a8243a"/><circle transform="translate(55.6 118.3) rotate(63)" r="6.5" fill="#fffaf0"/><rect transform="translate(121.4 54.3) rotate(110)" x="-5" y="-5" width="10" height="10" rx="2" fill="#a8243a"/><circle transform="translate(115.8 150.3) rotate(157)" r="6.5" fill="#fffaf0"/><rect transform="translate(52.4 72.4) rotate(24)" x="-5" y="-5" width="10" height="10" rx="2" fill="#a8243a"/><rect transform="translate(155.8 87.7) rotate(71)" x="-5" y="-5" width="10" height="10" rx="2" fill="#a8243a"/><rect transform="translate(66.0 148.4) rotate(118)" x="-5" y="-5" width="10" height="10" rx="2" fill="#a8243a"/></svg>
-              <div class="dish-body">
-                <h3>Romeu e Julieta</h3>
-                <p>Muçarela derretida e goiabada cremosa.</p>
-                <div class="dish-foot">
-                  <strong class="dish-price">R$ 39,00</strong>
-                  <button type="button" class="dish-add" data-add>Adicionar<span class="sr-only"> Romeu e Julieta</span></button>
-                </div>
-              </div>
-            </article>
-            <article class="dish" data-id="refri" data-cat="bebidas" data-name="Refrigerante 2 L" data-media="1200" data-grande="" hidden>
-              <svg class="dish-art dish-drink" viewBox="0 0 64 64" aria-hidden="true"><path d="M18 14h28l-3 38a4 4 0 0 1-4 4H25a4 4 0 0 1-4-4Z" fill="#fff4df" stroke="#1a1412" stroke-width="3" stroke-linejoin="round"></path><path d="M20 26h24" stroke="#1a1412" stroke-width="3"></path><path d="M36 14 42 4" stroke="#e0401f" stroke-width="4" stroke-linecap="round"></path></svg>
-              <div class="dish-body">
-                <h3>Refrigerante 2 L</h3>
-                <p>Cola, guaraná ou limão. Gelado.</p>
-                <div class="dish-foot">
-                  <strong class="dish-price">R$ 12,00</strong>
-                  <button type="button" class="dish-add" data-add>Adicionar<span class="sr-only"> Refrigerante 2 L</span></button>
-                </div>
-              </div>
-            </article>
-            <article class="dish" data-id="suco" data-cat="bebidas" data-name="Suco de laranja 500 ml" data-media="1000" data-grande="" hidden>
-              <svg class="dish-art dish-drink" viewBox="0 0 64 64" aria-hidden="true"><path d="M18 14h28l-3 38a4 4 0 0 1-4 4H25a4 4 0 0 1-4-4Z" fill="#fff4df" stroke="#1a1412" stroke-width="3" stroke-linejoin="round"></path><path d="M20 26h24" stroke="#1a1412" stroke-width="3"></path><path d="M36 14 42 4" stroke="#e0401f" stroke-width="4" stroke-linecap="round"></path></svg>
-              <div class="dish-body">
-                <h3>Suco de laranja 500 ml</h3>
-                <p>Espremido na hora, sem açúcar.</p>
-                <div class="dish-foot">
-                  <strong class="dish-price">R$ 10,00</strong>
-                  <button type="button" class="dish-add" data-add>Adicionar<span class="sr-only"> Suco de laranja 500 ml</span></button>
-                </div>
-              </div>
-            </article>
-            <article class="dish" data-id="agua" data-cat="bebidas" data-name="Água com gás 500 ml" data-media="600" data-grande="" hidden>
-              <svg class="dish-art dish-drink" viewBox="0 0 64 64" aria-hidden="true"><path d="M18 14h28l-3 38a4 4 0 0 1-4 4H25a4 4 0 0 1-4-4Z" fill="#fff4df" stroke="#1a1412" stroke-width="3" stroke-linejoin="round"></path><path d="M20 26h24" stroke="#1a1412" stroke-width="3"></path><path d="M36 14 42 4" stroke="#e0401f" stroke-width="4" stroke-linecap="round"></path></svg>
-              <div class="dish-body">
-                <h3>Água com gás 500 ml</h3>
-                <p>Gelada, com limão a pedido.</p>
-                <div class="dish-foot">
-                  <strong class="dish-price">R$ 6,00</strong>
-                  <button type="button" class="dish-add" data-add>Adicionar<span class="sr-only"> Água com gás 500 ml</span></button>
-                </div>
-              </div>
-            </article>
-              </div>
-
-              <aside class="fv-cart" id="pedido" aria-labelledby="titulo-pedido">
-                <h2 id="titulo-pedido">Seu pedido</h2>
-                <ul class="cart-lines" id="cart-lines" aria-live="polite"></ul>
-                <p class="cart-empty" id="cart-empty">Ainda vazio. Escolha uma pizza no cardápio.</p>
-                <label class="cart-field" for="bairro">Bairro de entrega</label>
-                <select id="bairro">
-                  <option value="">Escolha o bairro</option>
-                <option value="centro" data-fee="500" data-time="25 a 35 min">Centro</option>
-                <option value="acacias" data-fee="600" data-time="30 a 40 min">Jardim das Acácias</option>
-                <option value="serena" data-fee="700" data-time="35 a 45 min">Vila Serena</option>
-                <option value="aurora" data-fee="800" data-time="40 a 50 min">Parque Aurora</option>
-                <option value="bela" data-fee="900" data-time="45 a 55 min">Bela Vista</option>
-                </select>
-                <dl class="cart-sum">
-                  <div><dt>Subtotal</dt><dd id="subtotal">R$ 0,00</dd></div>
-                  <div><dt>Entrega</dt><dd id="fee">a calcular</dd></div>
-                  <div class="is-total"><dt>Total</dt><dd id="total">R$ 0,00</dd></div>
-                </dl>
-                <p class="cart-eta" id="eta">Escolha o bairro para ver o prazo.</p>
-                <button type="button" class="fv-btn is-fire" id="checkout" disabled>Finalizar pedido</button>
-              </aside>
+              <svg class="fv-peel" viewBox="0 0 520 600" aria-hidden="true"><path d="M60 236C60 118 150 34 260 34s200 84 200 202c0 112-74 194-170 214v150h-60V450C134 430 60 348 60 236Z" fill="#b5804b"/><path d="M260 34c110 0 200 84 200 202 0 112-74 194-170 214v150h-30Z" fill="#9c6936" opacity=".35"/><g fill="none" stroke="#8f5c2c" stroke-width="2" stroke-linecap="round" opacity=".45"><path d="M118 126c34 40 36 200 12 250"/><path d="M186 66c26 70 26 300 18 372"/><path d="M334 66c-26 70-26 300-18 372"/><path d="M402 126c-34 40-36 200-12 250"/><path d="M252 462v138M270 462v138"/></g><circle cx="268" cy="252" r="184" fill="#1a1412" opacity=".28"/><g transform="translate(70 50) scale(1.9)"><g class="fv-spin"><circle cx="100" cy="100" r="96" fill="#d89a4a"></circle><circle cx="100" cy="100" r="90" fill="#eab35f"></circle><circle cx="100" cy="100" r="78" fill="#c93a1f"></circle><circle cx="100" cy="100" r="72" fill="#f8d88a" opacity=".92"></circle><g transform="translate(111.0 100.0) rotate(0)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(86.8 112.1) rotate(47)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(102.0 77.3) rotate(94)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(116.3 121.3) rotate(141)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(70.1 94.7) rotate(8)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(128.2 82.0) rotate(55)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(90.6 135.1) rotate(102)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(82.0 65.4) rotate(149)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(139.0 114.2) rotate(16)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(59.5 116.7) rotate(63)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(119.5 58.3) rotate(110)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(114.4 146.0) rotate(157)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(56.6 74.8) rotate(24)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(150.9 88.8) rotate(71)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(68.9 144.2) rotate(118)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><g transform="translate(92.8 44.6) rotate(165)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><g transform="translate(144.1 137.1) rotate(32)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><g transform="translate(40.7 102.5) rotate(79)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g></g></g></svg>
             </div>
           </div>
         </section>
 
-        <section class="fv-how" id="como" aria-labelledby="titulo-como">
+        <section class="fv-about" id="sobre" aria-labelledby="titulo-sobre">
           <div class="fv-wrap">
-            <h2 id="titulo-como">Como pedir</h2>
-            <ol class="fv-steps">
-          <li><b aria-hidden="true">1</b><h3>Escolha</h3><p>Monte o pedido no cardápio, com tamanho e bebida.</p></li>
-          <li><b aria-hidden="true">2</b><h3>Confirme</h3><p>Informe o bairro e veja a taxa e o prazo antes de fechar.</p></li>
-          <li><b aria-hidden="true">3</b><h3>Receba</h3><p>A pizza sai do forno e vai direto para a sua porta.</p></li>
-            </ol>
+            <div class="fv-about-grid">
+              <div class="fv-about-copy">
+                <h2 id="titulo-sobre">Uma pizzaria de bairro, feita em volta do forno</h2>
+                <p>A Fornalha Vivo abriu em 2011, numa esquina do Centro, com oito mesas e um forno de tijolo montado pelos próprios donos. O salão cresceu para 60 lugares. O forno é o mesmo.</p>
+                <p>A receita da massa também não mudou: farinha, água, sal e tempo. Cada bolinha descansa 48 horas antes de ir para a pá. É esse descanso que deixa a borda leve, aerada e fácil de digerir.</p>
+              </div>
+              <div class="fv-about-art">
+                <svg class="fv-oven" viewBox="0 0 560 400" aria-hidden="true"><defs><pattern id="fv-tijolo" width="48" height="24" patternUnits="userSpaceOnUse"><rect width="48" height="24" fill="#6f210f"/><rect x="1" y="1" width="46" height="10" fill="#b23b1e"/><rect x="-23" y="13" width="46" height="10" fill="#a33419"/><rect x="25" y="13" width="46" height="10" fill="#a33419"/></pattern><linearGradient id="fv-cupula" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff4df" stop-opacity=".22"/><stop offset=".55" stop-color="#1a1412" stop-opacity="0"/><stop offset="1" stop-color="#1a1412" stop-opacity=".4"/></linearGradient><radialGradient id="fv-brasa" cx="50%" cy="88%" r="70%"><stop offset="0" stop-color="#ffd27a"/><stop offset=".4" stop-color="#ff8a1f"/><stop offset=".75" stop-color="#cf3a1b" stop-opacity=".55"/><stop offset="1" stop-color="#160f0c" stop-opacity="0"/></radialGradient></defs><rect x="252" y="70" width="56" height="84" fill="#3a2a22"/><rect x="244" y="60" width="72" height="14" fill="#2a1e19"/><path d="M80 320a200 200 0 0 1 400 0Z" fill="url(#fv-tijolo)"/><path d="M80 320a200 200 0 0 1 400 0Z" fill="url(#fv-cupula)"/><path d="M184 320v-56a96 96 0 0 1 192 0v56Z" fill="#e2c99f"/><path d="M184 264a96 96 0 0 1 192 0" fill="none" stroke="#c9ad80" stroke-width="2" stroke-dasharray="14 10"/><path d="M200 320v-56a80 80 0 0 1 160 0v56Z" fill="#160f0c"/><path d="M200 320v-56a80 80 0 0 1 160 0v56Z" fill="url(#fv-brasa)"/><path d="M281 314c-28-10-36-38-16-66 3 16 11 22 17 23-1-16 6-30 19-40-5 26 17 38 11 60-4 14-15 22-31 23Z" fill="#ff8a1f"/><path d="M283 314c-13-5-17-19-7-33 2 9 7 12 11 12 1-8 5-14 11-18-2 13 7 20 4 29-3 7-10 10-19 10Z" fill="#ffd27a"/><path d="M240 314c-12-6-14-20-4-32 1 8 5 11 8 11 0-7 3-12 8-16-2 12 6 18 3 26-2 7-8 11-15 11Z" fill="#ff8a1f" opacity=".85"/><path d="M326 314c-11-5-12-17-4-27 1 6 4 9 7 9 0-6 3-10 7-13-2 10 5 15 2 22-2 6-6 9-12 9Z" fill="#ff8a1f" opacity=".85"/><rect x="228" y="306" width="108" height="13" rx="6.5" fill="#5a3a24" transform="rotate(-6 282 312)"/><rect x="232" y="307" width="100" height="13" rx="6.5" fill="#74502f" transform="rotate(7 282 313)"/><rect x="40" y="318" width="480" height="16" fill="#5c463a"/><rect x="56" y="334" width="448" height="66" fill="#3f302a"/><path d="M56 367h448M160 334v33M292 334v33M420 334v33M104 367v33M226 367v33M358 367v33M470 367v33" stroke="#2c211c" stroke-width="3"/></svg>
+              </div>
+            </div>
+            <div class="fv-process">
+              <h3>Da massa ao forno</h3>
+              <ol class="fv-process-list">
+                <li><span class="fv-process-mark">Dia 1</span><strong>Mistura</strong><p>Farinha de trigo, água gelada, sal e pouco fermento. A massa é sovada e dividida em bolinhas.</p></li>
+                <li><span class="fv-process-mark">48 h</span><strong>Descanso</strong><p>As bolinhas passam dois dias na câmara fria. A fermentação lenta dá sabor e leveza.</p></li>
+                <li><span class="fv-process-mark">No pedido</span><strong>Abertura</strong><p>Cada disco é aberto à mão, sem rolo, para não tirar o ar da borda.</p></li>
+                <li><span class="fv-process-mark">90 s</span><strong>Forno</strong><p>A pizza assa perto de 400 °C sobre o piso de pedra e sai tostada por fora, macia por dentro.</p></li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <section class="fv-picks" id="destaques" aria-labelledby="titulo-destaques">
+          <div class="fv-wrap">
+            <div class="fv-section-head">
+              <div>
+                <h2 id="titulo-destaques">As mais pedidas da casa</h2>
+                <p>Quatro sabores que saem do forno todas as noites. No cardápio completo estão também as pizzas doces e as bebidas.</p>
+              </div>
+              <a class="fv-btn is-line" href="cardapio.html">Ver o cardápio completo</a>
+            </div>
+            <ul class="fv-picks-list">
+              <li class="fv-pick">
+                <svg class="fv-pick-art" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="96" fill="#d89a4a"></circle><circle cx="100" cy="100" r="90" fill="#eab35f"></circle><circle cx="100" cy="100" r="78" fill="#cf3b22"></circle><circle cx="100" cy="100" r="72" fill="#fff0cf" opacity=".92"></circle><circle transform="translate(111.6 100.0) rotate(0)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(86.0 112.8) rotate(47)" rx="7.5" ry="3.4" fill="#3d7a2c"/><circle transform="translate(102.1 75.9) rotate(94)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(117.3 122.6) rotate(141)" rx="7.5" ry="3.4" fill="#3d7a2c"/><circle transform="translate(68.3 94.4) rotate(8)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(130.0 80.9) rotate(55)" rx="7.5" ry="3.4" fill="#3d7a2c"/><circle transform="translate(90.0 137.2) rotate(102)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(80.9 63.3) rotate(149)" rx="7.5" ry="3.4" fill="#3d7a2c"/><circle transform="translate(141.3 115.1) rotate(16)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(57.0 117.7) rotate(63)" rx="7.5" ry="3.4" fill="#3d7a2c"/><circle transform="translate(120.7 55.8) rotate(110)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(115.3 148.7) rotate(157)" rx="7.5" ry="3.4" fill="#3d7a2c"/><circle transform="translate(53.9 73.3) rotate(24)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(154.0 88.1) rotate(71)" rx="7.5" ry="3.4" fill="#3d7a2c"/><circle transform="translate(67.0 146.9) rotate(118)" r="6.5" fill="#fffaf0"/><circle transform="translate(92.4 41.2) rotate(165)" r="6.5" fill="#fffaf0"/></svg>
+                <h3>Margherita da Casa</h3>
+                <p>Tomate pelado, muçarela de búfala, manjericão e fio de azeite.</p>
+                <dl class="fv-pick-prices">
+                  <div><dt>Média</dt><dd>R$ 44,00</dd></div>
+                  <div><dt>Grande</dt><dd>R$ 56,00</dd></div>
+                </dl>
+              </li>
+              <li class="fv-pick">
+                <svg class="fv-pick-art" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="96" fill="#d89a4a"></circle><circle cx="100" cy="100" r="90" fill="#eab35f"></circle><circle cx="100" cy="100" r="78" fill="#c93a1f"></circle><circle cx="100" cy="100" r="72" fill="#f8d88a" opacity=".92"></circle><g transform="translate(111.0 100.0) rotate(0)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(86.8 112.1) rotate(47)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(102.0 77.3) rotate(94)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(116.3 121.3) rotate(141)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(70.1 94.7) rotate(8)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(128.2 82.0) rotate(55)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(90.6 135.1) rotate(102)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(82.0 65.4) rotate(149)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(139.0 114.2) rotate(16)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(59.5 116.7) rotate(63)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(119.5 58.3) rotate(110)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(114.4 146.0) rotate(157)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(56.6 74.8) rotate(24)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><path transform="translate(150.9 88.8) rotate(71)" d="M-7 0a7 7 0 0 1 14 0" fill="none" stroke="#e8c4d8" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(68.9 144.2) rotate(118)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><g transform="translate(92.8 44.6) rotate(165)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><g transform="translate(144.1 137.1) rotate(32)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g><g transform="translate(40.7 102.5) rotate(79)"><circle r="7" fill="#a3281a"/><circle cx="-2" cy="-1.5" r="1.1" fill="#d9644f"/><circle cx="2" cy="1.5" r="1.1" fill="#d9644f"/></g></svg>
+                <h3>Calabresa Acebolada</h3>
+                <p>Calabresa curada, cebola roxa e orégano sobre muçarela.</p>
+                <dl class="fv-pick-prices">
+                  <div><dt>Média</dt><dd>R$ 42,00</dd></div>
+                  <div><dt>Grande</dt><dd>R$ 54,00</dd></div>
+                </dl>
+              </li>
+              <li class="fv-pick">
+                <svg class="fv-pick-art" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="96" fill="#d89a4a"></circle><circle cx="100" cy="100" r="90" fill="#eab35f"></circle><circle cx="100" cy="100" r="78" fill="#e6b04a"></circle><circle cx="100" cy="100" r="72" fill="#fde7a6" opacity=".92"></circle><circle transform="translate(110.4 100.0) rotate(0)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(87.5 111.5) rotate(47)" rx="5.5" ry="4" fill="#d9e4ef"/><circle transform="translate(101.9 78.4) rotate(94)" r="5" fill="#f2c24d"/><circle transform="translate(115.5 120.2) rotate(141)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(71.7 95.0) rotate(8)" rx="5.5" ry="4" fill="#d9e4ef"/><circle transform="translate(126.8 83.0) rotate(55)" r="5" fill="#f2c24d"/><circle transform="translate(91.1 133.3) rotate(102)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(83.0 67.2) rotate(149)" rx="5.5" ry="4" fill="#d9e4ef"/><circle transform="translate(137.0 113.5) rotate(16)" r="5" fill="#f2c24d"/><circle transform="translate(61.6 115.9) rotate(63)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(118.5 60.4) rotate(110)" rx="5.5" ry="4" fill="#d9e4ef"/><circle transform="translate(113.7 143.6) rotate(157)" r="5" fill="#f2c24d"/><circle transform="translate(58.8 76.1) rotate(24)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(148.3 89.4) rotate(71)" rx="5.5" ry="4" fill="#d9e4ef"/><circle transform="translate(70.5 141.9) rotate(118)" r="5" fill="#f2c24d"/><circle transform="translate(93.2 47.4) rotate(165)" r="6.5" fill="#fffaf0"/><ellipse transform="translate(141.8 135.2) rotate(32)" rx="5.5" ry="4" fill="#d9e4ef"/><circle transform="translate(43.8 102.3) rotate(79)" r="5" fill="#f2c24d"/><circle transform="translate(141.0 59.2) rotate(126)" r="6.5" fill="#fffaf0"/><circle transform="translate(97.3 159.3) rotate(173)" r="6.5" fill="#fffaf0"/></svg>
+                <h3>Quatro Queijos</h3>
+                <p>Muçarela, provolone, gorgonzola e parmesão.</p>
+                <dl class="fv-pick-prices">
+                  <div><dt>Média</dt><dd>R$ 48,00</dd></div>
+                  <div><dt>Grande</dt><dd>R$ 62,00</dd></div>
+                </dl>
+              </li>
+              <li class="fv-pick">
+                <svg class="fv-pick-art" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="96" fill="#d89a4a"></circle><circle cx="100" cy="100" r="90" fill="#eab35f"></circle><circle cx="100" cy="100" r="78" fill="#b8381f"></circle><circle cx="100" cy="100" r="72" fill="#f6e0a8" opacity=".92"></circle><g transform="translate(111.6 100.0) rotate(0)"><path d="M-7 1a7 6 0 0 1 14 0Z" fill="#c9a98a"/><rect x="-2" y="1" width="4" height="5" fill="#e6d2bd"/></g><ellipse transform="translate(86.0 112.8) rotate(47)" rx="7.5" ry="3.4" fill="#3d7a2c"/><g transform="translate(102.1 75.9) rotate(94)"><path d="M-7 1a7 6 0 0 1 14 0Z" fill="#c9a98a"/><rect x="-2" y="1" width="4" height="5" fill="#e6d2bd"/></g><ellipse transform="translate(117.3 122.6) rotate(141)" rx="7.5" ry="3.4" fill="#3d7a2c"/><g transform="translate(68.3 94.4) rotate(8)"><path d="M-7 1a7 6 0 0 1 14 0Z" fill="#c9a98a"/><rect x="-2" y="1" width="4" height="5" fill="#e6d2bd"/></g><ellipse transform="translate(130.0 80.9) rotate(55)" rx="7.5" ry="3.4" fill="#3d7a2c"/><g transform="translate(90.0 137.2) rotate(102)"><path d="M-7 1a7 6 0 0 1 14 0Z" fill="#c9a98a"/><rect x="-2" y="1" width="4" height="5" fill="#e6d2bd"/></g><ellipse transform="translate(80.9 63.3) rotate(149)" rx="7.5" ry="3.4" fill="#3d7a2c"/><g transform="translate(141.3 115.1) rotate(16)"><path d="M-7 1a7 6 0 0 1 14 0Z" fill="#c9a98a"/><rect x="-2" y="1" width="4" height="5" fill="#e6d2bd"/></g><ellipse transform="translate(57.0 117.7) rotate(63)" rx="7.5" ry="3.4" fill="#3d7a2c"/><g transform="translate(120.7 55.8) rotate(110)"><path d="M-7 1a7 6 0 0 1 14 0Z" fill="#c9a98a"/><rect x="-2" y="1" width="4" height="5" fill="#e6d2bd"/></g><ellipse transform="translate(115.3 148.7) rotate(157)" rx="7.5" ry="3.4" fill="#3d7a2c"/><g transform="translate(53.9 73.3) rotate(24)"><path d="M-7 1a7 6 0 0 1 14 0Z" fill="#c9a98a"/><rect x="-2" y="1" width="4" height="5" fill="#e6d2bd"/></g><ellipse transform="translate(154.0 88.1) rotate(71)" rx="7.5" ry="3.4" fill="#3d7a2c"/><g transform="translate(67.0 146.9) rotate(118)"><path d="M-7 1a7 6 0 0 1 14 0Z" fill="#c9a98a"/><rect x="-2" y="1" width="4" height="5" fill="#e6d2bd"/></g><ellipse transform="translate(92.4 41.2) rotate(165)" rx="7.5" ry="3.4" fill="#3d7a2c"/></svg>
+                <h3>Funghi e Rúcula</h3>
+                <p>Cogumelos salteados na manteiga, rúcula e lascas de parmesão.</p>
+                <dl class="fv-pick-prices">
+                  <div><dt>Média</dt><dd>R$ 49,00</dd></div>
+                  <div><dt>Grande</dt><dd>R$ 63,00</dd></div>
+                </dl>
+              </li>
+            </ul>
           </div>
         </section>
 
         <section class="fv-delivery" id="entrega" aria-labelledby="titulo-entrega">
           <div class="fv-wrap fv-delivery-grid">
-            <div>
-              <h2 id="titulo-entrega">Onde entregamos</h2>
-              <p>Taxa e prazo por bairro. Pedidos feitos até 22h30 chegam quentes.</p>
+            <div class="fv-delivery-copy">
+              <h2 id="titulo-entrega">Como funciona a entrega</h2>
+              <p>Quem leva a pizza é da nossa equipe, em bolsa térmica, para os cinco bairros da tabela. Recebemos pedidos de terça a domingo, das 18h às 22h30.</p>
+              <ol class="fv-steps">
+                <li><h3>Monte o pedido</h3><p>Escolha os sabores e o tamanho no cardápio.</p></li>
+                <li><h3>Informe o bairro</h3><p>A taxa e o prazo aparecem antes de você finalizar.</p></li>
+                <li><h3>Receba e pague</h3><p>Pix, cartão ou dinheiro, direto com o entregador.</p></li>
+              </ol>
+              <a class="fv-btn is-fire" href="cardapio.html">Montar meu pedido</a>
             </div>
-            <table class="fv-table">
-              <caption class="sr-only">Taxa e prazo de entrega por bairro</caption>
-              <thead><tr><th scope="col">Bairro</th><th scope="col">Taxa</th><th scope="col">Prazo</th></tr></thead>
-              <tbody>
-              <tr><th scope="row">Centro</th><td>R$ 5,00</td><td>25 a 35 min</td></tr>
-              <tr><th scope="row">Jardim das Acácias</th><td>R$ 6,00</td><td>30 a 40 min</td></tr>
-              <tr><th scope="row">Vila Serena</th><td>R$ 7,00</td><td>35 a 45 min</td></tr>
-              <tr><th scope="row">Parque Aurora</th><td>R$ 8,00</td><td>40 a 50 min</td></tr>
-              <tr><th scope="row">Bela Vista</th><td>R$ 9,00</td><td>45 a 55 min</td></tr>
-              </tbody>
-            </table>
+            <div class="fv-table-box">
+              <table class="fv-table">
+                <caption>Taxa e prazo por bairro</caption>
+                <thead><tr><th scope="col">Bairro</th><th scope="col">Taxa</th><th scope="col">Prazo</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Centro</th><td>R$ 5,00</td><td>25 a 35 min</td></tr>
+                  <tr><th scope="row">Jardim das Acácias</th><td>R$ 6,00</td><td>30 a 40 min</td></tr>
+                  <tr><th scope="row">Vila Serena</th><td>R$ 7,00</td><td>35 a 45 min</td></tr>
+                  <tr><th scope="row">Parque Aurora</th><td>R$ 8,00</td><td>40 a 50 min</td></tr>
+                  <tr><th scope="row">Bela Vista</th><td>R$ 9,00</td><td>45 a 55 min</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="fv-values" aria-labelledby="titulo-diferenciais">
+          <div class="fv-wrap fv-values-grid">
+            <div class="fv-values-head">
+              <h2 id="titulo-diferenciais">O que faz diferença na sua pizza</h2>
+              <p>Poucas coisas, feitas do mesmo jeito todos os dias.</p>
+            </div>
+            <ul class="fv-values-list">
+              <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3.5c1.2 5.2 7.5 7.4 7.5 14.2a7.5 7.5 0 0 1-15 0c0-3 1.4-5 3-6.6.6 2.2 1.8 3.2 3 3.5.4-4.6.3-7.8 1.5-11.1Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M5 28.5h22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><h3>Forno a lenha de tijolo</h3><p>Montado no salão em 2011 e aceso todas as noites com lenha de eucalipto de reflorestamento.</p></li>
+              <li><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="18.5" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8.5V5M11.5 9.5c1.6-2.2 7.4-2.2 9 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M11 17a5 5 0 0 1 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><h3>Molho feito na casa</h3><p>Tomate pelado, azeite, alho e manjericão. Preparado toda tarde, em panela pequena.</p></li>
+              <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 24 27 11.5V24Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 24v3.5h23V24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="20" cy="19.5" r="1.8" fill="currentColor"/><circle cx="14" cy="21.5" r="1.2" fill="currentColor"/><circle cx="23.5" cy="15.8" r="1.2" fill="currentColor"/></svg><h3>Ingredientes escolhidos</h3><p>Muçarela de búfala, calabresa curada e cogumelos frescos, comprados de produtores da região.</p></li>
+              <li><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="8" cy="23.5" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="25" cy="23.5" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11.5 23.5h8l3-8h-5M22.5 15.5l2.5 8M3.5 11.5h9v7h-9Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Entrega da própria casa</h3><p>Sem aplicativo no meio. A taxa que você vê no site é a mesma que paga na porta.</p></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="fv-reviews" aria-labelledby="titulo-avaliacoes">
+          <div class="fv-wrap">
+            <h2 id="titulo-avaliacoes">Quem já provou</h2>
+            <ul class="fv-reviews-list">
+              <li>
+                <figure class="fv-review">
+                  <span class="fv-stars" role="img" aria-label="Nota 5 de 5"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9Z" fill="currentColor"/></svg><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9Z" fill="currentColor"/></svg><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9Z" fill="currentColor"/></svg><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9Z" fill="currentColor"/></svg><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9Z" fill="currentColor"/></svg></span>
+                  <blockquote><p>A borda é leve de verdade, dá para comer a pizza inteira sem pesar. Pedimos quase toda sexta e sempre chega quente.</p></blockquote>
+                  <figcaption><span class="fv-avatar" aria-hidden="true">C</span><span><strong>Carla</strong> Jardim das Acácias</span></figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure class="fv-review">
+                  <span class="fv-stars" role="img" aria-label="Nota 5 de 5"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9Z" fill="currentColor"/></svg><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9Z" fill="currentColor"/></svg><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9Z" fill="currentColor"/></svg><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9Z" fill="currentColor"/></svg><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9Z" fill="currentColor"/></svg></span>
+                  <blockquote><p>A calabresa acebolada é a preferida aqui de casa. O prazo que aparece no pedido é o prazo que eles cumprem.</p></blockquote>
+                  <figcaption><span class="fv-avatar" aria-hidden="true">R</span><span><strong>Rafael</strong> Vila Serena</span></figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure class="fv-review">
+                  <span class="fv-stars" role="img" aria-label="Nota 5 de 5"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9Z" fill="currentColor"/></svg><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9Z" fill="currentColor"/></svg><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9Z" fill="currentColor"/></svg><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9Z" fill="currentColor"/></svg><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9Z" fill="currentColor"/></svg></span>
+                  <blockquote><p>Comemoramos o aniversário da minha mãe no salão. Atendimento atencioso e uma margherita que lembra cantina antiga.</p></blockquote>
+                  <figcaption><span class="fv-avatar" aria-hidden="true">B</span><span><strong>Beatriz</strong> Centro</span></figcaption>
+                </figure>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="fv-visit" id="visite" aria-labelledby="titulo-visite">
+          <div class="fv-wrap fv-visit-grid">
+            <div class="fv-visit-copy">
+              <h2 id="titulo-visite">Endereço e horário</h2>
+              <address class="fv-address">Rua Exemplo, 120<br />Centro, Cidade Exemplo</address>
+              <p>De frente para a praça, com vagas na rua e acesso sem degraus.</p>
+              <dl class="fv-hours">
+                <div><dt>Terça a domingo</dt><dd>18h às 23h</dd></div>
+                <div><dt>Delivery</dt><dd>pedidos até 22h30</dd></div>
+                <div><dt>Segunda</dt><dd>fechado</dd></div>
+              </dl>
+              <div class="fv-actions">
+                <button type="button" class="fv-btn is-fire" data-demo-action="Nesta demonstração, o botão não abre um mapa real.">Como chegar</button>
+                <button type="button" class="fv-btn is-dark" data-demo-action="Nesta demonstração, o botão não faz uma ligação real.">Ligar para a pizzaria</button>
+              </div>
+            </div>
+            <div class="fv-map">
+              <svg viewBox="0 0 600 420" role="img" aria-label="Mapa ilustrativo do Centro de Cidade Exemplo. A pizzaria fica na Rua Exemplo, 120, de frente para a praça."><rect width="600" height="420" fill="#e6cf9d"/><rect x="311" y="101" width="148" height="118" fill="#b5c48a"/><g fill="#8fa266"><circle cx="336" cy="126" r="11"/><circle cx="434" cy="124" r="11"/><circle cx="336" cy="194" r="11"/><circle cx="434" cy="196" r="11"/></g><g stroke="#fffaf0" stroke-width="22"><path d="M0 90h600M0 230h600M0 360h600M120 0v420M300 0v420M470 0v420"/></g><g fill="#d9bf88"><rect x="140" y="250" width="60" height="44"/><rect x="214" y="250" width="70" height="90"/><rect x="140" y="306" width="60" height="34"/><rect x="20" y="110" width="84" height="56"/><rect x="20" y="180" width="84" height="30"/><rect x="490" y="250" width="90" height="90"/><rect x="320" y="250" width="134" height="40"/><rect x="140" y="20" width="144" height="50"/></g><text x="385" y="164" fill="#3f4a22" font-size="17" font-weight="600" text-anchor="middle">Praça</text><text x="385" y="236" fill="#6b5a4e" font-size="15" text-anchor="middle">Rua Exemplo</text><text x="60" y="366" fill="#6b5a4e" font-size="15" text-anchor="middle">Rua do Forno</text><g transform="translate(262 214)"><path d="M0 0C-6-12-21-22-21-39a21 21 0 0 1 42 0c0 17-15 27-21 39Z" fill="#cf3a1b" stroke="#fffaf0" stroke-width="3"/><circle cy="-39" r="7.5" fill="#fffaf0"/></g><g transform="translate(130 112)"><rect width="150" height="38" rx="4" fill="#1a1412"/><text x="75" y="25.5" fill="#fff4df" font-size="19" font-weight="600" text-anchor="middle" font-family="Oswald, Arial Narrow, sans-serif">Fornalha Vivo</text></g></svg>
+            </div>
+          </div>
+        </section>
+
+        <section class="fv-faq" id="duvidas" aria-labelledby="titulo-duvidas">
+          <div class="fv-wrap fv-faq-grid">
+            <div class="fv-faq-head">
+              <h2 id="titulo-duvidas">Dúvidas frequentes</h2>
+              <p>Não achou sua resposta? Fale com a gente pelo telefone ou pelo WhatsApp.</p>
+            </div>
+            <div class="fv-faq-list">
+              <details>
+                <summary>Vocês aceitam reserva?</summary>
+                <p>Sim, para grupos a partir de seis pessoas, de terça a quinta. Na sexta, no sábado e no domingo o salão funciona por ordem de chegada.</p>
+              </details>
+              <details>
+                <summary>Até que horas posso pedir pelo delivery?</summary>
+                <p>Recebemos pedidos de terça a domingo, até 22h30. O prazo de cada bairro aparece no pedido antes de você finalizar.</p>
+              </details>
+              <details>
+                <summary>Quais bairros vocês atendem?</summary>
+                <p>Centro, Jardim das Acácias, Vila Serena, Parque Aurora e Bela Vista. Se você mora em outro bairro, pode retirar no balcão: a pizza fica pronta em cerca de 20 minutos.</p>
+              </details>
+              <details>
+                <summary>Quais são as formas de pagamento?</summary>
+                <p>Pix, cartão de débito ou crédito e dinheiro. No delivery, o entregador leva a maquininha.</p>
+              </details>
+              <details>
+                <summary>Tem opção sem glúten ou sem lactose?</summary>
+                <p>Qualquer sabor pode sair sem queijo. Massa sem glúten nós não fazemos: a farinha circula pela cozinha inteira e não teríamos como garantir a segurança de quem tem doença celíaca.</p>
+              </details>
+              <details>
+                <summary>Vocês fazem pizza para festas?</summary>
+                <p>Fazemos, com pelo menos dois dias de antecedência, que é o tempo da massa. Mande a data e o número de pessoas pelo WhatsApp que a gente prepara o orçamento.</p>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        <section class="fv-contact" id="contato" aria-labelledby="titulo-contato">
+          <div class="fv-wrap fv-contact-grid">
+            <div class="fv-contact-copy">
+              <h2 id="titulo-contato">Fale com a pizzaria</h2>
+              <p>Reserva de mesa, encomenda para festa ou uma dúvida sobre o pedido. Atendemos de terça a domingo, a partir das 17h.</p>
+            </div>
+            <ul class="fv-contact-list">
+              <li><span class="fv-contact-info"><span>Telefone</span> <strong>(00) 0000-0000</strong></span><button type="button" class="fv-btn is-white" data-demo-action="Nesta demonstração, o botão não faz uma ligação real.">Ligar</button></li>
+              <li><span class="fv-contact-info"><span>WhatsApp</span> <strong>(00) 0000-0000</strong></span><button type="button" class="fv-btn is-white" data-demo-action="Nesta demonstração, o botão não abre uma conversa real.">Chamar no WhatsApp</button></li>
+              <li><span class="fv-contact-info"><span>Encomendas para festas</span> <strong>Com dois dias de antecedência</strong></span><button type="button" class="fv-btn is-outline" data-demo-action="Nesta demonstração, o pedido de orçamento não é enviado.">Pedir orçamento</button></li>
+            </ul>
           </div>
         </section>
       </main>
 
-      <footer class="fv-foot" id="contato">
+      <footer class="fv-foot">
         <div class="fv-wrap fv-foot-grid">
+          <div class="fv-foot-brand">
+            <p class="fv-foot-name"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2c1.4 6 8 8.6 8 16.2A8 8 0 0 1 8 18c0-3.2 1.4-5.2 3.1-7 .6 2.4 1.9 3.5 3.3 3.8.4-5 .3-8.6 1.6-12.8Z" fill="#ff8a1f"></path><path d="M16 15c.7 2.4 4 3.6 4 7.4a4 4 0 0 1-8 0c0-1.8.9-2.8 1.8-3.6.4 1 1.2 1.4 1.7 1.5.5-2.2.2-3.7.5-5.3Z" fill="#fff4df"></path></svg><span>Fornalha Vivo</span></p>
+            <p>Pizzaria a lenha e delivery no Centro de Cidade Exemplo, desde 2011.</p>
+          </div>
+          <nav class="fv-foot-nav" aria-label="Rodapé">
+            <p class="fv-foot-label">Navegação</p>
+            <ul>
+              <li><a href="#topo">Início</a></li>
+              <li><a href="#sobre">Sobre</a></li>
+              <li><a href="cardapio.html">Cardápio</a></li>
+              <li><a href="#entrega">Entrega</a></li>
+              <li><a href="#contato">Contato</a></li>
+            </ul>
+          </nav>
           <div>
-            <p class="fv-foot-name">Fornalha Vivo</p>
-            <p>Rua das Palmeiras, 120, Cidade Exemplo</p>
+            <p class="fv-foot-label">Endereço</p>
+            <p>Rua Exemplo, 120<br />Centro, Cidade Exemplo</p>
+            <p class="fv-foot-label is-spaced">Telefone</p>
+            <p>(00) 0000-0000</p>
           </div>
           <div>
             <p class="fv-foot-label">Horário</p>
-            <p>Terça a domingo, das 18h às 23h</p>
-          </div>
-          <div>
-            <p class="fv-foot-label">Telefone</p>
-            <p>(00) 0000-0000</p>
+            <p>Terça a domingo, das 18h às 23h<br />Delivery até 22h30<br />Segunda, fechado</p>
           </div>
         </div>
-        <p class="fv-fine">Fornalha Vivo é uma marca fictícia criada pela Lade Group para esta demonstração.</p>
+        <div class="fv-wrap">
+          <p class="fv-fine">Fornalha Vivo é uma marca fictícia criada pela Lade Group para esta demonstração.</p>
+        </div>
       </footer>
     </div>
     <p class="demo-badge" aria-hidden="true">Demonstração</p>

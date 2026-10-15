@@ -114,30 +114,6 @@
   font-size: 14.5px;
 }
 
-.demo-card.is-wide .demo-card-body {
-  justify-content: center;
-}
-
-.demo-card.is-wide h3 {
-  text-wrap: balance;
-}
-
-@media (min-width: 861px) {
-  .demo-card.is-wide {
-    display: grid;
-    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-  }
-
-  .demo-card.is-wide .demo-card-media {
-    border-right: 1px solid var(--line);
-    border-bottom: 0;
-  }
-
-  .demo-card.is-wide .demo-card-body {
-    padding: 32px 36px;
-  }
-}
-
 .demo-notice {
   padding: 18px 22px;
   background: var(--surface);

@@ -1,4 +1,4 @@
-# Cumeeira, CRM imobiliário
+# Morada, CRM imobiliário
 
 Funil de vendas de uma imobiliária fictícia. Mostra cartões por etapa, ficha do contato em gaveta lateral, imóveis compatíveis, conversa e um assistente de IA simulado.
 

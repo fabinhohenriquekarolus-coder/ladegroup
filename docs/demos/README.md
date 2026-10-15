@@ -1,6 +1,6 @@
 # Demonstrações do portfólio
 
-Nove exemplos navegáveis feitos em HTML, CSS e JavaScript puro, sem framework e sem dependências em tempo de execução: o LaCar, quatro sistemas e quatro sites. O LaCar é produto real da Lade Group; os outros oito usam marcas fictícias. Todos usam dados fictícios, não fazem requisições externas e não guardam nada: o estado vive só na memória da página.
+Dez exemplos navegáveis feitos em HTML, CSS e JavaScript puro, sem framework e sem dependências em tempo de execução: o LaCar, cinco sistemas e quatro sites. O LaCar é produto real da Lade Group; os outros nove usam marcas fictícias. Todos usam dados fictícios, não fazem requisições externas e não guardam nada: o estado vive só na memória da página.
 
 ## Onde fica cada coisa
 
@@ -9,10 +9,11 @@ public/demos/
   comum/                 base compartilhada pelas demonstrações
     demo.css             reset, barra "Demonstração", selo e aviso
     toast.js             aviso acessível (role="status") e botões data-demo-action
+    tabs.js              abas com setas, Home e End
     html.js              template html`` que escapa todo valor interpolado
     fonts/               Montserrat e Open Sans da barra da Lade
   lacar/                 página do LaCar, na identidade do próprio sistema
-  sistemas/<exemplo>/    crm-imobiliario, erp-contabil, painel-de-gestao, agendamento
+  sistemas/<exemplo>/    crm-imobiliario, erp-contabil, painel-de-gestao, agendamento, barbearia
   sites/<exemplo>/       pizzaria, petshop, moda, autopecas
     index.html           estrutura e conteúdo
     styles.css           identidade visual do exemplo
@@ -70,10 +71,11 @@ Todas são servidas pelo próprio site, só no subconjunto latino (cobre o portu
 | --- | --- | --- |
 | Barra da Lade | Montserrat | Open Sans |
 | LaCar | Geist | Geist |
-| Cumeeira, CRM | Plus Jakarta Sans | Plus Jakarta Sans |
+| Morada, CRM | Plus Jakarta Sans | Plus Jakarta Sans |
 | Razão, ERP | IBM Plex Sans | IBM Plex Sans e IBM Plex Mono |
 | Maré, painel | Inter | Inter |
 | Compasso, agenda | Rubik | Rubik |
+| Régua, barbearia | Archivo | Archivo |
 | Fornalha Vivo, pizzaria | Oswald | Source Sans 3 |
 | Toca Mansa, pet shop | Poppins | Nunito Sans |
 | Meia-Luz, moda | Cormorant Garamond | Manrope |
@@ -82,10 +84,11 @@ Todas são servidas pelo próprio site, só no subconjunto latino (cobre o portu
 ## Documentação de cada exemplo
 
 - [LaCar, atendimento e gestão para lava-rápido](lacar.md)
-- [Cumeeira, CRM imobiliário](crm-imobiliario.md)
+- [Morada, CRM imobiliário](crm-imobiliario.md)
 - [Razão, ERP contábil](erp-contabil.md)
 - [Maré, painel de gestão](painel-de-gestao.md)
 - [Compasso, agendamento](agendamento.md)
+- [Régua, gestão para barbearia](barbearia.md)
 - [Fornalha Vivo, pizzaria](pizzaria.md)
 - [Toca Mansa, pet shop](petshop.md)
 - [Meia-Luz, loja de moda](moda.md)

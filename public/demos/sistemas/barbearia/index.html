@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Régua, gestão para barbearia | Demonstração Lade Group</title>
+    <meta name="description" content="Demonstração com dados fictícios de um sistema para barbearia: agenda por cadeira, fila de encaixe, clube de assinantes, caixa do dia e comissões dos barbeiros." />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#1f1b19" />
+    <link rel="icon" type="image/svg+xml" href="../../../favicon.svg" />
+    <link rel="preload" href="fonts/archivo-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../comum/demo.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="js/app.js"></script>
+  </head>
+  <body>
+    <a class="demo-skip" href="#conteudo">Ir para a demonstração</a>
+    <div class="demo-bar" role="region" aria-label="Sobre esta demonstração">
+      <div class="demo-bar-inner">
+        <div class="demo-bar-id">
+          <a class="demo-bar-logo" href="../../../index.html"><svg viewBox="0 0 56 56" aria-hidden="true"><polygon points="54,28 41,50.5 15,50.5 2,28 15,5.5 41,5.5" fill="#FFFFFF"></polygon><polygon points="48,28 38,45.3 18,45.3 8,28 18,10.7 38,10.7" fill="#0D0D0D"></polygon><polygon points="41,28 34.5,39.3 21.5,39.3 15,28 21.5,16.7 34.5,16.7" fill="#C9A227"></polygon></svg><span>LADE GROUP</span></a>
+          <span class="demo-tag">Demonstração</span>
+          <span class="demo-note">Marca e dados fictícios</span>
+        </div>
+        <div class="demo-bar-actions">
+          <a class="demo-back" href="../../../portfolio.html#sistemas"><span class="demo-long">Voltar ao portfólio</span><span class="demo-short">Portfólio</span></a>
+          <a class="demo-cta" href="https://wa.me/5547991065421?text=Ol%C3%A1%21%20Vi%20a%20demonstra%C3%A7%C3%A3o%20%22Gest%C3%A3o%20para%20barbearia%22%20no%20site%20da%20Lade%20Group%20e%20quero%20conversar%20sobre%20um%20sistema%20parecido%20para%20o%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">Quero um sistema assim</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="rg" id="conteudo">
+      <header class="rg-top">
+        <div class="rg-top-inner">
+          <div class="rg-brand">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+              <clipPath id="rg-mark"><rect width="32" height="32" rx="6"></rect></clipPath>
+              <g clip-path="url(#rg-mark)">
+                <rect width="32" height="32" fill="#f4efe7"></rect>
+                <path d="M-6 14 14 -6M-2 26 26 -2M6 34 34 6M18 38 38 18" stroke="#7a2430" stroke-width="5"></path>
+              </g>
+            </svg>
+            <h1 class="rg-name">Régua</h1>
+            <span class="rg-shop">Barbearia da Esquina</span>
+          </div>
+          <div class="rg-tabs" role="tablist" aria-label="Seções do sistema">
+            <button type="button" role="tab" id="aba-hoje" aria-controls="tela-hoje" aria-selected="true">Hoje</button>
+            <button type="button" role="tab" id="aba-clube" aria-controls="tela-clube" aria-selected="false" tabindex="-1">Clube</button>
+            <button type="button" role="tab" id="aba-caixa" aria-controls="tela-caixa" aria-selected="false" tabindex="-1">Caixa e comissões</button>
+          </div>
+          <p class="rg-clock"><span>Quarta, 14 de outubro</span><b>15:10</b></p>
+        </div>
+      </header>
+
+      <main class="rg-stage">
+        <section class="rg-view" role="tabpanel" id="tela-hoje" aria-labelledby="aba-hoje">
+          <div class="rg-kpis" id="hoje-numeros"></div>
+          <div class="rg-today">
+            <section class="rg-panel rg-board" aria-labelledby="titulo-agenda">
+              <div class="rg-panel-head">
+                <h2 id="titulo-agenda">Agenda por cadeira</h2>
+                <ul class="rg-legend" aria-label="Legenda">
+                  <li class="is-done">Concluído</li>
+                  <li class="is-now">Na cadeira</li>
+                  <li class="is-next">Agendado</li>
+                </ul>
+              </div>
+              <div class="rg-board-scroll" role="region" aria-label="Agenda do dia, com rolagem horizontal" tabindex="0">
+                <div class="rg-grid" id="agenda"></div>
+              </div>
+            </section>
+
+            <aside class="rg-panel rg-queue" aria-labelledby="titulo-fila">
+              <div class="rg-panel-head">
+                <h2 id="titulo-fila" tabindex="-1">Fila de encaixe</h2>
+              </div>
+              <p class="rg-note">Quem chegou sem horário entra na primeira cadeira que tiver tempo livre para o serviço.</p>
+              <ol class="rg-walkins" id="fila"></ol>
+              <p class="rg-empty" id="fila-vazia" hidden>Ninguém esperando agora.</p>
+              <p class="sr-only" id="fila-status" aria-live="polite"></p>
+              <form class="rg-form" id="novo-encaixe" novalidate>
+                <h3>Novo encaixe</h3>
+                <label for="encaixe-nome">Nome do cliente</label>
+                <input id="encaixe-nome" name="nome" autocomplete="off" maxlength="40" aria-describedby="encaixe-erro" />
+                <label for="encaixe-servico">Serviço</label>
+                <select id="encaixe-servico" name="servico"></select>
+                <p class="rg-error" id="encaixe-erro" hidden></p>
+                <button type="submit" class="rg-btn">Colocar na fila</button>
+              </form>
+            </aside>
+          </div>
+        </section>
+
+        <section class="rg-view" role="tabpanel" id="tela-clube" aria-labelledby="aba-clube" hidden>
+          <div class="rg-kpis" id="clube-numeros"></div>
+          <div class="rg-plans" id="planos"></div>
+          <section class="rg-panel" aria-labelledby="titulo-assinantes">
+            <div class="rg-panel-head">
+              <h2 id="titulo-assinantes" tabindex="-1">Assinantes</h2>
+              <div class="rg-filter" role="group" aria-label="Filtrar assinantes">
+                <button type="button" data-clube="todos" aria-pressed="true">Todos</button>
+                <button type="button" data-clube="vencendo" aria-pressed="false">Vencendo</button>
+                <button type="button" data-clube="atrasado" aria-pressed="false">Atrasados</button>
+              </div>
+            </div>
+            <div class="rg-table-wrap" role="region" aria-label="Tabela de assinantes, com rolagem horizontal" tabindex="0">
+              <table class="rg-table">
+                <caption class="sr-only">Assinantes do clube, com plano, uso no mês e situação da renovação</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Assinante</th>
+                    <th scope="col">Plano</th>
+                    <th scope="col" class="is-num">Usos no mês</th>
+                    <th scope="col">Renovação</th>
+                    <th scope="col">Situação</th>
+                    <th scope="col"><span class="sr-only">Ação</span></th>
+                  </tr>
+                </thead>
+                <tbody id="assinantes"></tbody>
+              </table>
+            </div>
+            <p class="rg-empty" id="assinantes-vazio" hidden>Nenhum assinante nesta situação.</p>
+          </section>
+        </section>
+
+        <section class="rg-view" role="tabpanel" id="tela-caixa" aria-labelledby="aba-caixa" hidden>
+          <div class="rg-kpis" id="caixa-numeros"></div>
+          <div class="rg-cash">
+            <section class="rg-panel" aria-labelledby="titulo-comissoes">
+              <div class="rg-panel-head">
+                <h2 id="titulo-comissoes">Comissões do dia</h2>
+              </div>
+              <div class="rg-table-wrap" role="region" aria-label="Tabela de comissões, com rolagem horizontal" tabindex="0">
+                <table class="rg-table">
+                  <caption class="sr-only">Atendimentos, valores e comissão de cada barbeiro até agora</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Barbeiro</th>
+                      <th scope="col" class="is-num">Atendimentos</th>
+                      <th scope="col" class="is-num">Serviços</th>
+                      <th scope="col" class="is-num">Clube</th>
+                      <th scope="col" class="is-num">Produtos</th>
+                      <th scope="col" class="is-num">Comissão</th>
+                    </tr>
+                  </thead>
+                  <tbody id="comissoes"></tbody>
+                  <tfoot id="comissoes-total"></tfoot>
+                </table>
+              </div>
+              <p class="rg-note" id="regra-comissao"></p>
+            </section>
+            <section class="rg-panel" aria-labelledby="titulo-pagamentos">
+              <div class="rg-panel-head">
+                <h2 id="titulo-pagamentos">Formas de pagamento</h2>
+              </div>
+              <ul class="rg-pay" id="pagamentos"></ul>
+              <button type="button" class="rg-btn is-wide" data-demo-action="Na demonstração o caixa não é fechado de verdade.">Fechar caixa do dia</button>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+    <p class="demo-badge" aria-hidden="true">Demonstração</p>
+  </body>
+</html>

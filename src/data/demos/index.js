@@ -6,6 +6,8 @@ import erpCover from '../../assets/previews/erp-contabil-inicio.jpg';
 import erpDetail from '../../assets/previews/erp-contabil-uso.jpg';
 import painelCover from '../../assets/previews/painel-de-gestao-inicio.jpg';
 import painelDetail from '../../assets/previews/painel-de-gestao-uso.jpg';
+import barbeariaCover from '../../assets/previews/barbearia-inicio.jpg';
+import barbeariaDetail from '../../assets/previews/barbearia-uso.jpg';
 import agendaCover from '../../assets/previews/agendamento-inicio.jpg';
 import agendaDetail from '../../assets/previews/agendamento-uso.jpg';
 import pizzariaCover from '../../assets/previews/pizzaria-inicio.jpg';
@@ -28,7 +30,7 @@ export const lacarDemo = {
 
 export const systemDemos = [
   {
-    product: 'Cumeeira',
+    product: 'Morada',
     title: 'CRM imobiliário com IA',
     text: 'Funil de vendas com cartões arrastáveis, conversa com o cliente e um assistente de IA simulado que resume e sugere o próximo passo.',
     href: '/demos/sistemas/crm-imobiliario/',
@@ -58,6 +60,14 @@ export const systemDemos = [
     href: '/demos/sistemas/agendamento/',
     cover: agendaCover,
     detail: agendaDetail,
+  },
+  {
+    product: 'Régua',
+    title: 'Gestão para barbearia',
+    text: 'Agenda por cadeira, fila de encaixe que acha o primeiro horário livre, clube de assinantes, caixa do dia e comissão de cada barbeiro.',
+    href: '/demos/sistemas/barbearia/',
+    cover: barbeariaCover,
+    detail: barbeariaDetail,
   },
 ];
 

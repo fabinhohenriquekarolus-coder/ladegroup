@@ -53,6 +53,13 @@ const demos = [
     },
   },
   {
+    slug: 'barbearia',
+    path: 'demos/sistemas/barbearia/',
+    use: async (page) => {
+      await page.click('#aba-clube');
+    },
+  },
+  {
     slug: 'crm-imobiliario',
     path: 'demos/sistemas/crm-imobiliario/',
     use: async (page) => {

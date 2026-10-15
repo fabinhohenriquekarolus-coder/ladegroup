@@ -26,17 +26,3 @@
 .card p {
   font-size: 14.5px;
 }
-
-.process-card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.process-card .hex-frame {
-  margin-bottom: 22px;
-}
-
-.process-card h3 {
-  margin-bottom: 8px;
-}

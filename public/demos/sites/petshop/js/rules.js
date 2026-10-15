@@ -32,3 +32,17 @@ export const listInPortuguese = (items) => {
   if (items.length <= 1) return items.join('');
   return `${items.slice(0, -1).join(', ')} e ${items[items.length - 1]}`;
 };
+
+export const bookingSummary = ({ tutor, pet, service, day, hour }, bath) => {
+  const text = `${pet.trim()}, com ${tutor.trim()}: ${service}, ${day} às ${hour}.`;
+  if (service !== 'Banho e tosa' || !bath) return text;
+  return `${text} Estimativa do banho: ${money(bath.price)}, cerca de ${formatDuration(bath.minutes)}.`;
+};
+
+export const hoursHint = (busy, day, hours) => {
+  if (!day) return 'Escolha um dia para ver os horários livres.';
+  const free = hours.filter((hour) => isAvailable(busy, day, hour)).length;
+  if (!free) return `${day}: nenhum horário livre. Escolha outro dia.`;
+  const count = free === 1 ? '1 horário livre' : `${free} horários livres`;
+  return free === hours.length ? `${day}: ${count}.` : `${day}: ${count}. Os indisponíveis já estão ocupados.`;
+};

@@ -8,45 +8,38 @@ import { lacarDemo, systemDemos, siteDemos } from '../data/demos/index.js';
 
 <BaseLayout
   title="Portfólio | Lade Group"
-  description="O LaCar, sistema próprio da Lade Group em produção, e demonstrações de sistemas e sites com marcas e dados fictícios para você ver o que podemos criar."
+  description="Sistemas e sites criados pela Lade Group, com identidade visual, regras de negócio e telas pensadas do zero. Navegue e teste cada projeto."
   path="/portfolio.html"
   current="portfolio"
 >
   <PageHero
     title="O que a gente constrói, funcionando"
-    lead="O LaCar está em produção. Os sistemas e sites abaixo são demonstrações com marcas e dados fictícios, feitas para você ver como o seu negócio poderia ficar."
+    lead="Cada projeto foi pensado do zero: identidade visual, regras do negócio e cada tela. Navegue, clique e teste como se fosse o seu. Os projetos de demonstração usam marcas e dados fictícios."
   />
 
-  <section class="tight" id="lacar">
+  <section class="tight" id="sistemas">
     <div class="container">
       <div class="section-head">
-        <h2>LaCar, nosso sistema em produção</h2>
+        <h2>Sistemas que desenvolvemos</h2>
         <p>
-          Atendente no WhatsApp e painel de gestão para lava-rápido e estética automotiva. A
-          demonstração usa a identidade do LaCar e dados fictícios.
+          Do atendimento no WhatsApp à gestão do caixa: sistemas que organizam a rotina de quem atende,
+          vende e agenda.
         </p>
       </div>
-      <DemoCard {...lacarDemo} wide priority />
-    </div>
-  </section>
-
-  <section class="tight section-alt" id="sistemas">
-    <div class="container">
-      <div class="section-head">
-        <h2>Sistemas exemplo</h2>
-        <p>Clique, navegue e teste. Tudo o que aparece é fictício e funciona só no seu navegador.</p>
-      </div>
       <div class="grid-2">
-        {systemDemos.map((demo) => <DemoCard {...demo} />)}
+        {[lacarDemo, ...systemDemos].map((demo, index) => <DemoCard {...demo} priority={index === 0} />)}
       </div>
     </div>
   </section>
 
-  <section class="tight" id="sites">
+  <section class="tight section-alt" id="sites">
     <div class="container">
       <div class="section-head">
-        <h2>Sites exemplo</h2>
-        <p>Cada site tem identidade própria e interações reais: pedido, agendamento, sacola e cotação.</p>
+        <h2>Sites institucionais</h2>
+        <p>
+          Sites completos para negócios que querem ser encontrados e escolhidos: apresentação,
+          serviços, avaliações, localização e a função que cada negócio precisa.
+        </p>
       </div>
       <div class="grid-2">
         {siteDemos.map((demo) => <DemoCard {...demo} />)}
@@ -54,7 +47,7 @@ import { lacarDemo, systemDemos, siteDemos } from '../data/demos/index.js';
     </div>
   </section>
 
-  <section class="tight section-alt">
+  <section class="tight">
     <div class="container">
       <div class="demo-notice">
         <h3>Sobre as demonstrações</h3>

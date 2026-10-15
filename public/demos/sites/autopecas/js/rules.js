@@ -60,3 +60,12 @@ export const isValidCnpj = (value) => {
 };
 
 export const itemsLabel = (count) => `${count} ${count === 1 ? 'item' : 'itens'}`;
+
+export const filtersFromQuery = (query, categories) => {
+  const params = new URLSearchParams(query);
+  const category = params.get('categoria') ?? '';
+  return {
+    term: (params.get('q') ?? '').trim().slice(0, 60),
+    category: categories.includes(category) ? category : 'todas',
+  };
+};

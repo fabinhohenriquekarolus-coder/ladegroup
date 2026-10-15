@@ -12,11 +12,13 @@ import {
   formatCnpj,
   isValidCnpj,
   itemsLabel,
+  filtersFromQuery,
 } from './rules.js';
 
 const rows = [...document.querySelectorAll('.part')];
 const chips = [...document.querySelectorAll('.en-chips [data-cat]')];
 const search = document.querySelector('#q');
+const headerSearch = document.querySelector('#busca');
 const lineSelect = document.querySelector('#line');
 const onlyStock = document.querySelector('#only-stock');
 const lines = document.querySelector('#quote-lines');
@@ -70,10 +72,14 @@ const showError = (message, field) => {
   field?.focus();
 };
 
+const selectCategory = (category) => {
+  state.category = category;
+  chips.forEach((chip) => chip.setAttribute('aria-pressed', String(chip.dataset.cat === category)));
+};
+
 chips.forEach((chip) =>
   chip.addEventListener('click', () => {
-    state.category = chip.dataset.cat;
-    chips.forEach((other) => other.setAttribute('aria-pressed', String(other === chip)));
+    selectCategory(chip.dataset.cat);
     renderTable();
   }),
 );
@@ -84,7 +90,10 @@ onlyStock.addEventListener('change', renderTable);
 
 document.querySelector('#search-form').addEventListener('submit', (event) => {
   event.preventDefault();
-  document.querySelector('#catalogo').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  search.value = headerSearch.value.trim();
+  renderTable();
+  const calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelector('#catalogo').scrollIntoView({ behavior: calm ? 'auto' : 'smooth', block: 'start' });
   document.querySelector('#titulo-catalogo').focus({ preventScroll: true });
 });
 
@@ -129,6 +138,11 @@ form.addEventListener('submit', (event) => {
   const summary = quoteSummary(state.entries, tiers);
   showToast(`Cotação de demonstração com ${itemsLabel(summary.items)}, total ${money(summary.total)}. Nada foi enviado.`);
 });
+
+const initial = filtersFromQuery(window.location.search, chips.map((chip) => chip.dataset.cat));
+search.value = initial.term;
+headerSearch.value = initial.term;
+selectCategory(initial.category);
 
 renderTable();
 renderQuote();

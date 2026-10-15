@@ -28,6 +28,10 @@ section.tight {
   margin-bottom: 48px;
 }
 
+.section-head h2 {
+  text-wrap: balance;
+}
+
 .eyebrow {
   display: inline-flex;
   align-items: center;

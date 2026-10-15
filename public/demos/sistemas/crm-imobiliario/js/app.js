@@ -78,7 +78,7 @@ const assistantPanel = (lead) => {
   if (status === 'idle') {
     return html`<div class="ai-intro"><span class="ai-tag">Assistente, exemplo simulado</span>
       <p>Leio o histórico, as conversas e os interesses do contato para sugerir o próximo passo e uma mensagem.</p>
-      <button type="button" class="cum-btn" data-ai>Gerar leitura do contato</button></div>`;
+      <button type="button" class="mor-btn" data-ai>Gerar leitura do contato</button></div>`;
   }
   if (status === 'loading') {
     return html`<div class="ai-intro"><span class="ai-tag">Assistente, exemplo simulado</span>
@@ -92,7 +92,7 @@ const assistantPanel = (lead) => {
     </section>
     <section><h3><label for="ai-message">Mensagem sugerida</label></h3>
       <textarea id="ai-message" rows="3">${suggestedMessage(lead)}</textarea>
-      <button type="button" class="cum-btn" data-send-ai>Enviar pela conversa</button></section></div>`;
+      <button type="button" class="mor-btn" data-send-ai>Enviar pela conversa</button></section></div>`;
 };
 
 const propertiesPanel = (lead) =>
@@ -107,7 +107,7 @@ const chatPanel = (lead) =>
     (message) => html`<li class="bubble ${message.from === 'agent' ? 'is-agent' : 'is-lead'}"><p>${message.text}</p><time>${message.time}</time></li>`,
   )}</ol>
     <form class="composer" id="composer"><label class="sr-only" for="chat-input">Mensagem</label>
-      <input id="chat-input" autocomplete="off" maxlength="400" placeholder="Escreva uma mensagem" /><button type="submit" class="cum-btn">Enviar</button></form></div>`;
+      <input id="chat-input" autocomplete="off" maxlength="400" placeholder="Escreva uma mensagem" /><button type="submit" class="mor-btn">Enviar</button></form></div>`;
 
 const timelinePanel = (lead) =>
   html`<ol class="timeline">${lead.timeline.map((entry) => html`<li><time>${entry.when}</time><p>${entry.text}</p></li>`)}</ol>`;

@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agendar horário | Toca Mansa, pet shop | Demonstração Lade Group</title>
+    <meta name="description" content="Demonstração com marca fictícia de um pet shop: estimativa do preço do banho por porte e adicionais e agendamento de dia e horário." />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#1d6b49" />
+    <link rel="icon" type="image/svg+xml" href="../../../favicon.svg" />
+    <link rel="preload" href="fonts/poppins-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/nunito-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../comum/demo.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="js/site.js"></script>
+    <script type="module" src="js/app.js"></script>
+  </head>
+  <body>
+    <a class="demo-skip" href="#conteudo">Ir para a demonstração</a>
+    <div class="demo-bar" role="region" aria-label="Sobre esta demonstração">
+      <div class="demo-bar-inner">
+        <div class="demo-bar-id">
+          <a class="demo-bar-logo" href="../../../index.html"><svg viewBox="0 0 56 56" aria-hidden="true"><polygon points="54,28 41,50.5 15,50.5 2,28 15,5.5 41,5.5" fill="#FFFFFF"></polygon><polygon points="48,28 38,45.3 18,45.3 8,28 18,10.7 38,10.7" fill="#0D0D0D"></polygon><polygon points="41,28 34.5,39.3 21.5,39.3 15,28 21.5,16.7 34.5,16.7" fill="#C9A227"></polygon></svg><span>LADE GROUP</span></a>
+          <span class="demo-tag">Demonstração</span>
+          <span class="demo-note">Marca e dados fictícios</span>
+        </div>
+        <div class="demo-bar-actions">
+          <a class="demo-back" href="../../../portfolio.html#sites"><span class="demo-long">Voltar ao portfólio</span><span class="demo-short">Portfólio</span></a>
+          <a class="demo-cta" href="https://wa.me/5547991065421?text=Ol%C3%A1%21%20Vi%20a%20demonstra%C3%A7%C3%A3o%20%22Pet%20shop%22%20no%20site%20da%20Lade%20Group%20e%20quero%20conversar%20sobre%20um%20site%20parecido%20para%20o%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">Quero um site assim</a>
+        </div>
+      </div>
+    </div>
+    <div class="tm" id="topo">
+      <header class="tm-top">
+        <div class="tm-top-inner">
+          <a class="tm-logo" href="index.html">
+            <span class="tm-logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="9.5" r="1.8"/><circle cx="12" cy="6.8" r="1.8"/><circle cx="17" cy="9.5" r="1.8"/><path d="M12 12.8c-3 0-5 2.4-5 4.4 0 1.7 1.6 2.4 3 2.4 1 0 1.4-.4 2-.4s1 .4 2 .4c1.4 0 3-.7 3-2.4 0-2-2-4.4-5-4.4Z"/></svg></span>
+            <span>Toca Mansa</span>
+          </a>
+          <button class="tm-menu" type="button" aria-expanded="false" aria-controls="menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            <span>Menu</span>
+          </button>
+          <nav class="tm-nav" id="menu" aria-label="Principal">
+            <ul>
+              <li><a href="index.html">Início</a></li>
+              <li><a href="index.html#sobre">Sobre</a></li>
+              <li><a href="index.html#servicos">Serviços</a></li>
+              <li><a href="agendar.html" aria-current="page">Agendar</a></li>
+              <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+          </nav>
+          <a class="tm-btn is-small tm-top-cta" href="#agendar">Agendar horário</a>
+        </div>
+      </header>
+
+      <main id="conteudo">
+        <section class="tm-intro" aria-labelledby="titulo-pagina">
+          <div class="tm-wrap">
+            <nav class="tm-crumbs" aria-label="Você está aqui">
+              <ol>
+                <li><a href="index.html">Início</a></li>
+                <li><span aria-current="page">Agendar</span></li>
+              </ol>
+            </nav>
+            <h1 id="titulo-pagina">Agende um horário</h1>
+            <p class="tm-lead">Simule o valor do banho e escolha um horário livre na semana. Ficou alguma dúvida? Ligue para a loja no (00) 0000-0000.</p>
+            <ol class="tm-stepper">
+              <li><a href="#precos"><span class="tm-num" aria-hidden="true">1</span>Simule o valor do banho</a></li>
+              <li><a href="#agendar"><span class="tm-num" aria-hidden="true">2</span>Escolha o dia e o horário</a></li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="tm-section is-sky" id="precos" aria-labelledby="titulo-precos">
+          <div class="tm-wrap">
+            <div class="tm-head">
+              <h2 id="titulo-precos" class="tm-step-title"><span class="tm-num" aria-hidden="true">1</span>Quanto custa o banho</h2>
+              <p class="tm-sub">Escolha o porte e os adicionais para ver o valor e o tempo aproximado. A tosa completa é combinada na loja.</p>
+            </div>
+            <div class="tm-calc">
+              <form class="tm-calc-form" id="calc">
+                <fieldset>
+                  <legend>Porte do pet</legend>
+                  <div class="tm-options">
+                    <label class="tm-option">
+                      <input type="radio" name="size" value="p" data-label="Pequeno" data-price="5500" data-minutes="60" checked />
+                      <span><b>Pequeno</b><small>até 8 kg</small><em>R$ 55,00</em></span>
+                    </label>
+                    <label class="tm-option">
+                      <input type="radio" name="size" value="m" data-label="Médio" data-price="7500" data-minutes="80" />
+                      <span><b>Médio</b><small>8 a 20 kg</small><em>R$ 75,00</em></span>
+                    </label>
+                    <label class="tm-option">
+                      <input type="radio" name="size" value="g" data-label="Grande" data-price="10500" data-minutes="100" />
+                      <span><b>Grande</b><small>acima de 20 kg</small><em>R$ 105,00</em></span>
+                    </label>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Adicionais</legend>
+                  <div class="tm-extras">
+                    <label class="tm-check">
+                      <input type="checkbox" name="extra" value="hidratacao" data-label="Hidratação de pelagem" data-price="2500" data-minutes="15" />
+                      <span>Hidratação de pelagem</span>
+                      <em>mais R$ 25,00</em>
+                    </label>
+                    <label class="tm-check">
+                      <input type="checkbox" name="extra" value="unhas" data-label="Corte de unhas" data-price="1500" data-minutes="10" />
+                      <span>Corte de unhas</span>
+                      <em>mais R$ 15,00</em>
+                    </label>
+                    <label class="tm-check">
+                      <input type="checkbox" name="extra" value="dentes" data-label="Escovação de dentes" data-price="1800" data-minutes="10" />
+                      <span>Escovação de dentes</span>
+                      <em>mais R$ 18,00</em>
+                    </label>
+                    <label class="tm-check">
+                      <input type="checkbox" name="extra" value="higienica" data-label="Tosa higiênica" data-price="2200" data-minutes="15" />
+                      <span>Tosa higiênica</span>
+                      <em>mais R$ 22,00</em>
+                    </label>
+                  </div>
+                </fieldset>
+              </form>
+              <aside class="tm-result" aria-live="polite" aria-label="Estimativa">
+                <p class="tm-result-label">Estimativa</p>
+                <strong id="calc-total">R$ 55,00</strong>
+                <p id="calc-time">Tempo aproximado: 1 h</p>
+                <ul id="calc-list"><li><span>Pequeno</span><em>R$ 55,00</em></li></ul>
+                <a class="tm-btn is-dark" href="#agendar" id="calc-book">Agendar com esse serviço</a>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="tm-section is-paper" id="agendar" aria-labelledby="titulo-agendar">
+          <div class="tm-wrap">
+            <div class="tm-head">
+              <h2 id="titulo-agendar" class="tm-step-title"><span class="tm-num" aria-hidden="true">2</span>Escolha o dia e o horário</h2>
+              <p class="tm-sub">Nesta demonstração nada é enviado: o resumo aparece só aqui na página.</p>
+            </div>
+            <div class="tm-book">
+              <div class="tm-book-main">
+                <form class="tm-form" id="booking" novalidate>
+                  <div class="tm-fields">
+                    <label>Seu nome<input name="tutor" autocomplete="name" maxlength="60" required /></label>
+                    <label>Nome do pet<input name="pet" autocomplete="off" maxlength="40" required /></label>
+                  </div>
+                  <label>
+                    Serviço
+                    <select name="service">
+                      <option value="Banho e tosa">Banho e tosa</option>
+                      <option value="Consulta veterinária">Consulta veterinária</option>
+                      <option value="Visita ao hotelzinho">Visita ao hotelzinho</option>
+                    </select>
+                  </label>
+                  <fieldset>
+                    <legend>Dia</legend>
+                    <div class="tm-chips" id="days">
+                      <button type="button" data-day="Seg 12" aria-pressed="false">Seg 12</button>
+                      <button type="button" data-day="Ter 13" aria-pressed="false">Ter 13</button>
+                      <button type="button" data-day="Qua 14" aria-pressed="false">Qua 14</button>
+                      <button type="button" data-day="Qui 15" aria-pressed="false">Qui 15</button>
+                      <button type="button" data-day="Sex 16" aria-pressed="false">Sex 16</button>
+                      <button type="button" data-day="Sáb 17" aria-pressed="false">Sáb 17</button>
+                    </div>
+                  </fieldset>
+                  <fieldset aria-describedby="hours-hint">
+                    <legend>Horário</legend>
+                    <div class="tm-chips" id="hours">
+                      <button type="button" data-hour="09:00" aria-pressed="false" disabled>09:00<span class="tm-slot"></span></button>
+                      <button type="button" data-hour="10:30" aria-pressed="false" disabled>10:30<span class="tm-slot"></span></button>
+                      <button type="button" data-hour="13:00" aria-pressed="false" disabled>13:00<span class="tm-slot"></span></button>
+                      <button type="button" data-hour="14:30" aria-pressed="false" disabled>14:30<span class="tm-slot"></span></button>
+                      <button type="button" data-hour="16:00" aria-pressed="false" disabled>16:00<span class="tm-slot"></span></button>
+                    </div>
+                    <p class="tm-hint" id="hours-hint">Escolha um dia para ver os horários livres.</p>
+                  </fieldset>
+                  <p class="tm-error" id="book-error" role="alert" hidden></p>
+                  <button type="submit" class="tm-btn">Reservar horário</button>
+                </form>
+                <div class="tm-confirm" id="confirm" role="status" hidden>
+                  <h3 tabindex="-1">Horário reservado</h3>
+                  <p id="confirm-text"></p>
+                  <button type="button" class="tm-btn is-ghost" id="again">Fazer outra reserva</button>
+                </div>
+              </div>
+              <aside class="tm-before" aria-labelledby="titulo-antes">
+                <h3 id="titulo-antes">Antes de vir</h3>
+                <ul>
+                  <li>Chegue 10 minutos antes. A primeira visita tem tempo extra para o pet se acostumar, sem custo.</li>
+                  <li>Na primeira vez, traga a carteira de vacinação com a antirrábica em dia.</li>
+                  <li>Se o pet usa shampoo receitado, traga na embalagem original.</li>
+                  <li>Para desmarcar, avise com pelo menos 2 horas de antecedência.</li>
+                </ul>
+                <div class="tm-before-call">
+                  <p>Prefere marcar por telefone?<br /><strong>(00) 0000-0000</strong></p>
+                  <button type="button" class="tm-btn is-ghost is-small" data-demo-action="Nesta demonstração a ligação não é feita. O telefone é fictício.">Ligar para a loja</button>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="tm-foot">
+        <div class="tm-wrap tm-foot-grid">
+          <div class="tm-foot-brand">
+            <a class="tm-logo is-light" href="index.html">
+              <span class="tm-logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="9.5" r="1.8"/><circle cx="12" cy="6.8" r="1.8"/><circle cx="17" cy="9.5" r="1.8"/><path d="M12 12.8c-3 0-5 2.4-5 4.4 0 1.7 1.6 2.4 3 2.4 1 0 1.4-.4 2-.4s1 .4 2 .4c1.4 0 3-.7 3-2.4 0-2-2-4.4-5-4.4Z"/></svg></span>
+              <span>Toca Mansa</span>
+            </a>
+            <p>Banho e tosa, veterinário, hotelzinho e loja, com hora marcada.</p>
+          </div>
+          <nav class="tm-foot-nav" aria-label="Rodapé">
+            <p class="tm-foot-label">Navegação</p>
+            <ul>
+              <li><a href="index.html">Início</a></li>
+              <li><a href="index.html#sobre">Sobre</a></li>
+              <li><a href="index.html#servicos">Serviços</a></li>
+              <li><a href="agendar.html">Agendar</a></li>
+              <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+          </nav>
+          <div>
+            <p class="tm-foot-label">Endereço</p>
+            <p>Avenida dos Ipês, 450, Centro<br />Cidade Exemplo</p>
+          </div>
+          <div>
+            <p class="tm-foot-label">Horário</p>
+            <p>Segunda a sábado, das 9h às 18h<br />Telefone (00) 0000-0000</p>
+          </div>
+        </div>
+        <div class="tm-wrap">
+          <p class="tm-fine">Toca Mansa é uma marca fictícia criada pela Lade Group para esta demonstração.</p>
+        </div>
+      </footer>
+    </div>
+    <p class="demo-badge" aria-hidden="true">Demonstração</p>
+  </body>
+</html>
