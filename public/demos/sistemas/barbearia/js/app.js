@@ -274,3 +274,4 @@ setupTabs($('.rg-tabs'));
 renderDay();
 renderClub();
 renderCash();
+$('.rg-stage').classList.add('is-ready');

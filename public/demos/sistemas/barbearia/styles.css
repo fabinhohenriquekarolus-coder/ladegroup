@@ -163,6 +163,11 @@
   padding: 20px;
 }
 
+.rg-stage:not(.is-ready) {
+  min-height: 900px;
+  visibility: hidden;
+}
+
 .rg-kpis {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));

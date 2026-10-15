@@ -94,6 +94,7 @@ const demos = [
   {
     slug: 'pizzaria',
     path: 'demos/sites/pizzaria/',
+    next: 'cardapio.html',
     use: async (page) => {
       await page.click('[data-id="margherita"] [data-add]');
       await page.click('[data-size="grande"]');
@@ -105,6 +106,7 @@ const demos = [
   {
     slug: 'petshop',
     path: 'demos/sites/petshop/',
+    next: 'agendar.html',
     use: async (page) => {
       await page.click('#calc .tm-option:nth-child(2)');
       await page.click('#calc .tm-check:nth-child(1)');
@@ -114,6 +116,7 @@ const demos = [
   {
     slug: 'moda',
     path: 'demos/sites/moda/',
+    next: 'colecao.html',
     use: async (page) => {
       await page.evaluate(() => document.querySelector('#colecao').scrollIntoView());
       await page.click('[data-id="aurora"] [data-add]');
@@ -122,6 +125,7 @@ const demos = [
   {
     slug: 'autopecas',
     path: 'demos/sites/autopecas/',
+    next: 'catalogo.html',
     use: async (page) => {
       await page.fill('[data-code="EN-1042"] .qty', '12');
       await page.click('[data-code="EN-1042"] [data-add]');
@@ -145,6 +149,11 @@ try {
     await page.addStyleTag({ content: hideChrome });
     await page.evaluate(() => document.fonts.ready);
     await page.screenshot({ path: join(output, `${demo.slug}-inicio.jpg`), type: 'jpeg', quality: 82 });
+    if (demo.next) {
+      await page.goto(base + demo.path + demo.next, { waitUntil: 'networkidle' });
+      await page.addStyleTag({ content: hideChrome });
+      await page.evaluate(() => document.fonts.ready);
+    }
     await demo.use(page);
     await page.mouse.move(0, 0);
     await page.waitForTimeout(300);

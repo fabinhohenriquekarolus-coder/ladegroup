@@ -75,7 +75,7 @@ export const siteDemos = [
   {
     product: 'Fornalha Vivo',
     title: 'Pizzaria e delivery',
-    text: 'Cardápio por categoria e tamanho, pedido que soma o total e taxa de entrega calculada por bairro.',
+    text: 'Site institucional com a história da casa, avaliações e localização, mais cardápio por tamanho e pedido com taxa de entrega por bairro.',
     href: '/demos/sites/pizzaria/',
     cover: pizzariaCover,
     detail: pizzariaDetail,
@@ -83,7 +83,7 @@ export const siteDemos = [
   {
     product: 'Toca Mansa',
     title: 'Pet shop',
-    text: 'Serviços, estimativa de preço do banho por porte e agendamento com horários livres e ocupados.',
+    text: 'Site institucional com serviços, equipe e depoimentos, mais simulação de preço do banho por porte e agendamento de horários.',
     href: '/demos/sites/petshop/',
     cover: petshopCover,
     detail: petshopDetail,
@@ -91,7 +91,7 @@ export const siteDemos = [
   {
     product: 'Meia-Luz',
     title: 'Loja de moda',
-    text: 'Coleção filtrável, escolha de cor e tamanho, favoritos e sacola com progresso do frete grátis.',
+    text: 'Site institucional da marca com lookbook e política de trocas, mais coleção filtrável e sacola com progresso do frete grátis.',
     href: '/demos/sites/moda/',
     cover: modaCover,
     detail: modaDetail,
@@ -99,7 +99,7 @@ export const siteDemos = [
   {
     product: 'Eixo Norte',
     title: 'Autopeças B2B',
-    text: 'Catálogo para lojistas com busca por código, estoque por item e cotação com desconto por volume.',
+    text: 'Site institucional de distribuidora, com empresa, linhas e cobertura, mais catálogo para lojistas e cotação com desconto por volume.',
     href: '/demos/sites/autopecas/',
     cover: autopecasCover,
     detail: autopecasDetail,
